@@ -1,0 +1,923 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Estrategia Digital — Las Huertas Agencia</title>
+  <link rel="icon" type="image/png" href="Imagenes/favicon.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Satoshi:wght@300;400;500;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --noir: #111111;
+      --purple: #a100ff;
+      --purple2: #c040ff;
+      --white: #ffffff;
+      --mid: #1c1c1c;
+      --mid2: #252525;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--noir);
+      color: var(--white);
+      font-family: "Satoshi", sans-serif;
+      font-weight: 400;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    h1, h2, h3, h4 { font-family: "Satoshi", sans-serif; font-weight: 700; letter-spacing: -0.03em; }
+    .container { max-width: 900px; margin: 0 auto; padding: 0 32px; }
+
+    /* HEADER */
+    header { padding: 40px 0 0; }
+    .header-inner {
+      display: flex; align-items: center; justify-content: space-between;
+      padding-bottom: 32px; border-bottom: 1px solid #2a2a2a;
+    }
+    .logo { display: flex; align-items: center; gap: 10px; }
+    .logo-icon { width: 36px; height: 36px; }
+    .logo-name { font-size: 26px; font-weight: 700; letter-spacing: -0.05em; color: var(--white); text-transform: lowercase; }
+    .logo-name span { color: var(--purple); }
+    .tag-doc {
+      font-size: 11px; font-weight: 500; letter-spacing: 0.15em;
+      text-transform: uppercase; color: var(--purple);
+      border: 1px solid var(--purple); padding: 5px 12px; border-radius: 20px;
+    }
+
+    /* HERO */
+    .hero { padding: 64px 0 48px; position: relative; overflow: hidden; }
+    .hero::before {
+      content: ""; position: absolute; top: -60px; right: -120px;
+      width: 480px; height: 480px;
+      background: radial-gradient(circle, rgba(161,0,255,0.15) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .hero-label {
+      display: inline-block; font-size: 11px; font-weight: 600;
+      letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--purple); margin-bottom: 20px;
+    }
+    .hero h1 {
+      font-size: clamp(32px, 5vw, 56px); line-height: 1.05;
+      letter-spacing: -0.04em; margin-bottom: 16px; max-width: 680px;
+    }
+    .hero h1 em { font-style: normal; color: var(--purple); }
+    .hero-sub { font-size: 15px; color: #999; max-width: 520px; line-height: 1.75; }
+
+    /* SECTION BLOCKS */
+    .section-block { padding: 56px 0; border-top: 1px solid #1e1e1e; }
+    .section-label {
+      font-size: 10px; font-weight: 600; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--purple); margin-bottom: 8px;
+    }
+    .section-title {
+      font-size: clamp(22px, 3.5vw, 32px); letter-spacing: -0.03em; margin-bottom: 8px;
+    }
+    .section-intro { font-size: 15px; color: #888; max-width: 600px; line-height: 1.75; margin-bottom: 36px; }
+
+    /* CARDS */
+    .card {
+      background: var(--mid);
+      border: 1px solid #333;
+      border-radius: 16px;
+      padding: 32px 36px;
+      position: relative;
+      overflow: hidden;
+    }
+    .card::after {
+      content: ""; position: absolute; bottom: -60px; right: -60px;
+      width: 200px; height: 200px;
+      background: radial-gradient(circle, rgba(161,0,255,0.12) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .card.featured { border-color: rgba(161,0,255,0.45); }
+    .card-badge {
+      display: inline-block;
+      background: rgba(161,0,255,0.12);
+      color: var(--purple);
+      border: 1px solid rgba(161,0,255,0.28);
+      font-size: 10px; font-weight: 600; letter-spacing: 0.15em;
+      text-transform: uppercase; padding: 4px 10px; border-radius: 20px;
+      margin-bottom: 14px;
+    }
+    .card-title { font-size: 18px; font-weight: 700; color: var(--white); margin-bottom: 8px; letter-spacing: -0.02em; }
+    .card-body { font-size: 14px; color: #aaa; line-height: 1.7; }
+    .card-body strong { color: var(--white); }
+    .card-divider { border: none; border-top: 1px solid #2a2a2a; margin: 20px 0; }
+
+    /* GRID LAYOUTS */
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; }
+    .grid-auto { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 16px; }
+    .stack { display: flex; flex-direction: column; gap: 16px; }
+
+    /* ICON ITEMS */
+    .icon-item {
+      display: flex; align-items: flex-start; gap: 12px;
+    }
+    .icon-box {
+      width: 32px; height: 32px; border-radius: 8px;
+      background: rgba(161,0,255,0.12);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 15px; flex-shrink: 0;
+    }
+    .icon-item strong { display: block; font-size: 13px; font-weight: 600; color: var(--white); margin-bottom: 2px; }
+    .icon-item p { font-size: 12px; color: #777; line-height: 1.5; }
+
+    /* BULLET ITEMS */
+    .bullet-item { display: flex; align-items: flex-start; gap: 10px; font-size: 13px; color: #aaa; margin-bottom: 10px; }
+    .bullet-item .dot { color: var(--purple); font-size: 13px; flex-shrink: 0; margin-top: 2px; }
+    .bullet-item strong { color: var(--white); }
+
+    /* QUOTE BLOCK */
+    .quote-block {
+      background: linear-gradient(135deg, #1a0030 0%, var(--mid2) 60%);
+      border: 1px solid rgba(161,0,255,0.28);
+      border-radius: 12px;
+      padding: 28px 32px;
+      position: relative;
+    }
+    .quote-block::before {
+      content: '"';
+      position: absolute; top: 12px; left: 20px;
+      font-size: 72px; line-height: 1; color: rgba(161,0,255,0.2);
+      font-family: Georgia, serif;
+    }
+    .quote-text { font-size: 16px; color: #ddd; line-height: 1.7; font-style: italic; padding-left: 16px; }
+    .quote-attr { font-size: 12px; color: #666; margin-top: 12px; padding-left: 16px; letter-spacing: 0.05em; text-transform: uppercase; }
+
+    /* PILL TAGS */
+    .pill-group { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+    .pill {
+      font-size: 12px; font-weight: 500; padding: 5px 14px;
+      border-radius: 20px; background: rgba(255,255,255,0.06);
+      border: 1px solid #333; color: #bbb;
+    }
+    .pill.yes { background: rgba(161,0,255,0.1); border-color: rgba(161,0,255,0.3); color: var(--purple); }
+    .pill.no { background: rgba(255,60,60,0.08); border-color: rgba(255,60,60,0.2); color: #ff6060; }
+
+    /* NUMBER STEPS */
+    .step-item { display: flex; gap: 20px; align-items: flex-start; }
+    .step-num {
+      width: 36px; height: 36px; border-radius: 50%;
+      border: 1px solid rgba(161,0,255,0.4);
+      background: rgba(161,0,255,0.08);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 13px; font-weight: 700; color: var(--purple); flex-shrink: 0;
+    }
+    .step-content strong { display: block; font-size: 14px; font-weight: 700; color: var(--white); margin-bottom: 4px; }
+    .step-content p { font-size: 13px; color: #888; line-height: 1.6; }
+
+    /* PILLAR CARDS */
+    .pillar-num {
+      font-size: 48px; font-weight: 700; letter-spacing: -0.05em;
+      color: rgba(161,0,255,0.2); line-height: 1; margin-bottom: 12px;
+    }
+
+    /* PLATFORM ROW */
+    .platform-row {
+      display: flex; align-items: center; gap: 16px;
+      padding: 16px 0; border-bottom: 1px solid #1e1e1e;
+    }
+    .platform-row:last-child { border-bottom: none; }
+    .platform-badge {
+      font-size: 11px; font-weight: 600; letter-spacing: 0.1em;
+      text-transform: uppercase; padding: 4px 12px; border-radius: 20px;
+      min-width: 100px; text-align: center;
+    }
+    .platform-badge.ig { background: rgba(225,48,108,0.15); border: 1px solid rgba(225,48,108,0.3); color: #e1306c; }
+    .platform-badge.fb { background: rgba(24,119,242,0.12); border: 1px solid rgba(24,119,242,0.25); color: #5b9aee; }
+    .platform-badge.li { background: rgba(0,119,181,0.12); border: 1px solid rgba(0,119,181,0.25); color: #4da6cc; }
+    .platform-role { font-size: 13px; color: #aaa; }
+    .platform-role strong { color: var(--white); }
+
+    /* WORD BLOCK */
+    .word-block { padding: 20px 24px; border-radius: 10px; }
+    .word-block.si { background: rgba(161,0,255,0.08); border: 1px solid rgba(161,0,255,0.2); }
+    .word-block.no { background: rgba(255,60,60,0.06); border: 1px solid rgba(255,60,60,0.15); }
+    .word-block h4 { font-size: 12px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 14px; }
+    .word-block.si h4 { color: var(--purple); }
+    .word-block.no h4 { color: #ff6060; }
+
+    /* WEEK TRACK */
+    .week-track { display: flex; flex-direction: column; gap: 0; }
+    .week-item {
+      display: flex; gap: 24px; align-items: stretch; padding-bottom: 24px; position: relative;
+    }
+    .week-item:last-child { padding-bottom: 0; }
+    .week-left { display: flex; flex-direction: column; align-items: center; gap: 0; }
+    .week-circle {
+      width: 38px; height: 38px; border-radius: 50%;
+      border: 1px solid rgba(161,0,255,0.45);
+      background: rgba(161,0,255,0.1);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 11px; font-weight: 700; color: var(--purple); flex-shrink: 0;
+    }
+    .week-line { width: 1px; background: #2a2a2a; flex: 1; margin-top: 4px; }
+    .week-item:last-child .week-line { display: none; }
+    .week-content { padding-top: 6px; padding-bottom: 8px; flex: 1; }
+    .week-content strong { display: block; font-size: 14px; font-weight: 700; color: var(--white); margin-bottom: 4px; }
+    .week-content p { font-size: 13px; color: #888; line-height: 1.6; }
+
+    /* INSIGHT BOX */
+    .insight-box {
+      background: linear-gradient(135deg, #1a0030 0%, var(--mid2) 50%);
+      border: 1px solid rgba(161,0,255,0.3);
+      border-radius: 12px;
+      padding: 24px 28px;
+      margin-top: 16px;
+    }
+    .insight-box p { font-size: 14px; color: #ccc; line-height: 1.75; }
+    .insight-box strong { color: var(--white); }
+
+    /* FOOTER */
+    footer { padding: 48px 0 32px; border-top: 1px solid #1e1e1e; }
+    .footer-inner { display: flex; flex-direction: column; gap: 20px; }
+    .footer-top { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+    .footer-logo { font-size: 20px; font-weight: 700; letter-spacing: -0.04em; text-transform: lowercase; color: var(--white); }
+    .footer-logo em { font-style: normal; color: var(--purple); }
+    .footer-contact a { color: var(--purple); text-decoration: none; font-size: 14px; font-weight: 500; }
+    .footer-bottom {
+      font-size: 12px; color: #444; padding-top: 20px;
+      border-top: 1px solid #1e1e1e;
+      display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px;
+    }
+
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+    .hero > * { animation: fadeUp 0.6s ease both; }
+    .hero > *:nth-child(2) { animation-delay: 0.1s; }
+    .hero > *:nth-child(3) { animation-delay: 0.2s; }
+
+    @media (max-width: 640px) {
+      .container { padding: 0 20px; }
+      .card { padding: 24px 20px; }
+      .grid-2, .grid-3 { grid-template-columns: 1fr; }
+      .header-inner { flex-direction: column; align-items: flex-start; gap: 16px; }
+      .footer-top { flex-direction: column; align-items: flex-start; }
+      .footer-bottom { flex-direction: column; }
+      .platform-row { flex-direction: column; align-items: flex-start; gap: 8px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="container">
+      <div class="header-inner">
+        <div class="logo">
+          <img src="Imagenes/logo.png" alt="Conectux" style="height:38px; width:auto;" />
+        </div>
+        <span class="tag-doc">Estrategia de Marketing</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <span class="hero-label">Especialmente para Las Huertas Agencia</span>
+      <h1>Tu red de expertos merece<br/><em>audiencias</em> que los busquen.</h1>
+      <p class="hero-sub">
+        Esta es la estrategia de contenido orgánico diseñada para posicionar a Las Huertas
+        como la referencia en LATAM para experiencias de conocimiento que transforman.
+      </p>
+    </div>
+  </section>
+
+  <!-- DIAGNÓSTICO -->
+  <section class="section-block">
+    <div class="container">
+      <p class="section-label">01 — Diagnóstico</p>
+      <h2 class="section-title">Dónde estás hoy</h2>
+      <p class="section-intro">
+        Antes de construir, hay que entender el punto de partida. Las Huertas tiene una propuesta de valor poderosa — el problema es que el mercado digital no lo sabe todavía.
+      </p>
+
+      <div class="grid-2" style="margin-bottom: 16px;">
+        <div class="card featured">
+          <span class="card-badge">La oportunidad</span>
+          <p class="card-title">El mercado está desatendido en digital</p>
+          <p class="card-body">
+            Tus competidores directos —HiCue Speakers, Divinamente— apenas usan redes sociales. No tienen presencia orgánica consistente, no educan a su audiencia, no construyen comunidad. <strong>El nicho está vacío y listo para ser ocupado.</strong>
+          </p>
+          <hr class="card-divider"/>
+          <div class="bullet-item"><span class="dot">◆</span><span>Competencia activa solo en LinkedIn buscando expertos, no construyendo marca</span></div>
+          <div class="bullet-item"><span class="dot">◆</span><span>Solo promueven celebrities. No hay nadie posicionando coaches, mentores y consultores de alto nivel</span></div>
+          <div class="bullet-item"><span class="dot">◆</span><span>Nadie está educando al mercado sobre el valor de estas experiencias</span></div>
+        </div>
+
+        <div class="card">
+          <span class="card-badge">El desafío</span>
+          <p class="card-title">La propuesta de valor es invisible en digital</p>
+          <p class="card-body">
+            Las Huertas tiene un diferencial claro —experiencias humanas y transformadoras, no solo información— pero ese diferencial no está siendo comunicado consistentemente en ninguna plataforma.
+          </p>
+          <hr class="card-divider"/>
+          <div class="bullet-item"><span class="dot">◆</span><span>El cliente llega preguntando precio sin entender el valor real</span></div>
+          <div class="bullet-item"><span class="dot">◆</span><span>La marca no tiene contenido que demuestre el impacto de sus expertos</span></div>
+          <div class="bullet-item"><span class="dot">◆</span><span>No hay un flujo de leads orgánicos entrando desde redes</span></div>
+        </div>
+      </div>
+
+      <div class="insight-box">
+        <p>
+          <strong>Diagnóstico central:</strong> Las Huertas Agencia opera en un mercado donde la decisión de compra requiere análisis y confianza. El contenido orgánico no debe vender directamente — debe <strong>construir autoridad</strong>, demostrar impacto y <strong>reducir la percepción de riesgo</strong> antes de que el prospecto levante la mano.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CLIENTE IDEAL -->
+  <section class="section-block">
+    <div class="container">
+      <p class="section-label">02 — Avatar</p>
+      <h2 class="section-title">Quién toma la decisión</h2>
+      <p class="section-intro">
+        El cliente de Las Huertas no es una sola persona. Es un perfil con poder de decisión dentro de una organización o institución en LATAM, alrededor de los 40 años, con presupuesto y necesidad real.
+      </p>
+
+      <div class="card featured" style="margin-bottom: 16px;">
+        <div class="grid-2">
+          <div>
+            <span class="card-badge">Perfil principal</span>
+            <p class="card-title">El decisor organizacional</p>
+            <p class="card-body" style="margin-bottom: 20px;">
+              Director de RR.HH., Gerente de Comunicaciones, CEO de empresa mediana, Coordinador de eventos institucionales. Tiene un presupuesto real y la responsabilidad de que la experiencia funcione.
+            </p>
+            <div class="bullet-item"><span class="dot">◆</span><span><strong>Edad:</strong> ~40 años</span></div>
+            <div class="bullet-item"><span class="dot">◆</span><span><strong>Ubicación:</strong> LATAM (Colombia, México, Perú, Chile)</span></div>
+            <div class="bullet-item"><span class="dot">◆</span><span><strong>NSE:</strong> Medio-alto / Alto</span></div>
+            <div class="bullet-item"><span class="dot">◆</span><span><strong>Conciencia:</strong> Ya compara proveedores activamente</span></div>
+          </div>
+          <div>
+            <span class="card-badge" style="background:transparent; border-color:transparent;">Quién más puede ser cliente</span>
+            <div class="stack">
+              <div class="icon-item">
+                <div class="icon-box">🏢</div>
+                <div><strong>Empresas del sector privado</strong><p>Cualquier industria, con equipos que necesitan formación y activación</p></div>
+              </div>
+              <div class="icon-item">
+                <div class="icon-box">🎓</div>
+                <div><strong>Instituciones educativas</strong><p>Universidades, escuelas de negocios, centros de formación</p></div>
+              </div>
+              <div class="icon-item">
+                <div class="icon-box">🏛️</div>
+                <div><strong>Gremios e instituciones</strong><p>Cámaras de comercio, organismos multilaterales, fundaciones</p></div>
+              </div>
+              <div class="icon-item">
+                <div class="icon-box">🚀</div>
+                <div><strong>Emprendedores y profesionales</strong><p>Que buscan mentoría, consultoría o bootcamps para crecer</p></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid-3">
+        <div class="card" style="text-align:center; padding: 24px 20px;">
+          <p style="font-size:32px; margin-bottom:8px;">📱</p>
+          <p class="card-title" style="font-size:14px;">Redes que consume</p>
+          <p class="card-body" style="font-size:12px;">Instagram, LinkedIn, WhatsApp, Facebook. Consume contenido educativo e inspiracional.</p>
+        </div>
+        <div class="card" style="text-align:center; padding: 24px 20px;">
+          <p style="font-size:32px; margin-bottom:8px;">🧠</p>
+          <p class="card-title" style="font-size:14px;">Cómo compra</p>
+          <p class="card-body" style="font-size:12px;">Necesita análisis. Compara opciones, pide propuestas, valida experiencias y trayectoria antes de decidir.</p>
+        </div>
+        <div class="card" style="text-align:center; padding: 24px 20px;">
+          <p style="font-size:32px; margin-bottom:8px;">🎯</p>
+          <p class="card-title" style="font-size:14px;">Lo que pregunta siempre</p>
+          <p class="card-body" style="font-size:12px;">Cuánto cuesta, qué charlas hay, cuál es la metodología, el perfil del experto y cómo se mide el impacto.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VOZ DEL CLIENTE -->
+  <section class="section-block">
+    <div class="container">
+      <p class="section-label">03 — Voz del cliente</p>
+      <h2 class="section-title">Lo que el cliente dice, siente y necesita</h2>
+      <p class="section-intro">
+        Entender la voz del cliente es la base de todo el contenido. Cada pieza que publiquemos debe resonar en alguno de estos tres niveles.
+      </p>
+
+      <div class="grid-3" style="margin-bottom: 24px;">
+        <div class="card">
+          <span class="card-badge">Lo que dice</span>
+          <p class="card-title">Sus palabras reales</p>
+          <hr class="card-divider"/>
+          <div class="quote-block" style="padding: 20px 20px 20px 28px; margin-bottom: 12px;">
+            <p class="quote-text" style="font-size:13px;">"Necesito a alguien que conecte de verdad con mi audiencia, no solo que hable bien."</p>
+          </div>
+          <div class="quote-block" style="padding: 20px 20px 20px 28px; margin-bottom: 12px;">
+            <p class="quote-text" style="font-size:13px;">"¿Tienen alguien con experiencia en innovación y liderazgo para equipos de 50 personas?"</p>
+          </div>
+          <div class="quote-block" style="padding: 20px 20px 20px 28px;">
+            <p class="quote-text" style="font-size:13px;">"Quiero algo que mi equipo recuerde al año siguiente, no una charla más."</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <span class="card-badge">Lo que siente</span>
+          <p class="card-title">Sus emociones reales</p>
+          <hr class="card-divider"/>
+          <div class="bullet-item" style="margin-bottom: 14px;"><span class="dot">◆</span><span><strong>Frustración</strong> de haber pagado por speakers que no conocían el contexto de su organización</span></div>
+          <div class="bullet-item" style="margin-bottom: 14px;"><span class="dot">◆</span><span><strong>Miedo</strong> a invertir en algo que no genere impacto real ni recordación</span></div>
+          <div class="bullet-item" style="margin-bottom: 14px;"><span class="dot">◆</span><span><strong>Cansancio</strong> de eventos impersonales, estandarizados y poco auténticos</span></div>
+          <div class="bullet-item"><span class="dot">◆</span><span><strong>Duda</strong> sobre si pagar más garantiza algo realmente diferente</span></div>
+        </div>
+
+        <div class="card featured">
+          <span class="card-badge">Lo que necesita</span>
+          <p class="card-title">Su necesidad profunda</p>
+          <hr class="card-divider"/>
+          <div class="bullet-item" style="margin-bottom: 14px;"><span class="dot">◆</span><span><strong>Certeza</strong> de que la experiencia será memorable, relevante y medible</span></div>
+          <div class="bullet-item" style="margin-bottom: 14px;"><span class="dot">◆</span><span><strong>Un aliado</strong> que entienda tanto el componente humano como los objetivos de impacto</span></div>
+          <div class="bullet-item" style="margin-bottom: 14px;"><span class="dot">◆</span><span><strong>Diversidad temática</strong> real: liderazgo, innovación, bienestar, estrategia, comunicación</span></div>
+          <div class="bullet-item"><span class="dot">◆</span><span><strong>Inspiración propia</strong>: volver a conectar con el propósito de lo que hace</span></div>
+        </div>
+      </div>
+
+      <div class="quote-block">
+        <p class="quote-text">
+          Lo que mantiene despierto a este cliente no es solo el evento que tiene que organizar. Es la sensación de estancamiento. La pregunta de si lo que hace genera un impacto real. El miedo a perder relevancia en un entorno que cambia constantemente. <strong style="color: var(--white); font-style: normal;">Eso es lo que Las Huertas resuelve — y eso es lo que el contenido debe demostrar.</strong>
+        </p>
+        <p class="quote-attr">Síntesis estratégica — Conectux</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- EL DOLOR -->
+  <section class="section-block">
+    <div class="container">
+      <p class="section-label">04 — El dolor del cliente</p>
+      <h2 class="section-title">Los cuatro dolores que el contenido debe resolver</h2>
+      <p class="section-intro">
+        Cada pieza de contenido orgánico debe atacar al menos uno de estos dolores. No directamente —no con mensajes de venta— sino demostrando que Las Huertas entiende el problema y tiene la solución.
+      </p>
+
+      <div class="stack">
+        <div class="card featured">
+          <div style="display: flex; gap: 20px; align-items: flex-start;">
+            <div style="font-size: 36px; line-height:1; flex-shrink: 0;">😤</div>
+            <div>
+              <span class="card-badge">Dolor 1</span>
+              <p class="card-title">Expertos que hablan bien pero no conectan</p>
+              <p class="card-body">
+                El mercado está lleno de speakers con buenas diapositivas pero sin capacidad de generar reflexión real. El cliente ha sido quemado antes. <strong>El contenido debe mostrar la diferencia: expertos con trayectoria real, con historia, con metodología probada.</strong> No solo un CV, sino el impacto detrás de cada nombre.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div style="display: flex; gap: 20px; align-items: flex-start;">
+            <div style="font-size: 36px; line-height:1; flex-shrink: 0;">💸</div>
+            <div>
+              <span class="card-badge">Dolor 2</span>
+              <p class="card-title">"Seguro es muy caro y no lo vale"</p>
+              <p class="card-body">
+                La percepción de precio es una barrera de entrada enorme. El cliente no ve la diferencia entre contratar directamente a un experto y contratar a través de Las Huertas. <strong>El contenido debe educar sobre el valor agregado de la agencia: curaduría, propuesta, metodología, seguimiento, contexto organizacional.</strong> El precio no se justifica con argumentos, se justifica con evidencia de impacto.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div style="display: flex; gap: 20px; align-items: flex-start;">
+            <div style="font-size: 36px; line-height:1; flex-shrink: 0;">🔍</div>
+            <div>
+              <span class="card-badge">Dolor 3</span>
+              <p class="card-title">No saben que Las Huertas existe</p>
+              <p class="card-body">
+                El cliente ideal está en LATAM buscando soluciones en LinkedIn o Google. Si Las Huertas no aparece en esa búsqueda ni en su feed, no existe para ese cliente. <strong>El contenido orgánico es el primer punto de contacto.</strong> Antes de que levanten la mano, ya deben haber consumido 3 o 4 piezas que les digan: "esta gente sabe lo que hace."
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div style="display: flex; gap: 20px; align-items: flex-start;">
+            <div style="font-size: 36px; line-height:1; flex-shrink: 0;">⚡</div>
+            <div>
+              <span class="card-badge">Dolor 4</span>
+              <p class="card-title">La oferta parece demasiado genérica</p>
+              <p class="card-body">
+                Si el perfil del experto se presenta como una lista de temas, parece un menú genérico. <strong>El contenido debe humanizar el portafolio:</strong> mostrar quiénes son los expertos, qué los hace únicos, qué tipo de audiencias transforman. La especificidad genera confianza. La generalidad genera duda.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- POSICIONAMIENTO -->
+  <section class="section-block">
+    <div class="container">
+      <p class="section-label">05 — Posicionamiento</p>
+      <h2 class="section-title">Cómo debe aparecer Las Huertas</h2>
+      <p class="section-intro">
+        El posicionamiento no es lo que Las Huertas dice que es. Es lo que el cliente siente que es cuando ve el contenido. Aquí está el territorio que debemos ocupar.
+      </p>
+
+      <div class="card featured" style="margin-bottom: 16px;">
+        <span class="card-badge">Declaración de posicionamiento</span>
+        <p style="font-size: clamp(18px, 2.5vw, 26px); font-weight: 700; letter-spacing: -0.03em; line-height: 1.3; color: var(--white); margin-bottom: 16px;">
+          Las Huertas Agencia es el puente entre el conocimiento que transforma y las organizaciones que lo necesitan.
+        </p>
+        <p class="card-body">
+          No somos un directorio de speakers. No somos una empresa de eventos. Somos <strong>curadores de experiencias humanas</strong> que conectan propósito, conocimiento y audiencias en el momento exacto en que una organización necesita moverse.
+        </p>
+      </div>
+
+      <div class="grid-2">
+        <div class="card">
+          <span class="card-badge">Lo que NO somos</span>
+          <p class="card-title">Distancia de la competencia</p>
+          <hr class="card-divider"/>
+          <div class="bullet-item"><span class="dot">◆</span><span>No somos un catálogo de famosos sin filtro de calidad</span></div>
+          <div class="bullet-item"><span class="dot">◆</span><span>No ofrecemos información: ofrecemos <strong>transformación</strong></span></div>
+          <div class="bullet-item"><span class="dot">◆</span><span>No somos impersonales ni estandarizados</span></div>
+          <div class="bullet-item"><span class="dot">◆</span><span>No nos limitamos a speakers: coaches, mentores, consultores</span></div>
+        </div>
+
+        <div class="card">
+          <span class="card-badge">Lo que SÍ somos</span>
+          <p class="card-title">Territorio único en LATAM</p>
+          <hr class="card-divider"/>
+          <div class="bullet-item"><span class="dot">◆</span><span>Curadores con criterio: cada experto pasa por un filtro de calidad</span></div>
+          <div class="bullet-item"><span class="dot">◆</span><span>Aliados estratégicos que entienden el objetivo de cada cliente</span></div>
+          <div class="bullet-item"><span class="dot">◆</span><span>La agencia que conecta <strong>propósito + conocimiento + impacto</strong></span></div>
+          <div class="bullet-item"><span class="dot">◆</span><span>Humanos, cercanos, empáticos — sin perder el profesionalismo</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PILARES DE CONTENIDO -->
+  <section class="section-block">
+    <div class="container">
+      <p class="section-label">06 — Pilares de contenido</p>
+      <h2 class="section-title">Los cinco territorios de comunicación</h2>
+      <p class="section-intro">
+        Todo el contenido — los 4 videos y los 2 posts del mes — se publicará dentro de uno de estos cinco pilares. Cada pilar tiene un propósito específico en el viaje del cliente.
+      </p>
+
+      <div class="stack">
+
+        <div class="card featured">
+          <div class="grid-2">
+            <div>
+              <p class="pillar-num">01</p>
+              <span class="card-badge">Pilar Principal</span>
+              <p class="card-title">Conocimiento en acción</p>
+              <p class="card-body">
+                Insights prácticos, frameworks y perspectivas sobre liderazgo, innovación, comunicación, bienestar y transformación organizacional. El objetivo es <strong>demostrar que Las Huertas vive en el mundo del conocimiento</strong> — no solo lo distribuye.
+              </p>
+            </div>
+            <div style="padding-top: 52px;">
+              <div class="bullet-item" style="margin-bottom:12px;"><span class="dot">◆</span><span><strong>Formato ideal:</strong> Video corto (reels 60–90s) o carrusel</span></div>
+              <div class="bullet-item" style="margin-bottom:12px;"><span class="dot">◆</span><span><strong>Tono:</strong> Educativo, claro, sin jerga técnica</span></div>
+              <div class="bullet-item"><span class="dot">◆</span><span><strong>Propósito:</strong> Atraer audiencia nueva. Posicionar autoridad</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid-2">
+          <div class="card">
+            <p class="pillar-num">02</p>
+            <span class="card-badge">Pilar de credibilidad</span>
+            <p class="card-title">Los expertos del portafolio</p>
+            <p class="card-body">
+              Presentación de los speakers, coaches y mentores: quiénes son, qué los hace únicos, a qué audiencias han transformado. <strong>Humanizar el portafolio es vender sin vender.</strong>
+            </p>
+            <hr class="card-divider"/>
+            <div class="bullet-item"><span class="dot">◆</span><span><strong>Formato:</strong> Video presentación o post de perfil</span></div>
+            <div class="bullet-item"><span class="dot">◆</span><span><strong>Propósito:</strong> Reducir fricción de compra, generar confianza</span></div>
+          </div>
+
+          <div class="card">
+            <p class="pillar-num">03</p>
+            <span class="card-badge">Pilar de impacto</span>
+            <p class="card-title">Transformación real</p>
+            <p class="card-body">
+              Historias de impacto, resultados de clientes, momentos memorables de eventos pasados. <strong>No testimonios vacíos — narrativas de cambio real.</strong>
+            </p>
+            <hr class="card-divider"/>
+            <div class="bullet-item"><span class="dot">◆</span><span><strong>Formato:</strong> Video storytelling o post de caso</span></div>
+            <div class="bullet-item"><span class="dot">◆</span><span><strong>Propósito:</strong> Evidencia de valor. Prueba social</span></div>
+          </div>
+        </div>
+
+        <div class="grid-2">
+          <div class="card">
+            <p class="pillar-num">04</p>
+            <span class="card-badge">Pilar inspiracional</span>
+            <p class="card-title">El arte de inspirar</p>
+            <p class="card-body">
+              Reflexiones, perspectivas y preguntas sobre aprendizaje, propósito, liderazgo y crecimiento. La voz de Carolina o del equipo Las Huertas. <strong>Aquí la marca tiene personalidad propia.</strong>
+            </p>
+            <hr class="card-divider"/>
+            <div class="bullet-item"><span class="dot">◆</span><span><strong>Formato:</strong> Video opinión o post reflexivo</span></div>
+            <div class="bullet-item"><span class="dot">◆</span><span><strong>Propósito:</strong> Conectar emocionalmente. Humanizar la marca</span></div>
+          </div>
+
+          <div class="card">
+            <p class="pillar-num">05</p>
+            <span class="card-badge">Pilar de marca</span>
+            <p class="card-title">Las Huertas en acción</p>
+            <p class="card-body">
+              Detrás de cámaras, momentos del equipo, preparación de eventos, el proceso de curar un experto. <strong>La marca como protagonista.</strong>
+            </p>
+            <hr class="card-divider"/>
+            <div class="bullet-item"><span class="dot">◆</span><span><strong>Formato:</strong> Video documental corto o post de proceso</span></div>
+            <div class="bullet-item"><span class="dot">◆</span><span><strong>Propósito:</strong> Diferenciación. Confianza. Cultura</span></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ESTRATEGIA DE PUBLICACIÓN -->
+  <section class="section-block">
+    <div class="container">
+      <p class="section-label">07 — Estrategia de publicación</p>
+      <h2 class="section-title">6 piezas al mes con propósito</h2>
+      <p class="section-intro">
+        No se trata de publicar por publicar. Cada una de las 6 piezas mensuales tiene un rol específico dentro del embudo de atracción orgánica.
+      </p>
+
+      <!-- VIDEOS -->
+      <div class="card featured" style="margin-bottom: 16px;">
+        <span class="card-badge">Formato principal</span>
+        <p class="card-title" style="font-size: 22px;">🎬 Los 4 videos del mes</p>
+        <p class="card-body" style="margin-bottom: 24px;">
+          Los videos son el motor de alcance orgánico. Reels en Instagram, con replicación directa a Facebook. En LinkedIn se adaptan al formato nativo con copy más corporativo. <strong>Duración ideal: 60 a 90 segundos.</strong>
+        </p>
+        <hr class="card-divider"/>
+        <div class="stack">
+          <div class="step-item">
+            <div class="step-num">V1</div>
+            <div class="step-content">
+              <strong>Video educativo — Pilar Conocimiento en acción</strong>
+              <p>Un insight claro y accionable sobre liderazgo, innovación o comunicación. Puede ser la voz de Carolina o de un experto del portafolio. Formato: talking head o con texto animado. El objetivo es el alcance — que llegue a personas que aún no conocen Las Huertas.</p>
+            </div>
+          </div>
+          <div class="step-item">
+            <div class="step-num">V2</div>
+            <div class="step-content">
+              <strong>Presentación de experto — Pilar Portafolio</strong>
+              <p>Un video corto que presenta a un speaker, coach o mentor del portafolio. No es un CV parlado — es una narrativa: quién es, qué lo mueve, qué tipo de transformación genera. El cliente ideal debe ver este video y pensar: "quiero a esta persona en mi evento."</p>
+            </div>
+          </div>
+          <div class="step-item">
+            <div class="step-num">V3</div>
+            <div class="step-content">
+              <strong>Historia de impacto — Pilar Transformación real</strong>
+              <p>Storytelling de un resultado real: una organización que cambió su dinámica, un equipo que encontró propósito, un emprendedor que transformó su visión. Sin datos duros inventados — con la narrativa honesta de lo que ocurrió. Esto genera prueba social sin parecer publicidad.</p>
+            </div>
+          </div>
+          <div class="step-item">
+            <div class="step-num">V4</div>
+            <div class="step-content">
+              <strong>Reflexión o perspectiva — Pilar El arte de inspirar</strong>
+              <p>La voz de Carolina o del equipo sobre un tema que le importa al cliente: por qué la mayoría de los eventos no generan cambio real, cómo elegir al speaker correcto, qué diferencia una charla de una experiencia. Posiciona a Las Huertas como pensadores del sector, no solo proveedores.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- POSTS -->
+      <div class="card" style="margin-bottom: 24px;">
+        <span class="card-badge">Formato de profundidad</span>
+        <p class="card-title" style="font-size: 22px;">📸 Los 2 posts del mes</p>
+        <p class="card-body" style="margin-bottom: 24px;">
+          Los posts son el contenido que detiene el scroll y profundiza. Carruseles o imágenes fijas con copy trabajado. Se publican en Instagram, se replican en Facebook y en LinkedIn con adaptación del texto.
+        </p>
+        <hr class="card-divider"/>
+        <div class="grid-2">
+          <div>
+            <div class="step-item">
+              <div class="step-num">P1</div>
+              <div class="step-content">
+                <strong>Carrusel educativo</strong>
+                <p>Contenido que el cliente guarda y comparte. Un framework, una lista accionable, una guía práctica relacionada con el sector de Las Huertas. Ejemplo: "5 preguntas que debes hacerle a cualquier speaker antes de contratarlo" o "Cómo medir el impacto real de una conferencia." Este post trabaja el Pilar de Conocimiento.</p>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="step-item">
+              <div class="step-num">P2</div>
+              <div class="step-content">
+                <strong>Post de posicionamiento</strong>
+                <p>Comunica la propuesta de valor, los valores de marca o el diferencial de Las Huertas. Puede ser una cita poderosa del equipo, una declaración de propósito, o una imagen de marca bien construida. Aquí la estética y el copy trabajan juntos para reforzar la identidad. Este post trabaja el Pilar de Marca.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PLATAFORMAS -->
+      <div class="card">
+        <span class="card-badge">Distribución</span>
+        <p class="card-title">Cómo se distribuye cada pieza</p>
+        <hr class="card-divider"/>
+        <div class="platform-row">
+          <span class="platform-badge ig">Instagram</span>
+          <p class="platform-role"><strong>Plataforma principal.</strong> Aquí se crea, optimiza y publica el contenido primero. Copy conversacional, hashtags relevantes, CTA orientado a DM o WhatsApp. Reels para los videos, carruseles para los posts.</p>
+        </div>
+        <div class="platform-row">
+          <span class="platform-badge fb">Facebook</span>
+          <p class="platform-role"><strong>Replicación directa.</strong> Mismo contenido, mismo copy. El algoritmo de Facebook favorece videos y carruseles. No requiere adaptación de copy pero sí validar que los formatos se vean bien.</p>
+        </div>
+        <div class="platform-row">
+          <span class="platform-badge li">LinkedIn</span>
+          <p class="platform-role"><strong>Replicación con adaptación.</strong> El copy se ajusta al tono corporativo-profesional de la plataforma. Más contexto, menos informalidad. Los videos del portafolio y los carruseles educativos funcionan especialmente bien aquí. Es la red donde está el decisor organizacional.</p>
+        </div>
+        <div class="insight-box" style="margin-top: 20px;">
+          <p>
+            <strong>Nota estratégica sobre LinkedIn:</strong> Es la red donde el cliente ideal de Las Huertas pasa más tiempo laboral. Los competidores solo la usan para buscar expertos, no para construir comunidad. <strong>Publicar consistentemente aquí es una ventaja competitiva directa.</strong> El copy en LinkedIn debe hablarle directamente al Director de RR.HH. o al CEO, con lenguaje de impacto organizacional.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GUÍA DE VOZ Y TONO -->
+  <section class="section-block">
+    <div class="container">
+      <p class="section-label">08 — Voz y tono</p>
+      <h2 class="section-title">Cómo suena Las Huertas</h2>
+      <p class="section-intro">
+        La voz de la marca es consistente en los 6 formatos del mes. No cambia por plataforma — solo el registro y la formalidad se ajustan.
+      </p>
+
+      <div class="card featured" style="margin-bottom: 16px;">
+        <span class="card-badge">Principios de comunicación</span>
+        <p class="card-title">La marca habla así</p>
+        <hr class="card-divider"/>
+        <div class="grid-2">
+          <div class="stack">
+            <div class="icon-item">
+              <div class="icon-box">🤝</div>
+              <div><strong>Cercana sin ser informal</strong><p>Habla de tú a tú, con calidez. Nunca condescendiente ni distante. El cliente siente que le hablan a él, no al mercado en general.</p></div>
+            </div>
+            <div class="icon-item">
+              <div class="icon-box">📖</div>
+              <div><strong>Educativa sin ser técnica</strong><p>Comparte conocimiento de forma que sea entendible y aplicable. Sin jerga académica ni términos corporativos vacíos.</p></div>
+            </div>
+            <div class="icon-item">
+              <div class="icon-box">🔥</div>
+              <div><strong>Inspiradora sin ser motivacional barata</strong><p>La inspiración de Las Huertas viene de la profundidad, no del entusiasmo superficial. Nada de frases vacías de impacto sin sustancia.</p></div>
+            </div>
+          </div>
+          <div class="stack">
+            <div class="icon-item">
+              <div class="icon-box">🎯</div>
+              <div><strong>Directa sin ser agresiva</strong><p>Dice lo que tiene que decir. Sin rodeos, sin exageración. La verdad bien dicha es más poderosa que cualquier hipérbole.</p></div>
+            </div>
+            <div class="icon-item">
+              <div class="icon-box">❤️</div>
+              <div><strong>Empática con el dolor del cliente</strong><p>Demuestra que entiende las frustraciones del mercado. No para quejarse de la competencia, sino para mostrar que Las Huertas existe como respuesta a esos problemas.</p></div>
+            </div>
+            <div class="icon-item">
+              <div class="icon-box">🌟</div>
+              <div><strong>Profesional con propósito</strong><p>Cada pieza tiene una razón de existir. El profesionalismo no es solo estética — es intención clara en cada palabra y cada imagen.</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid-2">
+        <div class="word-block si">
+          <h4>✓ Palabras y frases que SÍ</h4>
+          <div class="pill-group">
+            <span class="pill yes">Transformación</span>
+            <span class="pill yes">Propósito</span>
+            <span class="pill yes">Impacto</span>
+            <span class="pill yes">Conexión</span>
+            <span class="pill yes">Experiencia</span>
+            <span class="pill yes">Conocimiento</span>
+            <span class="pill yes">Reflexión</span>
+            <span class="pill yes">Auténtico</span>
+            <span class="pill yes">Significativo</span>
+            <span class="pill yes">Humano</span>
+            <span class="pill yes">Inspirar</span>
+            <span class="pill yes">Movilizar</span>
+            <span class="pill yes">Aprendizaje real</span>
+            <span class="pill yes">Expertos que recorrieron el camino</span>
+          </div>
+        </div>
+        <div class="word-block no">
+          <h4>✗ Palabras y frases que NO</h4>
+          <div class="pill-group">
+            <span class="pill no">Definitivamente</span>
+            <span class="pill no">Sin duda alguna</span>
+            <span class="pill no">Increíble</span>
+            <span class="pill no">Épico</span>
+            <span class="pill no">Romper paradigmas</span>
+            <span class="pill no">Disruptivo</span>
+            <span class="pill no">Dios mío</span>
+            <span class="pill no">Emocionante</span>
+            <span class="pill no">Política</span>
+            <span class="pill no">Generado con IA</span>
+            <span class="pill no">Solo por hoy</span>
+            <span class="pill no">No te lo pierdas</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RUTA DE TRABAJO -->
+  <!-- LO QUE NO VAMOS A HACER -->
+  <section class="section-block">
+    <div class="container">
+      <p class="section-label">09 — Restricciones</p>
+      <h2 class="section-title">Lo que no vamos a hacer</h2>
+      <p class="section-intro">
+        Los límites también son estrategia. Estas reglas protegen la integridad de la marca y garantizan que el contenido sea coherente con lo que Las Huertas representa.
+      </p>
+
+      <div class="grid-2">
+        <div class="card">
+          <span class="card-badge">Producción</span>
+          <p class="card-title">Reglas de creación</p>
+          <hr class="card-divider"/>
+          <div class="bullet-item"><span class="dot" style="color: #f0a500;">◎</span><span><strong>Podríamos usar imágenes y videos generados con IA de forma selectiva.</strong> Se evaluará caso a caso, priorizando siempre la autenticidad y coherencia con la marca.</span></div>
+          <div class="bullet-item"><span class="dot" style="color: #ff6060;">✕</span><span><strong>No haremos contenido motivacional vacío.</strong> Sin frases de calendario sin sustancia ni contexto.</span></div>
+        </div>
+
+        <div class="card">
+          <span class="card-badge">Mensajes</span>
+          <p class="card-title">Reglas de comunicación</p>
+          <hr class="card-divider"/>
+          <div class="bullet-item"><span class="dot" style="color: #ff6060;">✕</span><span><strong>No tocaremos temas políticos</strong> ni tomaremos posiciones que dividan la audiencia o generen controversia innecesaria.</span></div>
+          <div class="bullet-item"><span class="dot" style="color: #ff6060;">✕</span><span><strong>No publicaremos contenido de venta directa.</strong> El orgánico es para construir autoridad y confianza, no para cerrar ventas de forma transaccional.</span></div>
+          <div class="bullet-item"><span class="dot" style="color: #ff6060;">✕</span><span><strong>No hablaremos mal de la competencia.</strong> Las Huertas se posiciona por lo que es, no por lo que otros no son.</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CIERRE ESTRATÉGICO -->
+  <section class="section-block" style="border-bottom: 1px solid #1e1e1e;">
+    <div class="container">
+      <div class="card featured">
+        <div style="text-align: center; padding: 12px 0 20px;">
+          <p style="font-size: 40px; margin-bottom: 16px;">🌿</p>
+          <p class="section-label" style="display: block; text-align: center;">Resumen ejecutivo</p>
+          <h2 style="font-size: clamp(22px, 3.5vw, 36px); letter-spacing: -0.04em; line-height: 1.2; max-width: 620px; margin: 12px auto 20px;">
+            Seis piezas al mes. Un objetivo: que LATAM sepa que <em style="color: var(--purple); font-style: normal;">Las Huertas existe.</em>
+          </h2>
+          <p style="font-size: 14px; color: #888; max-width: 520px; margin: 0 auto 28px; line-height: 1.75;">
+            No es una cantidad de contenido — es una estrategia de posicionamiento. Cada video y cada post tiene un rol dentro de un sistema que construye autoridad, genera confianza y atrae a los clientes correctos.
+          </p>
+        </div>
+        <hr class="card-divider"/>
+        <div class="grid-3">
+          <div style="text-align: center; padding: 16px 0;">
+            <p style="font-size: 28px; font-weight: 700; color: var(--purple); letter-spacing: -0.04em;">4</p>
+            <p style="font-size: 12px; color: #888; margin-top: 4px;">Videos al mes</p>
+          </div>
+          <div style="text-align: center; padding: 16px 0; border-left: 1px solid #2a2a2a; border-right: 1px solid #2a2a2a;">
+            <p style="font-size: 28px; font-weight: 700; color: var(--purple); letter-spacing: -0.04em;">2</p>
+            <p style="font-size: 12px; color: #888; margin-top: 4px;">Posts al mes</p>
+          </div>
+          <div style="text-align: center; padding: 16px 0;">
+            <p style="font-size: 28px; font-weight: 700; color: var(--purple); letter-spacing: -0.04em;">3</p>
+            <p style="font-size: 12px; color: #888; margin-top: 4px;">Plataformas activas</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-top">
+          <div>
+            <img src="Imagenes/logo.png" alt="Conectux" style="height:28px; width:auto;" />
+            <p style="font-size:12px;color:#555;margin-top:4px">Agencia de Marketing Digital</p>
+          </div>
+          <div class="footer-contact">
+            <p style="font-size:13px;color:#777;margin-bottom:6px">¿Hablamos de la estrategia?</p>
+            <a href="https://wa.me/573005473048">Escríbenos por WhatsApp →</a>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <span>© 2025 Conectux Digital. Todos los derechos reservados.</span>
+          <span>Estrategia elaborada para Las Huertas Agencia — Bogotá, Colombia</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

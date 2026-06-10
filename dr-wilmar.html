@@ -1,0 +1,994 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Estrategia Digital — Clínica Oftalmológica San Diego</title>
+  <link rel="icon" type="image/png" href="Imagenes/favicon.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Satoshi:wght@300;400;500;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --noir: #111111;
+      --purple: #a100ff;
+      --purple2: #c040ff;
+      --white: #ffffff;
+      --mid: #1c1c1c;
+      --mid2: #252525;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--noir);
+      color: var(--white);
+      font-family: "Satoshi", sans-serif;
+      font-weight: 400;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    h1, h2, h3, h4 { font-family: "Satoshi", sans-serif; font-weight: 700; letter-spacing: -0.03em; }
+    .container { max-width: 900px; margin: 0 auto; padding: 0 32px; }
+
+    /* HEADER */
+    header { padding: 40px 0 0; }
+    .header-inner {
+      display: flex; align-items: center; justify-content: space-between;
+      padding-bottom: 32px; border-bottom: 1px solid #2a2a2a;
+    }
+    .logo { display: flex; align-items: center; gap: 10px; }
+    .logo-icon { width: 36px; height: 36px; }
+    .logo-name { font-size: 26px; font-weight: 700; letter-spacing: -0.05em; color: var(--white); text-transform: lowercase; }
+    .logo-name span { color: var(--purple); }
+    .tag-doc {
+      font-size: 11px; font-weight: 500; letter-spacing: 0.15em;
+      text-transform: uppercase; color: var(--purple);
+      border: 1px solid var(--purple); padding: 5px 12px; border-radius: 20px;
+    }
+
+    /* HERO */
+    .hero { padding: 64px 0 48px; position: relative; overflow: hidden; }
+    .hero::before {
+      content: ""; position: absolute; top: -60px; right: -120px;
+      width: 480px; height: 480px;
+      background: radial-gradient(circle, rgba(161,0,255,0.15) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .hero-label {
+      display: inline-block; font-size: 11px; font-weight: 600;
+      letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--purple); margin-bottom: 20px;
+    }
+    .hero h1 {
+      font-size: clamp(32px, 5vw, 54px); line-height: 1.05;
+      letter-spacing: -0.04em; margin-bottom: 16px; max-width: 700px;
+    }
+    .hero h1 em { font-style: normal; color: var(--purple); }
+    .hero-sub { font-size: 15px; color: #999; max-width: 540px; line-height: 1.75; }
+
+    /* SECTION BLOCKS */
+    .section-block { padding: 56px 0; border-top: 1px solid #1e1e1e; }
+    .section-label {
+      font-size: 10px; font-weight: 600; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--purple); margin-bottom: 8px;
+    }
+    .section-title { font-size: clamp(22px, 3.5vw, 32px); letter-spacing: -0.03em; margin-bottom: 8px; }
+    .section-intro { font-size: 15px; color: #888; max-width: 600px; line-height: 1.75; margin-bottom: 36px; }
+
+    /* CARDS */
+    .card {
+      background: var(--mid); border: 1px solid #333;
+      border-radius: 16px; padding: 32px 36px;
+      position: relative; overflow: hidden;
+    }
+    .card::after {
+      content: ""; position: absolute; bottom: -60px; right: -60px;
+      width: 200px; height: 200px;
+      background: radial-gradient(circle, rgba(161,0,255,0.12) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .card.featured { border-color: rgba(161,0,255,0.45); }
+    .card-badge {
+      display: inline-block;
+      background: rgba(161,0,255,0.12); color: var(--purple);
+      border: 1px solid rgba(161,0,255,0.28);
+      font-size: 10px; font-weight: 600; letter-spacing: 0.15em;
+      text-transform: uppercase; padding: 4px 10px; border-radius: 20px; margin-bottom: 14px;
+    }
+    .card-title { font-size: 18px; font-weight: 700; color: var(--white); margin-bottom: 8px; letter-spacing: -0.02em; }
+    .card-body { font-size: 14px; color: #aaa; line-height: 1.7; }
+    .card-body strong { color: var(--white); }
+    .card-divider { border: none; border-top: 1px solid #2a2a2a; margin: 20px 0; }
+
+    /* GRIDS */
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; }
+    .stack { display: flex; flex-direction: column; gap: 16px; }
+
+    /* ICON ITEMS */
+    .icon-item { display: flex; align-items: flex-start; gap: 12px; }
+    .icon-box {
+      width: 32px; height: 32px; border-radius: 8px;
+      background: rgba(161,0,255,0.12);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 15px; flex-shrink: 0;
+    }
+    .icon-item strong { display: block; font-size: 13px; font-weight: 600; color: var(--white); margin-bottom: 2px; }
+    .icon-item p { font-size: 12px; color: #777; line-height: 1.5; }
+
+    /* BULLET ITEMS */
+    .bullet-item { display: flex; align-items: flex-start; gap: 10px; font-size: 13px; color: #aaa; margin-bottom: 10px; }
+    .bullet-item .dot { color: var(--purple); font-size: 13px; flex-shrink: 0; margin-top: 2px; }
+    .bullet-item strong { color: var(--white); }
+
+    /* QUOTE BLOCK */
+    .quote-block {
+      background: linear-gradient(135deg, #1a0030 0%, var(--mid2) 60%);
+      border: 1px solid rgba(161,0,255,0.28);
+      border-radius: 12px; padding: 28px 32px; position: relative;
+    }
+    .quote-block::before {
+      content: '"'; position: absolute; top: 12px; left: 20px;
+      font-size: 72px; line-height: 1; color: rgba(161,0,255,0.2);
+      font-family: Georgia, serif;
+    }
+    .quote-text { font-size: 16px; color: #ddd; line-height: 1.7; font-style: italic; padding-left: 16px; }
+    .quote-attr { font-size: 12px; color: #666; margin-top: 12px; padding-left: 16px; letter-spacing: 0.05em; text-transform: uppercase; }
+
+    /* PILL TAGS */
+    .pill-group { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+    .pill { font-size: 12px; font-weight: 500; padding: 5px 14px; border-radius: 20px; background: rgba(255,255,255,0.06); border: 1px solid #333; color: #bbb; }
+    .pill.yes { background: rgba(161,0,255,0.1); border-color: rgba(161,0,255,0.3); color: var(--purple); }
+    .pill.no { background: rgba(255,60,60,0.08); border-color: rgba(255,60,60,0.2); color: #ff6060; }
+    .pill.warn { background: rgba(255,165,0,0.08); border-color: rgba(255,165,0,0.25); color: #ffa500; }
+
+    /* STEP ITEMS */
+    .step-item { display: flex; gap: 20px; align-items: flex-start; }
+    .step-num {
+      width: 36px; height: 36px; border-radius: 50%;
+      border: 1px solid rgba(161,0,255,0.4);
+      background: rgba(161,0,255,0.08);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 13px; font-weight: 700; color: var(--purple); flex-shrink: 0;
+    }
+    .step-content strong { display: block; font-size: 14px; font-weight: 700; color: var(--white); margin-bottom: 4px; }
+    .step-content p { font-size: 13px; color: #888; line-height: 1.6; }
+
+    /* PILLAR */
+    .pillar-num { font-size: 48px; font-weight: 700; letter-spacing: -0.05em; color: rgba(161,0,255,0.2); line-height: 1; margin-bottom: 12px; }
+
+    /* PLATFORM ROW */
+    .platform-row { display: flex; align-items: center; gap: 16px; padding: 16px 0; border-bottom: 1px solid #1e1e1e; }
+    .platform-row:last-child { border-bottom: none; }
+    .platform-badge { font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; padding: 4px 12px; border-radius: 20px; min-width: 100px; text-align: center; }
+    .platform-badge.ig { background: rgba(225,48,108,0.15); border: 1px solid rgba(225,48,108,0.3); color: #e1306c; }
+    .platform-badge.fb { background: rgba(24,119,242,0.12); border: 1px solid rgba(24,119,242,0.25); color: #5b9aee; }
+    .platform-role { font-size: 13px; color: #aaa; }
+    .platform-role strong { color: var(--white); }
+
+    /* WORD BLOCKS */
+    .word-block { padding: 20px 24px; border-radius: 10px; }
+    .word-block.si { background: rgba(161,0,255,0.08); border: 1px solid rgba(161,0,255,0.2); }
+    .word-block.no { background: rgba(255,60,60,0.06); border: 1px solid rgba(255,60,60,0.15); }
+    .word-block h4 { font-size: 12px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 14px; }
+    .word-block.si h4 { color: var(--purple); }
+    .word-block.no h4 { color: #ff6060; }
+
+    /* WEEK TRACK */
+    .week-track { display: flex; flex-direction: column; gap: 0; }
+    .week-item { display: flex; gap: 24px; align-items: stretch; padding-bottom: 24px; position: relative; }
+    .week-item:last-child { padding-bottom: 0; }
+    .week-left { display: flex; flex-direction: column; align-items: center; gap: 0; }
+    .week-circle {
+      width: 38px; height: 38px; border-radius: 50%;
+      border: 1px solid rgba(161,0,255,0.45);
+      background: rgba(161,0,255,0.1);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 11px; font-weight: 700; color: var(--purple); flex-shrink: 0;
+    }
+    .week-line { width: 1px; background: #2a2a2a; flex: 1; margin-top: 4px; }
+    .week-item:last-child .week-line { display: none; }
+    .week-content { padding-top: 6px; padding-bottom: 8px; flex: 1; }
+    .week-content strong { display: block; font-size: 14px; font-weight: 700; color: var(--white); margin-bottom: 4px; }
+    .week-content p { font-size: 13px; color: #888; line-height: 1.6; }
+
+    /* INSIGHT BOX */
+    .insight-box {
+      background: linear-gradient(135deg, #1a0030 0%, var(--mid2) 50%);
+      border: 1px solid rgba(161,0,255,0.3);
+      border-radius: 12px; padding: 24px 28px; margin-top: 16px;
+    }
+    .insight-box p { font-size: 14px; color: #ccc; line-height: 1.75; }
+    .insight-box strong { color: var(--white); }
+
+    /* WARNING BOX */
+    .warn-box {
+      background: rgba(255,165,0,0.06);
+      border: 1px solid rgba(255,165,0,0.25);
+      border-radius: 12px; padding: 24px 28px;
+    }
+    .warn-box p { font-size: 14px; color: #ccc; line-height: 1.75; }
+    .warn-box strong { color: #ffa500; }
+    .warn-title { font-size: 12px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: #ffa500; margin-bottom: 12px; display: block; }
+
+    /* STAT HIGHLIGHT */
+    .stat-block {
+      text-align: center; padding: 24px 16px;
+      border-right: 1px solid #2a2a2a;
+    }
+    .stat-block:last-child { border-right: none; }
+    .stat-num { font-size: clamp(28px, 3.5vw, 40px); font-weight: 700; color: var(--purple); letter-spacing: -0.05em; line-height: 1; }
+    .stat-label { font-size: 12px; color: #666; margin-top: 6px; line-height: 1.4; }
+
+    /* FOOTER */
+    footer { padding: 48px 0 32px; border-top: 1px solid #1e1e1e; }
+    .footer-inner { display: flex; flex-direction: column; gap: 20px; }
+    .footer-top { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+    .footer-logo { font-size: 20px; font-weight: 700; letter-spacing: -0.04em; text-transform: lowercase; color: var(--white); }
+    .footer-logo em { font-style: normal; color: var(--purple); }
+    .footer-contact a { color: var(--purple); text-decoration: none; font-size: 14px; font-weight: 500; }
+    .footer-bottom { font-size: 12px; color: #444; padding-top: 20px; border-top: 1px solid #1e1e1e; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+    .hero > * { animation: fadeUp 0.6s ease both; }
+    .hero > *:nth-child(2) { animation-delay: 0.1s; }
+    .hero > *:nth-child(3) { animation-delay: 0.2s; }
+
+    @media (max-width: 640px) {
+      .container { padding: 0 20px; }
+      .card { padding: 24px 20px; }
+      .grid-2, .grid-3 { grid-template-columns: 1fr; }
+      .header-inner { flex-direction: column; align-items: flex-start; gap: 16px; }
+      .footer-top { flex-direction: column; align-items: flex-start; }
+      .footer-bottom { flex-direction: column; }
+      .platform-row { flex-direction: column; align-items: flex-start; gap: 8px; }
+      .stat-block { border-right: none; border-bottom: 1px solid #2a2a2a; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="container">
+      <div class="header-inner">
+        <div class="logo">
+          <img src="Imagenes/logo.png" alt="Conectux" style="height:38px; width:auto;" />
+        </div>
+        <span class="tag-doc">Estrategia de Marketing — Salud</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <span class="hero-label">Especialmente para la Clínica Oftalmológica San Diego</span>
+      <h1>Deja de pedirle prestada<br/>tu visión a <em>unas gafas.</em></h1>
+      <p class="hero-sub">
+        Estrategia de contenido orgánico para que el Dr. Wilmar Escobar opere más pacientes de alto valor —
+        posicionando la clínica como la primera opción en cirugía refractiva en Medellín y LATAM.
+      </p>
+    </div>
+  </section>
+
+  <!-- DIAGNÓSTICO -->
+  <section class="section-block">
+    <div class="container">
+      <p class="section-label">01 — Diagnóstico</p>
+      <h2 class="section-title">El punto de partida</h2>
+      <p class="section-intro">
+        La clínica tiene marketing activo y resultados que funcionan. El problema no es que las estrategias fallen — es que llevan meses estables. No hay crecimiento. Hay que romper ese techo.
+      </p>
+
+      <!-- Stats -->
+      <div class="card featured" style="margin-bottom:16px;">
+        <span class="card-badge">Lo que ya existe</span>
+        <p class="card-title" style="margin-bottom: 20px;">La base es sólida. Falta escalar.</p>
+        <div style="display: grid; grid-template-columns: repeat(4, 1fr);">
+          <div class="stat-block">
+            <p class="stat-num">16</p>
+            <p class="stat-label">Años de experiencia en oftalmología</p>
+          </div>
+          <div class="stat-block">
+            <p class="stat-num">3</p>
+            <p class="stat-label">Servicios quirúrgicos diferenciados (refractiva, catarata, pterigión)</p>
+          </div>
+          <div class="stat-block">
+            <p class="stat-num">$3.6M</p>
+            <p class="stat-label">Ticket promedio cirugía refractiva</p>
+          </div>
+          <div class="stat-block">
+            <p class="stat-num">San Diego</p>
+            <p class="stat-label">Operan en la mejor clínica de Medellín</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid-2" style="margin-bottom:16px;">
+        <div class="card">
+          <span class="card-badge">El freno</span>
+          <p class="card-title">¿Por qué el crecimiento se estabilizó?</p>
+          <p class="card-body" style="margin-bottom: 16px;">
+            Las estrategias actuales funcionan pero están trabajando para el mismo nivel de demanda. No hay un sistema de contenido que construya autoridad, eduque pacientes y llene el embudo de forma constante. <strong>El techo no es el mercado — es la visibilidad.</strong>
+          </p>
+          <div class="bullet-item"><span class="dot">◆</span><span>La competencia activa en redes (Arbeláez, Calle, Orrego) capta la atención de pacientes en fase de investigación</span></div>
+          <div class="bullet-item"><span class="dot">◆</span><span>Sin contenido orgánico consistente, el Dr. Escobar solo aparece cuando hay pauta. Se apaga la pauta, se apaga el flujo</span></div>
+          <div class="bullet-item"><span class="dot">◆</span><span>El paciente de alto valor investiga mucho antes de decidir. Si no encuentra contenido que genere confianza, se va con quien más aparece</span></div>
+        </div>
+
+        <div class="card">
+          <span class="card-badge">La oportunidad</span>
+          <p class="card-title">El activo que la clínica tiene y no está usando</p>
+          <p class="card-body" style="margin-bottom: 16px;">
+            El Dr. Escobar tiene algo que muy pocos pueden decir: <strong>sub-especialista en córnea y segmento anterior, operando en Clínica San Diego, con 16 años de trayectoria y flujo de pacientes internacionales.</strong> Eso no está en ningún feed de Instagram todavía.
+          </p>
+          <div class="bullet-item"><span class="dot">◆</span><span>Los competidores publican resultados. Nadie está educando al mercado sobre <em>cómo elegir</em> al cirujano correcto</span></div>
+          <div class="bullet-item"><span class="dot">◆</span><span>Medellín es destino de salud en LATAM. Ese paciente internacional no tiene un canal dedicado</span></div>
+          <div class="bullet-item"><span class="dot">◆</span><span>El miedo al dolor y la duda sobre durabilidad son objeciones que nadie está respondiendo con contenido</span></div>
+        </div>
+      </div>
+
+      <div class="insight-box">
+        <p>
+          <strong>Diagnóstico central:</strong> El paciente de cirugía refractiva de alto valor no se convierte por impulso. Investiga, compara y decide por confianza. El contenido orgánico debe construir esa confianza <strong>antes</strong> de que el paciente escriba al WhatsApp — no después. Cada pieza publicada debe responder una duda, resolver un miedo o demostrar experiencia.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- AVATAR -->
+  <section class="section-block">
+    <div class="container">
+      <p class="section-label">02 — Avatar</p>
+      <h2 class="section-title">A quién le hablamos</h2>
+      <p class="section-intro">
+        La clínica tiene tres tipos de paciente quirúrgico. El contenido orgánico prioriza al paciente de cirugía refractiva (láser) — el de mayor volumen y audiencia digital más activa. Los otros dos perfiles también reciben atención estratégica.
+      </p>
+
+      <!-- Avatar principal -->
+      <div class="card featured" style="margin-bottom: 16px;">
+        <span class="card-badge">Avatar principal — 80% del contenido</span>
+        <p class="card-title" style="font-size: 20px;">👓 El miope cansado de sus gafas</p>
+        <hr class="card-divider"/>
+        <div class="grid-2">
+          <div>
+            <div class="bullet-item" style="margin-bottom:12px;"><span class="dot">◆</span><span><strong>Edad:</strong> 18 a 40 años</span></div>
+            <div class="bullet-item" style="margin-bottom:12px;"><span class="dot">◆</span><span><strong>NSE:</strong> Medio-alto</span></div>
+            <div class="bullet-item" style="margin-bottom:12px;"><span class="dot">◆</span><span><strong>Ubicación:</strong> Medellín, Colombia y LATAM (pacientes internacionales)</span></div>
+            <div class="bullet-item" style="margin-bottom:12px;"><span class="dot">◆</span><span><strong>Problema:</strong> Dificultad para ver de lejos. Dependencia total de gafas o lentes</span></div>
+            <div class="bullet-item"><span class="dot">◆</span><span><strong>Deseo profundo:</strong> Levantarse en la mañana y ver sin buscar nada. Libertad visual real</span></div>
+          </div>
+          <div>
+            <div class="bullet-item" style="margin-bottom:12px;"><span class="dot">◆</span><span><strong>Redes:</strong> Instagram activo, consume reels y contenido educativo visual</span></div>
+            <div class="bullet-item" style="margin-bottom:12px;"><span class="dot">◆</span><span><strong>Conciencia:</strong> Ya sabe que existe la cirugía. Está comparando, evaluando, dudando</span></div>
+            <div class="bullet-item" style="margin-bottom:12px;"><span class="dot">◆</span><span><strong>Proceso de compra:</strong> Necesita análisis. Investiga meses antes de decidir</span></div>
+            <div class="bullet-item"><span class="dot">◆</span><span><strong>Ticket a invertir:</strong> $3.600.000. Es consciente de que no es barato y busca justificar la inversión</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Avatares secundarios -->
+      <div class="grid-2">
+        <div class="card">
+          <span class="card-badge">Avatar secundario</span>
+          <p class="card-title">👁️ El paciente de catarata</p>
+          <p class="card-body" style="margin-bottom: 16px;">40 años en adelante. Pérdida progresiva de visión. Generalmente viene referido por un familiar o médico general. <strong>El familiar también es parte de la audiencia</strong> — quien busca en Instagram o WhatsApp muchas veces es el hijo o cónyuge del paciente.</p>
+          <hr class="card-divider"/>
+          <div class="bullet-item"><span class="dot">◆</span><span><strong>Ticket más alto</strong> del portafolio: faco refractiva es el servicio más rentable</span></div>
+          <div class="bullet-item"><span class="dot">◆</span><span>Necesita contenido que <strong>explique el proceso con sencillez</strong> y elimine el miedo a la cirugía</span></div>
+        </div>
+
+        <div class="card">
+          <span class="card-badge">Avatar internacional</span>
+          <p class="card-title">✈️ El paciente de otro país</p>
+          <p class="card-body" style="margin-bottom: 16px;">LATAM. Viene a Medellín específicamente por la combinación de calidad médica + precio ventajoso frente a su país. <strong>Este paciente es un diferenciador único de la clínica</strong> — ya hay un proceso ágil para ellos y es un activo de marketing desaprovechado.</p>
+          <hr class="card-divider"/>
+          <div class="bullet-item"><span class="dot">◆</span><span>Busca activamente en Google e Instagram: <em>"cirugía láser Medellín"</em></span></div>
+          <div class="bullet-item"><span class="dot">◆</span><span>Necesita contenido en español neutro y <strong>prueba de experiencias de otros viajeros médicos</strong></span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VOZ DEL PACIENTE -->
+  <section class="section-block">
+    <div class="container">
+      <p class="section-label">03 — Voz del paciente</p>
+      <h2 class="section-title">Lo que el paciente dice, siente y teme</h2>
+      <p class="section-intro">
+        El contenido que convierte es el que le habla al paciente en su propio idioma. Estas son las frases reales que viven en su cabeza antes de escribirle al consultorio.
+      </p>
+
+      <div class="grid-3" style="margin-bottom: 24px;">
+        <div class="card">
+          <span class="card-badge">Lo que dice</span>
+          <p class="card-title">Sus palabras</p>
+          <hr class="card-divider"/>
+          <div class="quote-block" style="padding: 20px 20px 20px 28px; margin-bottom: 12px;">
+            <p class="quote-text" style="font-size:13px;">"¿Duele la cirugía? Eso es lo que más me da miedo."</p>
+          </div>
+          <div class="quote-block" style="padding: 20px 20px 20px 28px; margin-bottom: 12px;">
+            <p class="quote-text" style="font-size:13px;">"¿Cuánto dura la cirugía? ¿Y si después se me vuelve a dañar la visión?"</p>
+          </div>
+          <div class="quote-block" style="padding: 20px 20px 20px 28px;">
+            <p class="quote-text" style="font-size:13px;">"¿Cómo sé que soy candidato? No quiero ir a una cita para que me digan que no."</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <span class="card-badge">Lo que siente</span>
+          <p class="card-title">Sus emociones</p>
+          <hr class="card-divider"/>
+          <div class="bullet-item" style="margin-bottom:14px;"><span class="dot">◆</span><span><strong>Cansancio acumulado</strong> de las gafas, las lentes, el olvido constante, la limitación</span></div>
+          <div class="bullet-item" style="margin-bottom:14px;"><span class="dot">◆</span><span><strong>Miedo real</strong> a que algo salga mal en la cirugía de un órgano tan delicado como el ojo</span></div>
+          <div class="bullet-item" style="margin-bottom:14px;"><span class="dot">◆</span><span><strong>Incertidumbre</strong> sobre si vale la pena invertir $3.6M en algo que no conoce</span></div>
+          <div class="bullet-item"><span class="dot">◆</span><span><strong>Esperanza</strong> genuina de que exista una solución definitiva y segura</span></div>
+        </div>
+
+        <div class="card featured">
+          <span class="card-badge">Lo que necesita</span>
+          <p class="card-title">Su necesidad real</p>
+          <hr class="card-divider"/>
+          <div class="bullet-item" style="margin-bottom:14px;"><span class="dot">◆</span><span><strong>Seguridad</strong> — que el cirujano sabe lo que hace y tiene años de experiencia comprobable</span></div>
+          <div class="bullet-item" style="margin-bottom:14px;"><span class="dot">◆</span><span><strong>Claridad</strong> — entender el proceso, la recuperación, los cuidados, sin tecnicismos</span></div>
+          <div class="bullet-item" style="margin-bottom:14px;"><span class="dot">◆</span><span><strong>Certeza de candidatura</strong> — saber antes de agendar si probablemente es candidato o no</span></div>
+          <div class="bullet-item"><span class="dot">◆</span><span><strong>Evidencia de resultados</strong> — ver pacientes reales que ya se operaron y cómo les fue</span></div>
+        </div>
+      </div>
+
+      <div class="quote-block">
+        <p class="quote-text">
+          Este paciente no decide en el primer reel que ve. Guarda el video, lo vuelve a ver, busca al doctor en Google, revisa los comentarios, le pregunta a un amigo. <strong style="color: var(--white); font-style: normal;">El contenido orgánico debe acompañar ese proceso de investigación durante semanas — no intentar cerrar la venta en un solo post.</strong>
+        </p>
+        <p class="quote-attr">Síntesis estratégica — Conectux</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- DOLOR DEL PACIENTE -->
+  <section class="section-block">
+    <div class="container">
+      <p class="section-label">04 — El dolor del paciente</p>
+      <h2 class="section-title">Las tres barreras que el contenido debe derribar</h2>
+      <p class="section-intro">
+        Antes de que el paciente escriba al WhatsApp, hay tres muros mentales que hay que derrumbar. Cada pieza de contenido apunta a uno.
+      </p>
+
+      <div class="stack">
+
+        <div class="card featured">
+          <div style="display:flex; gap:20px; align-items:flex-start;">
+            <div style="font-size:36px; line-height:1; flex-shrink:0;">😰</div>
+            <div>
+              <span class="card-badge">Barrera 1 — La más crítica</span>
+              <p class="card-title">El miedo a que algo salga mal</p>
+              <p class="card-body">
+                "¿Y si pierdo visión?" es la objeción más profunda y la más difícil de vencer con argumentos de venta. No se combate con frases tranquilizadoras vacías. Se combate con <strong>transparencia radical:</strong> explicar en qué consiste el proceso de evaluación previa, por qué no todos son candidatos, qué condiciones se requieren y cómo se minimiza el riesgo. <strong>El rigor de los criterios de selección comunica más seguridad que cualquier claim de efectividad.</strong>
+              </p>
+              <div class="insight-box" style="margin-top:14px;">
+                <p><strong>Movimiento estratégico:</strong> Publicar contenido sobre <em>cuándo NO se opera</em> genera más confianza que decir cuántas cirugías exitosas hay. Muestra criterio médico, no promesas.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid-2">
+          <div class="card">
+            <div style="font-size:28px; margin-bottom:10px;">💸</div>
+            <span class="card-badge">Barrera 2</span>
+            <p class="card-title">¿Vale la pena $3.6M?</p>
+            <p class="card-body">
+              El paciente compara ese precio con lo que gasta en gafas, lentes y controles cada año. <strong>El contenido debe hacer ese cálculo por él:</strong> cuánto invierte en visión a lo largo de su vida sin cirugía vs. una sola vez con la intervención. No se trata de hablar de precio — se trata de hablar del valor de no volver a depender de nada.
+            </p>
+          </div>
+
+          <div class="card">
+            <div style="font-size:28px; margin-bottom:10px;">🤔</div>
+            <span class="card-badge">Barrera 3</span>
+            <p class="card-title">"¿Seré candidato?"</p>
+            <p class="card-body">
+              Muchos pacientes no agendan por miedo a que les digan que no. El contenido debe <strong>pre-calificar audiencia:</strong> explicar los criterios generales de candidatura (edad, estabilidad de la prescripción, espesor corneal), para que quien llega al WhatsApp ya sepa que tiene posibilidades reales. Esto también filtra consultas que no son quirúrgicas.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- POSICIONAMIENTO -->
+  <section class="section-block">
+    <div class="container">
+      <p class="section-label">05 — Posicionamiento</p>
+      <h2 class="section-title">Cómo debe aparecer el Dr. Escobar</h2>
+      <p class="section-intro">
+        En redes sociales de salud, el médico es la marca. El posicionamiento no es de la clínica — es del Doctor. La clínica es el escenario que le da credibilidad.
+      </p>
+
+      <div class="card featured" style="margin-bottom: 16px;">
+        <span class="card-badge">Declaración de posicionamiento</span>
+        <p style="font-size: clamp(18px, 2.5vw, 26px); font-weight: 700; letter-spacing: -0.03em; line-height: 1.3; color: var(--white); margin-bottom: 16px;">
+          El Dr. Wilmar Escobar no solo opera ojos — devuelve libertad visual a personas que nunca pensaron que era posible.
+        </p>
+        <p class="card-body">
+          Sub-especialista en córnea y segmento anterior. 16 años de trayectoria. Sede en Clínica San Diego — la referencia médica de Medellín. Atiende pacientes de toda LATAM. <strong>No es el más barato. Es el correcto.</strong>
+        </p>
+      </div>
+
+      <div class="grid-2" style="margin-bottom:16px;">
+        <div class="card">
+          <span class="card-badge">La diferencia real</span>
+          <p class="card-title">Lo que nos separa de la competencia</p>
+          <hr class="card-divider"/>
+          <div class="bullet-item"><span class="dot">◆</span><span><strong>Sub-especialista en córnea</strong> — no es solo un oftalmólogo general que hace laser</span></div>
+          <div class="bullet-item"><span class="dot">◆</span><span><strong>Clínica San Diego</strong> — el paciente no llega a un consultorio improvisado</span></div>
+          <div class="bullet-item"><span class="dot">◆</span><span><strong>Agilidad para pacientes internacionales</strong> — proceso optimizado para quien viene de afuera</span></div>
+          <div class="bullet-item"><span class="dot">◆</span><span><strong>Criterios de selección estrictos</strong> — no operamos a todos. Eso es lo que nos hace seguros</span></div>
+        </div>
+
+        <div class="card">
+          <span class="card-badge">Lo que NO somos</span>
+          <p class="card-title">Límites que también posicionan</p>
+          <hr class="card-divider"/>
+          <div class="bullet-item"><span class="dot" style="color:#ff6060;">✕</span><span>No somos optometría. No somos consulta general de visión</span></div>
+          <div class="bullet-item"><span class="dot" style="color:#ff6060;">✕</span><span>No atendemos menores de edad</span></div>
+          <div class="bullet-item"><span class="dot" style="color:#ff6060;">✕</span><span>No somos la opción más económica del mercado</span></div>
+          <div class="bullet-item"><span class="dot" style="color:#ff6060;">✕</span><span>No somos corneólogos, estrabólogos ni otras especialidades</span></div>
+          <div class="insight-box" style="margin-top:14px; padding:16px 18px;">
+            <p style="font-size:13px;">Decir lo que no somos en redes <strong>filtra audiencia no calificada</strong> y refuerza la especialización. El paciente correcto ve ese límite como señal de rigor.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PILARES DE CONTENIDO -->
+  <section class="section-block">
+    <div class="container">
+      <p class="section-label">06 — Pilares de contenido</p>
+      <h2 class="section-title">Los cinco territorios del mes</h2>
+      <p class="section-intro">
+        Todo el contenido — los 4 videos y los 4 posts — se publicará dentro de uno de estos cinco pilares. Cada uno cumple un rol específico en el proceso de decisión del paciente.
+      </p>
+
+      <div class="stack">
+
+        <div class="card featured">
+          <div class="grid-2">
+            <div>
+              <p class="pillar-num">01</p>
+              <span class="card-badge">Pilar base</span>
+              <p class="card-title">Educación visual</p>
+              <p class="card-body">
+                Contenido que responde las preguntas más frecuentes: ¿cómo funciona la cirugía láser?, ¿qué es la catarata y cuándo se opera?, ¿qué es el pterigión?, ¿soy candidato para refractiva? <strong>Educar es la forma más poderosa de generar confianza en salud.</strong>
+              </p>
+            </div>
+            <div style="padding-top:50px;">
+              <div class="bullet-item" style="margin-bottom:10px;"><span class="dot">◆</span><span><strong>Formato ideal:</strong> Reel explicativo o carrusel visual</span></div>
+              <div class="bullet-item" style="margin-bottom:10px;"><span class="dot">◆</span><span><strong>Tono:</strong> Claro, sencillo, sin términos médicos innecesarios</span></div>
+              <div class="bullet-item"><span class="dot">◆</span><span><strong>Propósito:</strong> Atraer nuevo público. Posicionar conocimiento médico</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid-2">
+          <div class="card">
+            <p class="pillar-num">02</p>
+            <span class="card-badge">Pilar de confianza</span>
+            <p class="card-title">El proceso quirúrgico</p>
+            <p class="card-body">
+              Desmitificar la cirugía. Mostrar cómo es el día de la operación, qué siente el paciente, cuánto dura, qué pasa después. <strong>La transparencia sobre el proceso elimina el miedo más efectivo que cualquier argumento.</strong>
+            </p>
+            <hr class="card-divider"/>
+            <div class="bullet-item"><span class="dot">◆</span><span><strong>Formato:</strong> Video paso a paso o reel de proceso</span></div>
+            <div class="bullet-item"><span class="dot">◆</span><span><strong>Propósito:</strong> Reducir miedo. Humanizar la experiencia quirúrgica</span></div>
+          </div>
+
+          <div class="card">
+            <p class="pillar-num">03</p>
+            <span class="card-badge">Pilar de autoridad</span>
+            <p class="card-title">El Dr. Escobar habla</p>
+            <p class="card-body">
+              La voz del médico genera la mayor credibilidad en salud. Videos cortos donde el Dr. Escobar explica un tema, responde una duda frecuente o comparte su perspectiva clínica. <strong>El experto hablando directamente vale más que cualquier diseño.</strong>
+            </p>
+            <hr class="card-divider"/>
+            <div class="bullet-item"><span class="dot">◆</span><span><strong>Formato:</strong> Talking head, máx. 90 segundos</span></div>
+            <div class="bullet-item"><span class="dot">◆</span><span><strong>Propósito:</strong> Construir autoridad médica. Generar confianza personal</span></div>
+          </div>
+        </div>
+
+        <div class="grid-2">
+          <div class="card">
+            <p class="pillar-num">04</p>
+            <span class="card-badge">Pilar de prueba social</span>
+            <p class="card-title">Pacientes reales</p>
+            <p class="card-body">
+              Testimonios, experiencias y resultados de pacientes que ya se operaron. Sin promesas absolutas — con narrativas honestas de lo que vivieron. <strong>El paciente que ve a alguien como él contando su experiencia elimina la duda más que cualquier estadística.</strong>
+            </p>
+            <hr class="card-divider"/>
+            <div class="bullet-item"><span class="dot">◆</span><span><strong>Formato:</strong> Video testimonial corto o post con historia</span></div>
+            <div class="bullet-item"><span class="dot">◆</span><span><strong>Propósito:</strong> Prueba social. Reducir miedo al resultado</span></div>
+          </div>
+
+          <div class="card">
+            <p class="pillar-num">05</p>
+            <span class="card-badge">Pilar diferenciador</span>
+            <p class="card-title">La experiencia San Diego</p>
+            <p class="card-body">
+              Mostrar el entorno, la clínica, el equipo y el proceso para pacientes internacionales. <strong>Este pilar trabaja el diferenciador más exclusivo de la clínica y atrae un perfil de alto valor desde LATAM.</strong>
+            </p>
+            <hr class="card-divider"/>
+            <div class="bullet-item"><span class="dot">◆</span><span><strong>Formato:</strong> Video detrás de cámaras o post de marca</span></div>
+            <div class="bullet-item"><span class="dot">◆</span><span><strong>Propósito:</strong> Diferenciación. Atraer paciente internacional</span></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ESTRATEGIA DE PUBLICACIÓN -->
+  <section class="section-block">
+    <div class="container">
+      <p class="section-label">07 — Estrategia de publicación</p>
+      <h2 class="section-title">8 piezas al mes con rol definido</h2>
+      <p class="section-intro">
+        Cuatro videos y cuatro posts. Cada uno con un trabajo específico dentro del viaje del paciente. No se publica por llenar el calendario — se publica para mover al paciente de la duda a la decisión.
+      </p>
+
+      <!-- VIDEOS -->
+      <div class="card featured" style="margin-bottom:16px;">
+        <span class="card-badge">Motor de alcance</span>
+        <p class="card-title" style="font-size:22px;">🎬 Los 4 videos del mes</p>
+        <p class="card-body" style="margin-bottom:24px;">
+          Reels para Instagram con replicación directa a Facebook. <strong>Duración recomendada: 60 a 90 segundos.</strong> Cada video tiene un objetivo claro en el embudo del paciente.
+        </p>
+        <hr class="card-divider"/>
+        <div class="stack">
+          <div class="step-item">
+            <div class="step-num">V1</div>
+            <div class="step-content">
+              <strong>Video educativo — Pilar Educación visual</strong>
+              <p>Responde una pregunta frecuente del paciente candidato a refractiva. Ejemplos: "¿Eres candidato para cirugía láser? Estas son las 4 condiciones que se evalúan." o "¿Por qué no todos pueden operarse el mismo día de la valoración?" El objetivo es atraer pacientes en fase de investigación y pre-calificarlos antes de que escriban. El Dr. Escobar habla directamente a cámara.</p>
+            </div>
+          </div>
+          <div class="step-item">
+            <div class="step-num">V2</div>
+            <div class="step-content">
+              <strong>Video de proceso — Pilar El proceso quirúrgico</strong>
+              <p>Muestra cómo es la experiencia real de una cirugía refractiva o de catarata en la clínica. No tiene que ser de sala de operaciones — puede ser desde la llegada, la preparación previa, el ambiente en Clínica San Diego. "¿Cómo es el día de tu cirugía láser con nosotros?" elimina el miedo al proceso desconocido y humaniza la experiencia.</p>
+            </div>
+          </div>
+          <div class="step-item">
+            <div class="step-num">V3</div>
+            <div class="step-content">
+              <strong>Testimonio de paciente — Pilar Pacientes reales</strong>
+              <p>Un paciente que ya se operó contando su experiencia en 60-90 segundos: cómo era su vida con gafas, por qué decidió operarse, cómo fue el proceso y cómo es su vida ahora. Sin afirmaciones absolutas de resultado — con la narrativa honesta de lo que vivió. Este es el video de mayor conversión porque habla desde la experiencia, no desde la clínica.</p>
+            </div>
+          </div>
+          <div class="step-item">
+            <div class="step-num">V4</div>
+            <div class="step-content">
+              <strong>El Doctor responde — Pilar Dr. Escobar habla</strong>
+              <p>El Dr. Escobar responde la objeción más frecuente del mes: "¿Duele la cirugía?" / "¿Cuánto dura el efecto?" / "¿Puedo operarme si vengo de otro país?" Formato directo a cámara, tono cercano y claro. Este video posiciona al doctor como persona accesible y confiable, no solo como cirujano inalcanzable.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- POSTS -->
+      <div class="card" style="margin-bottom:24px;">
+        <span class="card-badge">Contenido de profundidad</span>
+        <p class="card-title" style="font-size:22px;">📸 Los 4 posts del mes</p>
+        <p class="card-body" style="margin-bottom:24px;">
+          Carruseles e imágenes fijas. Contenido que se guarda, se comparte y vive más tiempo en el feed. Se publican en Instagram con copy adaptado para Facebook.
+        </p>
+        <hr class="card-divider"/>
+        <div class="stack">
+          <div class="step-item">
+            <div class="step-num">P1</div>
+            <div class="step-content">
+              <strong>Carrusel educativo — Pilar Educación visual</strong>
+              <p>Contenido que el paciente guarda para releer. Ejemplos: "5 señales de que ya eres candidato para cirugía refractiva" / "Miopía vs. Catarata: esto es lo que le pasa realmente a tu ojo" / "¿Gafas para siempre o una sola cirugía? El cálculo que nadie te ha hecho." Información clara, visualmente bien construida, con lenguaje directo y sin jerga médica.</p>
+            </div>
+          </div>
+          <div class="step-item">
+            <div class="step-num">P2</div>
+            <div class="step-content">
+              <strong>Post de autoridad — Pilar Dr. Escobar habla</strong>
+              <p>Una pieza que comunique la trayectoria, la sub-especialización y la sede en Clínica San Diego. No como un currículum — como una declaración de confianza. "16 años operando córneas. Lo que más me importa no es cuántos casos hago — es que cada paciente entienda por qué lo operamos y por qué no." La credibilidad del médico refuerza la decisión de compra.</p>
+            </div>
+          </div>
+          <div class="step-item">
+            <div class="step-num">P3</div>
+            <div class="step-content">
+              <strong>Carrusel de mitos — Pilar Educación visual</strong>
+              <p>Atacar directamente las objeciones más comunes en formato "mito vs. realidad": "¿La cirugía láser duele?" / "¿La visión puede empeorar después?" / "¿Tengo que estar dormido para la cirugía?" Este formato genera alto engagement porque el paciente reconoce sus propias dudas y las comparte. Es el post de mayor alcance orgánico del mes.</p>
+            </div>
+          </div>
+          <div class="step-item">
+            <div class="step-num">P4</div>
+            <div class="step-content">
+              <strong>Post de marca — Pilar La experiencia San Diego</strong>
+              <p>Una pieza que muestre el entorno, la clínica, el equipo o el proceso de atención para pacientes de otras ciudades y países. Puede ser una foto del espacio, del equipo médico o del proceso de llegada para un paciente internacional. Refuerza la percepción de calidad y diferencia la experiencia de un consultorio promedio.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PLATAFORMAS -->
+      <div class="card">
+        <span class="card-badge">Distribución</span>
+        <p class="card-title">Cómo se distribuye cada pieza</p>
+        <hr class="card-divider"/>
+        <div class="platform-row">
+          <span class="platform-badge ig">Instagram</span>
+          <p class="platform-role"><strong>Plataforma principal.</strong> Donde se crea y optimiza todo el contenido primero. Reels para los 4 videos, carruseles e imágenes para los 4 posts. Copy conversacional. CTA siempre orientado a un solo paso: escribir al WhatsApp o agendar valoración. Hashtags de cirugía refractiva, oftalmología y Medellín salud.</p>
+        </div>
+        <div class="platform-row">
+          <span class="platform-badge fb">Facebook</span>
+          <p class="platform-role"><strong>Replicación directa.</strong> El mismo contenido con el mismo copy. Facebook tiene una audiencia de mayor edad que se superpone con el perfil del paciente de catarata. Los videos y carruseles tienen buen alcance orgánico en Facebook, especialmente cuando generan comentarios.</p>
+        </div>
+        <div class="insight-box" style="margin-top:20px;">
+          <p>
+            <strong>Nota sobre LinkedIn:</strong> Para esta clínica no se incluye LinkedIn en la estrategia orgánica inicial. El paciente quirúrgico no busca su cirujano en LinkedIn. Si en el futuro se quiere trabajar referidos B2B (convenios con empresas, EPS privadas, aseguradoras), LinkedIn puede activarse como canal secundario.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GUÍA DE VOZ -->
+  <section class="section-block">
+    <div class="container">
+      <p class="section-label">08 — Voz y tono</p>
+      <h2 class="section-title">Cómo habla la clínica</h2>
+      <p class="section-intro">
+        En contenido de salud el tono es crítico. Un error de comunicación puede generar desconfianza o, peor, falsas expectativas. La voz de la clínica tiene que equilibrar cercanía y rigor médico.
+      </p>
+
+      <div class="card featured" style="margin-bottom:16px;">
+        <span class="card-badge">Principios de comunicación</span>
+        <p class="card-title">La clínica habla así</p>
+        <hr class="card-divider"/>
+        <div class="grid-2">
+          <div class="stack">
+            <div class="icon-item">
+              <div class="icon-box">🩺</div>
+              <div><strong>Médicamente honesta</strong><p>Nunca promete resultados absolutos. Habla en términos de probabilidades, criterios y procesos. La honestidad médica es el mayor generador de confianza.</p></div>
+            </div>
+            <div class="icon-item">
+              <div class="icon-box">🤝</div>
+              <div><strong>Cercana sin perder autoridad</strong><p>El Dr. Escobar habla de tú a tú al paciente. No condescendiente, no fría. El paciente siente que le habla un médico que lo respeta.</p></div>
+            </div>
+            <div class="icon-item">
+              <div class="icon-box">📖</div>
+              <div><strong>Educativa sin ser técnica</strong><p>Todo término médico que aparezca en el contenido se explica en lenguaje cotidiano. El paciente no debe sentir que necesita un diccionario para entender.</p></div>
+            </div>
+          </div>
+          <div class="stack">
+            <div class="icon-item">
+              <div class="icon-box">🎯</div>
+              <div><strong>Directa sobre el proceso</strong><p>Habla claro sobre qué es la cirugía, qué implica, qué no implica. Sin romantizar ni dramatizar. La claridad es tranquilizadora.</p></div>
+            </div>
+            <div class="icon-item">
+              <div class="icon-box">🌟</div>
+              <div><strong>Orgullosa de sus límites</strong><p>Comunicar que no todos pueden operarse, que hay criterios estrictos, que no somos para todos los perfiles — esto genera más confianza que decir que operamos a cualquiera.</p></div>
+            </div>
+            <div class="icon-item">
+              <div class="icon-box">✈️</div>
+              <div><strong>Abierta al paciente de afuera</strong><p>El contenido siempre incluye señales de que la clínica atiende pacientes de otras ciudades y países. Eso expande el mercado sin saturar el mensaje local.</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid-2">
+        <div class="word-block si">
+          <h4>✓ Frases y mensajes que SÍ</h4>
+          <div class="pill-group">
+            <span class="pill yes">En la mayoría de los casos</span>
+            <span class="pill yes">Los candidatos ideales son...</span>
+            <span class="pill yes">El proceso incluye una valoración previa</span>
+            <span class="pill yes">Libertad visual</span>
+            <span class="pill yes">Recuperación progresiva</span>
+            <span class="pill yes">Experiencia comprobada</span>
+            <span class="pill yes">No todos son candidatos y eso está bien</span>
+            <span class="pill yes">Seguridad en cada decisión</span>
+            <span class="pill yes">Medellín como destino de salud</span>
+          </div>
+        </div>
+        <div class="word-block no">
+          <h4>✗ Frases y mensajes que NO</h4>
+          <div class="pill-group">
+            <span class="pill no">100% efectivo</span>
+            <span class="pill no">Sin riesgos</span>
+            <span class="pill no">Garantizado</span>
+            <span class="pill no">Resultados inmediatos</span>
+            <span class="pill no">Operamos a cualquier persona</span>
+            <span class="pill no">El antes y después sin contexto</span>
+            <span class="pill no">No duele nada</span>
+            <span class="pill no">Cura definitiva</span>
+            <span class="pill no">Somos los mejores</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RUTA DE TRABAJO -->
+  <section class="section-block">
+    <div class="container">
+      <p class="section-label">09 — Ruta de trabajo</p>
+      <h2 class="section-title">Cómo funciona el mes</h2>
+      <p class="section-intro">
+        8 piezas de contenido requieren un proceso claro para garantizar calidad, aprobación médica y publicación a tiempo.
+      </p>
+
+      <div class="card featured" style="margin-bottom:24px;">
+        <div class="week-track">
+          <div class="week-item">
+            <div class="week-left">
+              <div class="week-circle">S1</div>
+              <div class="week-line"></div>
+            </div>
+            <div class="week-content">
+              <strong>Semana 1 — Brief estratégico del mes</strong>
+              <p>Reunión de kickoff con el Dr. Escobar o su equipo (30-45 min). Se define qué objeción o tema responde cada video, qué experto o proceso se muestra, si hay algún testimonial disponible para filmar, y el pilar de cada post. Se entrega brief escrito con dirección creativa de las 8 piezas para aprobación previa a producción.</p>
+            </div>
+          </div>
+          <div class="week-item">
+            <div class="week-left">
+              <div class="week-circle">S2</div>
+              <div class="week-line"></div>
+            </div>
+            <div class="week-content">
+              <strong>Semana 2 — Producción de videos y diseño</strong>
+              <p>Grabación de los 4 videos en la clínica (si aplica el plan con grabación presencial) o edición del material que envíe el Dr. Escobar. Diseño de los 4 posts. El guión de cada video se comparte con anticipación para que el doctor llegue preparado — los mejores videos médicos parecen espontáneos pero tienen estructura definida.</p>
+            </div>
+          </div>
+          <div class="week-item">
+            <div class="week-left">
+              <div class="week-circle">S3</div>
+              <div class="week-line"></div>
+            </div>
+            <div class="week-content">
+              <strong>Semana 3 — Edición, copy y aprobación médica</strong>
+              <p>Edición de videos, redacción de captions para Instagram y Facebook, diseño final de posts. <strong>El Dr. Escobar revisa y aprueba todo el contenido antes de publicar</strong> — especialmente cualquier afirmación sobre resultados, procesos o condiciones médicas. Máximo dos rondas de ajuste. El médico tiene veto total sobre cualquier mensaje que comprometa su reputación clínica.</p>
+            </div>
+          </div>
+          <div class="week-item">
+            <div class="week-left">
+              <div class="week-circle">S4</div>
+            </div>
+            <div class="week-content">
+              <strong>Semana 4 — Publicación, gestión y reporte</strong>
+              <p>Publicación distribuida a lo largo de la semana (no todo el mismo día). Gestión de comentarios y DMs en las primeras horas post-publicación — las consultas que lleguen por mensaje directo se redirigen al WhatsApp de atención o se responden con información básica de pre-calificación. Reporte mensual de métricas: alcance, nuevos seguidores, consultas generadas.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid-2">
+        <div class="card">
+          <span class="card-badge">Lo que necesitamos del Dr. Escobar</span>
+          <p class="card-title">Compromiso del cliente</p>
+          <hr class="card-divider"/>
+          <div class="bullet-item"><span class="dot">◆</span><span>30-45 minutos en semana 1 para el brief mensual</span></div>
+          <div class="bullet-item"><span class="dot">◆</span><span>Disponibilidad para grabación de videos (1 sesión al mes)</span></div>
+          <div class="bullet-item"><span class="dot">◆</span><span>Facilitar acceso a pacientes que quieran dar testimonio (con consentimiento)</span></div>
+          <div class="bullet-item"><span class="dot">◆</span><span>Aprobación médica del contenido en máximo 48h en semana 3</span></div>
+          <div class="bullet-item"><span class="dot">◆</span><span>Manual de marca y acceso a las redes actuales de la clínica</span></div>
+        </div>
+
+        <div class="card">
+          <span class="card-badge">Lo que entrega Conectux</span>
+          <p class="card-title">Nuestra responsabilidad</p>
+          <hr class="card-divider"/>
+          <div class="bullet-item"><span class="dot">◆</span><span>Brief estratégico mensual con dirección creativa de las 8 piezas</span></div>
+          <div class="bullet-item"><span class="dot">◆</span><span>Producción o edición de los 4 videos con guión previo</span></div>
+          <div class="bullet-item"><span class="dot">◆</span><span>Diseño de los 4 posts con copy adaptado por plataforma</span></div>
+          <div class="bullet-item"><span class="dot">◆</span><span>Publicación, gestión de comentarios y redirección de DMs</span></div>
+          <div class="bullet-item"><span class="dot">◆</span><span>Reporte mensual de resultados con métricas clave</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESTRICCIONES MÉDICAS Y LEGALES -->
+  <section class="section-block">
+    <div class="container">
+      <p class="section-label">10 — Restricciones</p>
+      <h2 class="section-title">Lo que el sector salud no permite</h2>
+      <p class="section-intro">
+        El marketing en salud tiene limitaciones legales y éticas específicas. No son obstáculos — son el marco que protege la credibilidad del Dr. Escobar y evita sanciones.
+      </p>
+
+      <div class="warn-box" style="margin-bottom:16px;">
+        <span class="warn-title">⚠️ Marco regulatorio — Colombia</span>
+        <p>El contenido de salud en Colombia está regulado por el Ministerio de Salud y la Ley 100. La publicidad médica no puede hacer promesas de resultados, afirmar curaciones absolutas ni inducir procedimientos sin valoración previa. <strong>Todos los mensajes de la clínica deben respetar este marco.</strong></p>
+      </div>
+
+      <div class="grid-2" style="margin-bottom:16px;">
+        <div class="card">
+          <span class="card-badge">Producción</span>
+          <p class="card-title">Reglas de creación de contenido</p>
+          <hr class="card-divider"/>
+          <div class="bullet-item"><span class="dot" style="color:#ff6060;">✕</span><span><strong>No se usarán imágenes de personas generadas con IA.</strong> El contenido de salud requiere autenticidad. Las personas deben ser reales y verificables.</span></div>
+          <div class="bullet-item"><span class="dot" style="color:#ff6060;">✕</span><span><strong>No se publicarán fotos de sala de cirugía o tejido ocular sin aprobación explícita del Dr. Escobar.</strong></span></div>
+          <div class="bullet-item"><span class="dot" style="color:#ff6060;">✕</span><span><strong>No se mostrarán comparativos antes/después sin consentimiento informado del paciente</strong> por escrito y con las advertencias requeridas.</span></div>
+        </div>
+
+        <div class="card">
+          <span class="card-badge">Mensajes</span>
+          <p class="card-title">Reglas de comunicación médica</p>
+          <hr class="card-divider"/>
+          <div class="bullet-item"><span class="dot" style="color:#ff6060;">✕</span><span><strong>No se harán afirmaciones de resultados garantizados</strong> ("quedará con visión perfecta", "nunca volverá a usar gafas").</span></div>
+          <div class="bullet-item"><span class="dot" style="color:#ff6060;">✕</span><span><strong>No se invitará a menores de edad</strong> a buscar la cirugía ni se publicará contenido dirigido a ese perfil.</span></div>
+          <div class="bullet-item"><span class="dot" style="color:#ff6060;">✕</span><span><strong>No se posicionará como alternativa a la optometría general</strong> ni como solución a patologías fuera del alcance quirúrgico de la clínica (estrabismo, retina, etc.).</span></div>
+          <div class="bullet-item"><span class="dot" style="color:#ff6060;">✕</span><span><strong>No se promoverá la valoración como un primer paso "sin compromiso"</strong> si la clínica busca específicamente pacientes quirúrgicos, no consultas generales.</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CIERRE ESTRATÉGICO -->
+  <section class="section-block" style="border-bottom: 1px solid #1e1e1e;">
+    <div class="container">
+      <div class="card featured">
+        <div style="text-align:center; padding: 12px 0 20px;">
+          <p style="font-size:40px; margin-bottom:16px;">👁️</p>
+          <p class="section-label" style="display:block; text-align:center;">Resumen ejecutivo</p>
+          <h2 style="font-size: clamp(22px, 3.5vw, 36px); letter-spacing: -0.04em; line-height: 1.2; max-width: 640px; margin: 12px auto 20px;">
+            8 piezas al mes para que el paciente correcto encuentre <em style="color:var(--purple); font-style:normal;">al cirujano correcto.</em>
+          </h2>
+          <p style="font-size:14px; color:#888; max-width:520px; margin: 0 auto 28px; line-height:1.75;">
+            El contenido orgánico no cierra cirugías directamente. Construye la confianza que hace que el paciente decida escribir — y que cuando llegue al WhatsApp, ya sepa que quiere al Dr. Escobar.
+          </p>
+        </div>
+        <hr class="card-divider"/>
+        <div style="display: grid; grid-template-columns: repeat(4, 1fr);">
+          <div class="stat-block">
+            <p class="stat-num">4</p>
+            <p class="stat-label">Videos al mes</p>
+          </div>
+          <div class="stat-block">
+            <p class="stat-num">4</p>
+            <p class="stat-label">Posts al mes</p>
+          </div>
+          <div class="stat-block">
+            <p class="stat-num">2</p>
+            <p class="stat-label">Plataformas activas</p>
+          </div>
+          <div class="stat-block">
+            <p class="stat-num">5</p>
+            <p class="stat-label">Pilares de contenido</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-top">
+          <div>
+            <img src="Imagenes/logo.png" alt="Conectux" style="height:28px; width:auto;" />
+            <p style="font-size:12px;color:#555;margin-top:4px">Agencia de Marketing Digital</p>
+          </div>
+          <div class="footer-contact">
+            <p style="font-size:13px;color:#777;margin-bottom:6px">¿Hablamos de la estrategia?</p>
+            <a href="https://wa.me/573005473048">Escríbenos por WhatsApp →</a>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <span>© 2025 Conectux Digital. Todos los derechos reservados.</span>
+          <span>Estrategia elaborada para Clínica Oftalmológica San Diego — Medellín, Colombia</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

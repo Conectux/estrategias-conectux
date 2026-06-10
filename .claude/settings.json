@@ -1,7 +1,13 @@
 {
   "permissions": {
     "allow": [
-      "Bash(git commit *)"
+      "Bash(git commit *)",
+      "Bash(mkdir -p /Users/pipe/Documents/Projects/estrategias-conectux/dr-wilmar)",
+      "Bash(mkdir -p /Users/pipe/Documents/Projects/estrategias-conectux/las-huertas)",
+      "Bash(cp /Users/pipe/Documents/Projects/estrategias-conectux/dr-wilmar.html /Users/pipe/Documents/Projects/estrategias-conectux/dr-wilmar/index.html)",
+      "Bash(cp /Users/pipe/Documents/Projects/estrategias-conectux/las-huertas.html /Users/pipe/Documents/Projects/estrategias-conectux/las-huertas/index.html)",
+      "Bash(sed -i '' 's|href=\"Imagenes/|href=\"../Imagenes/|g; s|src=\"Imagenes/|src=\"../Imagenes/|g' /Users/pipe/Documents/Projects/estrategias-conectux/dr-wilmar/index.html)",
+      "Bash(sed -i '' 's|href=\"Imagenes/|href=\"../Imagenes/|g; s|src=\"Imagenes/|src=\"../Imagenes/|g' /Users/pipe/Documents/Projects/estrategias-conectux/las-huertas/index.html)"
     ]
   }
 }

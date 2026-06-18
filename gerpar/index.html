@@ -54,42 +54,21 @@
       letter-spacing: 0.18em; text-transform: uppercase;
       color: var(--purple); margin-bottom: 20px;
     }
-    .hero h1 {
-      font-size: clamp(32px, 5vw, 54px); line-height: 1.05;
-      letter-spacing: -0.04em; margin-bottom: 16px; max-width: 700px;
-    }
+    .hero h1 { font-size: clamp(32px, 5vw, 54px); line-height: 1.05; letter-spacing: -0.04em; margin-bottom: 16px; max-width: 700px; }
     .hero h1 em { font-style: normal; color: var(--purple); }
     .hero-sub { font-size: 15px; color: #999; max-width: 540px; line-height: 1.75; }
 
     /* SECTIONS */
     .section-block { padding: 56px 0; border-top: 1px solid #1e1e1e; }
-    .section-label {
-      font-size: 10px; font-weight: 600; letter-spacing: 0.2em;
-      text-transform: uppercase; color: var(--purple); margin-bottom: 8px;
-    }
+    .section-label { font-size: 10px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--purple); margin-bottom: 8px; }
     .section-title { font-size: clamp(22px, 3.5vw, 32px); letter-spacing: -0.03em; margin-bottom: 8px; }
     .section-intro { font-size: 15px; color: #888; max-width: 600px; line-height: 1.75; margin-bottom: 36px; }
 
     /* CARDS */
-    .card {
-      background: var(--mid); border: 1px solid #333;
-      border-radius: 16px; padding: 32px 36px;
-      position: relative; overflow: hidden;
-    }
-    .card::after {
-      content: ""; position: absolute; bottom: -60px; right: -60px;
-      width: 200px; height: 200px;
-      background: radial-gradient(circle, rgba(161,0,255,0.12) 0%, transparent 65%);
-      pointer-events: none;
-    }
+    .card { background: var(--mid); border: 1px solid #333; border-radius: 16px; padding: 32px 36px; position: relative; overflow: hidden; }
+    .card::after { content: ""; position: absolute; bottom: -60px; right: -60px; width: 200px; height: 200px; background: radial-gradient(circle, rgba(161,0,255,0.12) 0%, transparent 65%); pointer-events: none; }
     .card.featured { border-color: rgba(161,0,255,0.45); }
-    .card-badge {
-      display: inline-block;
-      background: rgba(161,0,255,0.12); color: var(--purple);
-      border: 1px solid rgba(161,0,255,0.28);
-      font-size: 10px; font-weight: 600; letter-spacing: 0.15em;
-      text-transform: uppercase; padding: 4px 10px; border-radius: 20px; margin-bottom: 14px;
-    }
+    .card-badge { display: inline-block; background: rgba(161,0,255,0.12); color: var(--purple); border: 1px solid rgba(161,0,255,0.28); font-size: 10px; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; padding: 4px 10px; border-radius: 20px; margin-bottom: 14px; }
     .card-title { font-size: 18px; font-weight: 700; color: var(--white); margin-bottom: 8px; letter-spacing: -0.02em; }
     .card-body { font-size: 14px; color: #aaa; line-height: 1.7; }
     .card-body strong { color: var(--white); }
@@ -107,44 +86,46 @@
 
     /* STEP ITEMS */
     .step-item { display: flex; gap: 14px; align-items: flex-start; }
-    .step-num {
-      width: 30px; height: 30px; border-radius: 50%; flex-shrink: 0;
-      border: 1px solid rgba(161,0,255,0.4);
-      background: rgba(161,0,255,0.08);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 11px; font-weight: 700; color: var(--purple);
-    }
+    .step-num { width: 30px; height: 30px; border-radius: 50%; flex-shrink: 0; border: 1px solid rgba(161,0,255,0.4); background: rgba(161,0,255,0.08); display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700; color: var(--purple); }
     .step-content { flex: 1; padding-top: 3px; }
     .step-content strong { display: block; font-size: 13px; font-weight: 700; color: var(--white); margin-bottom: 3px; }
     .step-content p { font-size: 12px; color: #777; line-height: 1.6; }
 
     /* AUDIENCE TYPE TAGS */
-    .tipo {
-      display: inline-block; font-size: 9px; font-weight: 700;
-      letter-spacing: 0.12em; text-transform: uppercase;
-      padding: 2px 7px; border-radius: 20px; margin-right: 6px;
-      vertical-align: middle; position: relative; top: -1px;
-    }
+    .tipo { display: inline-block; font-size: 9px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; padding: 2px 7px; border-radius: 20px; margin-right: 6px; vertical-align: middle; position: relative; top: -1px; }
     .tipo-mayorista  { background: rgba(161,0,255,0.12); border: 1px solid rgba(161,0,255,0.3);  color: var(--purple); }
     .tipo-emprendedor{ background: rgba(59,130,246,0.12); border: 1px solid rgba(59,130,246,0.3); color: #60a5fa; }
     .tipo-lanzamiento{ background: rgba(245,158,11,0.12); border: 1px solid rgba(245,158,11,0.3); color: #fbbf24; }
-    .tipo-alcance    { background: rgba(156,163,175,0.12);border: 1px solid rgba(156,163,175,0.25);color: #9ca3af; }
+    .tipo-alcance    { background: rgba(156,163,175,0.12); border: 1px solid rgba(156,163,175,0.25); color: #9ca3af; }
+    .tipo-especial   { background: rgba(52,211,153,0.12); border: 1px solid rgba(52,211,153,0.3); color: #34d399; }
 
-    /* MONTH CARD */
-    .month-header { display: flex; align-items: center; gap: 14px; margin-bottom: 22px; flex-wrap: wrap; }
-    .month-badge {
-      font-size: 11px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase;
-      color: var(--purple); border: 1px solid rgba(161,0,255,0.3);
-      padding: 5px 14px; border-radius: 20px; background: rgba(161,0,255,0.08);
-    }
+    /* MONTH HEADER */
+    .month-header { display: flex; align-items: center; gap: 14px; margin-bottom: 20px; flex-wrap: wrap; }
+    .month-badge { font-size: 11px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--purple); border: 1px solid rgba(161,0,255,0.3); padding: 5px 14px; border-radius: 20px; background: rgba(161,0,255,0.08); }
     .month-theme { font-size: 13px; color: #666; }
 
+    /* PAC CAMPAIGNS */
+    .pac-section { margin-bottom: 20px; padding: 14px 16px; background: rgba(245,158,11,0.06); border: 1px solid rgba(245,158,11,0.2); border-radius: 10px; }
+    .pac-label { font-size: 9px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: #fbbf24; margin-bottom: 10px; }
+    .pac-item { font-size: 12px; color: #c8922a; line-height: 1.5; margin-bottom: 4px; display: flex; gap: 6px; align-items: flex-start; }
+    .pac-item:last-child { margin-bottom: 0; }
+    .pac-dot { color: #fbbf24; flex-shrink: 0; margin-top: 2px; font-size: 10px; }
+    .pac-item strong { color: #fcd975; }
+
+    /* STORIES SECTION */
+    .stories-section { margin-top: 22px; padding-top: 20px; border-top: 1px solid #242424; }
+    .stories-label { font-size: 9px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: #60a5fa; margin-bottom: 14px; }
+    .story-weeks { display: flex; flex-direction: column; gap: 12px; }
+    .story-week-label { font-size: 10px; font-weight: 700; color: #3d3d3d; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 6px; }
+    .story-item { display: flex; gap: 7px; align-items: flex-start; font-size: 12px; color: #666; margin-bottom: 4px; line-height: 1.4; }
+    .story-item:last-child { margin-bottom: 0; }
+    .s-tag { font-size: 9px; font-weight: 800; letter-spacing: 0.05em; padding: 1px 6px; border-radius: 4px; flex-shrink: 0; margin-top: 1px; }
+    .s-a { background: rgba(161,0,255,0.15); color: #c060ff; }
+    .s-b { background: rgba(59,130,246,0.15); color: #60a5fa; }
+    .s-c { background: rgba(52,211,153,0.15); color: #34d399; }
+
     /* INSIGHT BOX */
-    .insight-box {
-      background: linear-gradient(135deg, #1a0030 0%, var(--mid2) 50%);
-      border: 1px solid rgba(161,0,255,0.3);
-      border-radius: 12px; padding: 24px 28px; margin-top: 16px;
-    }
+    .insight-box { background: linear-gradient(135deg, #1a0030 0%, var(--mid2) 50%); border: 1px solid rgba(161,0,255,0.3); border-radius: 12px; padding: 24px 28px; margin-top: 16px; }
     .insight-box p { font-size: 14px; color: #ccc; line-height: 1.75; }
     .insight-box strong { color: var(--white); }
 
@@ -159,11 +140,7 @@
     .footer-inner { display: flex; flex-direction: column; gap: 20px; }
     .footer-top { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
     .footer-contact a { color: var(--purple); text-decoration: none; font-size: 14px; font-weight: 500; }
-    .footer-bottom {
-      font-size: 12px; color: #444; padding-top: 20px;
-      border-top: 1px solid #1e1e1e;
-      display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px;
-    }
+    .footer-bottom { font-size: 12px; color: #444; padding-top: 20px; border-top: 1px solid #1e1e1e; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
 
     @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
     .hero > * { animation: fadeUp 0.6s ease both; }
@@ -203,7 +180,7 @@
       <h1>Una marca que vende en <em>tres velocidades.</em></h1>
       <p class="hero-sub">
         Arquitectura de contenido orgánico para mayoristas, emprendedores y público al detal —
-        con un calendario de 8 piezas mensuales diseñado para el segundo semestre de 2025.
+        8 piezas mensuales + 3 historias semanales para el segundo semestre de 2025.
       </p>
     </div>
   </section>
@@ -213,24 +190,18 @@
     <div class="container">
       <p class="section-label">01 — Arquitectura</p>
       <h2 class="section-title">Los 3 públicos y su embudo</h2>
-      <p class="section-intro">
-        Gerpar no tiene un solo cliente — tiene tres perfiles con comportamientos de compra radicalmente distintos. Mezclarlos en un solo canal es el error que frena el crecimiento. Separarlos es lo que lo desbloquea.
-      </p>
+      <p class="section-intro">No todos los clientes compran igual. Por eso la estrategia se divide en tres públicos con canales de conversión distintos.</p>
 
       <div class="stack" style="margin-bottom:16px;">
-
         <div class="card featured">
           <div style="display:flex; gap:20px; align-items:flex-start;">
             <div style="font-size:32px; line-height:1; flex-shrink:0;">🏭</div>
             <div style="flex:1;">
               <span class="card-badge">Público 1 — Ticket $1.000.000+</span>
               <p class="card-title">Mayorista</p>
-              <p class="card-body" style="margin-bottom:14px;">
-                El contenido público <strong>no les vende directamente — los atrae y los hace escribir.</strong> Una vez escriben, ahí sí se les muestra catálogo, telas, fotos reales, videollamada si es necesario. Este ticket alto necesita confianza humana, no un checkout.
-              </p>
+              <p class="card-body" style="margin-bottom:14px;">El contenido público <strong>no les vende directamente — los atrae y los hace escribir.</strong> Una vez escriben, ahí sí se les muestra catálogo, telas, fotos reales, videollamada si es necesario.</p>
               <div class="bullet-item"><span class="dot">◆</span><span><strong>Canal de conversión:</strong> Asesoría privada por WhatsApp</span></div>
-              <div class="bullet-item"><span class="dot">◆</span><span><strong>Lo que necesitan ver:</strong> Volumen, variedad y prueba de que otros negocios ya compran</span></div>
-              <div class="bullet-item"><span class="dot">◆</span><span><strong>CTA de todo su contenido:</strong> "Escríbenos por WhatsApp"</span></div>
+              <div class="bullet-item"><span class="dot">◆</span><span><strong>CTA de su contenido:</strong> "Escríbenos por WhatsApp"</span></div>
             </div>
           </div>
         </div>
@@ -240,33 +211,23 @@
             <div style="font-size:28px; margin-bottom:10px;">💼</div>
             <span class="card-badge">Público 2 — Ticket $500.000 mín</span>
             <p class="card-title">Emprendedor</p>
-            <p class="card-body" style="margin-bottom:14px;">
-              El contenido público <strong>sí los vende directo</strong>, porque su ticket es bajo y no necesitan tanta asesoría. Funcionan como cualquier persona que compra ropa online.
-            </p>
+            <p class="card-body" style="margin-bottom:14px;">El contenido público <strong>sí los vende directo</strong>, porque su ticket es bajo y no necesitan tanta asesoría. Funcionan como cualquier persona que compra ropa online.</p>
             <hr class="card-divider"/>
             <div class="bullet-item"><span class="dot">◆</span><span><strong>Canal de conversión:</strong> Página web con combos armados</span></div>
-            <div class="bullet-item"><span class="dot">◆</span><span><strong>CTA de su contenido:</strong> Link directo a la web</span></div>
           </div>
-
           <div class="card">
             <div style="font-size:28px; margin-bottom:10px;">🛍️</div>
             <span class="card-badge">Público 3 — Detal</span>
             <p class="card-title">Público al detal</p>
-            <p class="card-body" style="margin-bottom:14px;">
-              Se les vende a través de <strong>influencers que ya tienen su confianza.</strong> Gerpar les envía producto, ellos generan contenido en sus redes. La marca llega con credibilidad prestada.
-            </p>
+            <p class="card-body" style="margin-bottom:14px;">Compra porque <strong>alguien que sigue se lo recomienda.</strong> Gerpar les envía producto, ellos generan contenido. 2–3 influencers de nicho por mes: mamás, moda casual, fitness, papás. Rotar entre nichos todo el año.</p>
             <hr class="card-divider"/>
-            <div class="bullet-item"><span class="dot">◆</span><span><strong>Canal de adquisición:</strong> Influencers de nicho</span></div>
             <div class="bullet-item"><span class="dot">◆</span><span><strong>Mecánica:</strong> Prenda del mes a cambio de post o reel etiquetando a Gerpar</span></div>
           </div>
         </div>
-
       </div>
 
       <div class="insight-box">
-        <p>
-          <strong>Por qué funciona separar así:</strong> El error anterior era mandar al mayorista de $1.000.000+ a comprar solo en una web, sin tocar tela ni hablar con nadie. Ese ticket alto necesita confianza humana, no un checkout. El emprendedor de $500.000 sí compra solo. Y el público al detal compra porque alguien que sigue se lo recomienda — no porque Gerpar se lo diga directamente.
-        </p>
+        <p><strong>Por qué funciona separar así:</strong> El error anterior era mandar al mayorista de $1.000.000+ a comprar solo en una web, sin tocar tela ni hablar con nadie. Ese ticket alto necesita confianza humana. El emprendedor de $500.000 sí compra solo. Y el público al detal compra porque alguien que sigue se lo recomienda.</p>
       </div>
     </div>
   </section>
@@ -275,330 +236,445 @@
   <section class="section-block">
     <div class="container">
       <p class="section-label">02 — Estructura mensual</p>
-      <h2 class="section-title">8 contenidos al mes con rol definido</h2>
-      <p class="section-intro">
-        Cada mes se publican exactamente 8 piezas, distribuidas entre los tres públicos. No es un calendario arbitrario — cada pieza tiene un trabajo específico dentro del embudo de cada cliente.
-      </p>
+      <h2 class="section-title">8 contenidos + 3 historias por semana</h2>
+      <p class="section-intro">Cada mes se publican 8 piezas en el feed y 3 historias por semana. Cada pieza tiene un público, un objetivo y un canal de conversión definido.</p>
 
       <div class="card featured" style="margin-bottom:16px;">
-        <span class="card-badge">Plantilla fija mensual</span>
-        <p class="card-title" style="margin-bottom:24px; font-size:20px;">Las 8 piezas que se repiten cada mes</p>
+        <span class="card-badge">Plantilla fija mensual — Feed</span>
+        <p class="card-title" style="margin-bottom:24px; font-size:20px;">Las 8 piezas del mes</p>
         <div class="stack">
-          <div class="step-item">
-            <div class="step-num">1</div>
-            <div class="step-content">
-              <strong><span class="tipo tipo-mayorista">Mayorista</span> Reel de credibilidad</strong>
-              <p>Bodega, volumen, "le surtimos a cadenas conocidas." CTA: escríbenos por WhatsApp.</p>
-            </div>
-          </div>
-          <div class="step-item">
-            <div class="step-num">2</div>
-            <div class="step-content">
-              <strong><span class="tipo tipo-mayorista">Mayorista</span> Gráfico de prueba social</strong>
-              <p>Dato o caso de un cliente mayorista actual. CTA: WhatsApp.</p>
-            </div>
-          </div>
-          <div class="step-item">
-            <div class="step-num">3</div>
-            <div class="step-content">
-              <strong><span class="tipo tipo-emprendedor">Emprendedor</span> Carrusel "Combo del mes"</strong>
-              <p>Paquete armado desde $500.000. CTA: web.</p>
-            </div>
-          </div>
-          <div class="step-item">
-            <div class="step-num">4</div>
-            <div class="step-content">
-              <strong><span class="tipo tipo-emprendedor">Emprendedor</span> Gráfico de producto destacado</strong>
-              <p>Producto de la colección del mes con precio mayorista visible. CTA: web.</p>
-            </div>
-          </div>
-          <div class="step-item">
-            <div class="step-num">5</div>
-            <div class="step-content">
-              <strong><span class="tipo tipo-lanzamiento">Lanzamiento</span> Carrusel de colección del mes</strong>
-              <p>La colección temática mensual — aplica a los tres públicos. CTA dual (WhatsApp + web).</p>
-            </div>
-          </div>
-          <div class="step-item">
-            <div class="step-num">6</div>
-            <div class="step-content">
-              <strong><span class="tipo tipo-alcance">Alcance</span> Reel de tendencia</strong>
-              <p>Contenido suelto, sin venta directa, pensado para que el algoritmo lo mueva y alimente el ecosistema de influencers.</p>
-            </div>
-          </div>
-          <div class="step-item">
-            <div class="step-num">7</div>
-            <div class="step-content">
-              <strong><span class="tipo tipo-emprendedor">Emprendedor</span> Gráfico educativo</strong>
-              <p>Tip de negocio relacionado con vender ropa. CTA: web.</p>
-            </div>
-          </div>
-          <div class="step-item">
-            <div class="step-num">8</div>
-            <div class="step-content">
-              <strong><span class="tipo tipo-mayorista">Mayorista</span> Cierre de mes con urgencia</strong>
-              <p>Stock limitado, cierre de pedidos. CTA: WhatsApp.</p>
-            </div>
-          </div>
+          <div class="step-item"><div class="step-num">1</div><div class="step-content"><strong><span class="tipo tipo-mayorista">Mayorista</span> Reel de credibilidad</strong><p>Bodega, volumen, "Resolviendo todas las dudas." CTA: WhatsApp.</p></div></div>
+          <div class="step-item"><div class="step-num">2</div><div class="step-content"><strong><span class="tipo tipo-mayorista">Mayorista</span> Gráfico de prueba social</strong><p>Dato o caso de un cliente mayorista actual. CTA: WhatsApp.</p></div></div>
+          <div class="step-item"><div class="step-num">3</div><div class="step-content"><strong><span class="tipo tipo-emprendedor">Emprendedor</span> Carrusel "Combo del mes"</strong><p>Paquete armado desde $500.000. CTA: WhatsApp.</p></div></div>
+          <div class="step-item"><div class="step-num">4</div><div class="step-content"><strong><span class="tipo tipo-emprendedor">Emprendedor</span> Gráfico de producto destacado</strong><p>Producto de la colección del mes con precio mayorista visible. CTA: web.</p></div></div>
+          <div class="step-item"><div class="step-num">5</div><div class="step-content"><strong><span class="tipo tipo-lanzamiento">Lanzamiento</span> Carrusel de colección del mes</strong><p>La colección temática mensual — aplica a los tres públicos. CTA dual (WhatsApp + web).</p></div></div>
+          <div class="step-item"><div class="step-num">6</div><div class="step-content"><strong><span class="tipo tipo-alcance">Alcance</span> Reel de tendencia</strong><p>Contenido suelto, sin venta directa. Para que el algoritmo lo mueva y alimente el ecosistema de influencers.</p></div></div>
+          <div class="step-item"><div class="step-num">7</div><div class="step-content"><strong><span class="tipo tipo-emprendedor">Emprendedor</span> Gráfico educativo</strong><p>Tip de negocio relacionado con vender ropa. CTA: web.</p></div></div>
+          <div class="step-item"><div class="step-num">8</div><div class="step-content"><strong><span class="tipo tipo-mayorista">Mayorista</span> Cierre de mes</strong><p>Stock limitado, cierre de pedidos. CTA: WhatsApp.</p></div></div>
         </div>
       </div>
 
       <div class="card">
-        <span class="card-badge">Pauta paga</span>
-        <p class="card-title">Solo 3 piezas se pautan por mes</p>
-        <p class="card-body" style="margin-bottom:16px;">
-          Las piezas <strong>#1</strong> (mayorista), <strong>#3</strong> (emprendedor) y <strong>#6</strong> (alcance/detal) son las únicas que deben pautarse. El resto es orgánico puro. Concentrar el presupuesto en piezas con CTA claro y público definido maximiza el retorno.
-        </p>
-        <hr class="card-divider"/>
-        <div class="grid-3">
-          <div class="bullet-item"><span class="dot">◆</span><span><strong>Pieza #1</strong> → Pauta a compradores mayoristas y revendedores</span></div>
-          <div class="bullet-item"><span class="dot">◆</span><span><strong>Pieza #3</strong> → Pauta a emprendedores de moda y pequeños negocios</span></div>
-          <div class="bullet-item"><span class="dot">◆</span><span><strong>Pieza #6</strong> → Pauta para alcance general y captación detal</span></div>
+        <span class="card-badge">Plantilla fija semanal — Historias</span>
+        <p class="card-title" style="margin-bottom:20px; font-size:18px;">3 historias por semana</p>
+        <div class="stack">
+          <div class="step-item">
+            <div class="step-num" style="background:rgba(161,0,255,0.15); border-color:rgba(161,0,255,0.5);">A</div>
+            <div class="step-content">
+              <strong>Inicio de semana — Ángulo mayorista</strong>
+              <p>Bodega, volumen, urgencia. CTA: WhatsApp.</p>
+            </div>
+          </div>
+          <div class="step-item">
+            <div class="step-num" style="background:rgba(59,130,246,0.15); border-color:rgba(59,130,246,0.4); color:#60a5fa;">B</div>
+            <div class="step-content">
+              <strong>Mitad de semana — Ángulo emprendedor</strong>
+              <p>Producto puntual de la colección, precio mayorista. CTA: web.</p>
+            </div>
+          </div>
+          <div class="step-item">
+            <div class="step-num" style="background:rgba(52,211,153,0.15); border-color:rgba(52,211,153,0.4); color:#34d399;">C</div>
+            <div class="step-content">
+              <strong>Fin de semana — Ángulo detal/engagement</strong>
+              <p>Detrás de cámaras, looks armados, contenido influencer repostado. CTA: seguir/comentar.</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 03 INFLUENCER MARKETING -->
+  <!-- 03 CALENDARIO -->
   <section class="section-block">
     <div class="container">
-      <p class="section-label">03 — Influencer marketing</p>
-      <h2 class="section-title">El canal paralelo que no ocupa los 8 espacios</h2>
-      <p class="section-intro">
-        El programa de influencers corre en paralelo cada mes sin consumir los 8 contenidos del calendario. Es una capa adicional de alcance que trabaja directamente para el público al detal.
-      </p>
-
-      <div class="card featured" style="margin-bottom:16px;">
-        <span class="card-badge">Mecánica mensual</span>
-        <p class="card-title">2–3 influencers de nicho por mes</p>
-        <p class="card-body" style="margin-bottom:20px;">
-          Se les envía una prenda de la colección del mes a cambio de un post o reel etiquetando a Gerpar. <strong>Rotar entre cuatro nichos fijos durante todo el año</strong> para no improvisar cada mes a quién contactar.
-        </p>
-        <hr class="card-divider"/>
-        <div class="grid-2">
-          <div>
-            <div class="bullet-item"><span class="dot">◆</span><span><strong>Nicho 1 — Mamás:</strong> Ropa de niños, vida familiar, maternidad</span></div>
-            <div class="bullet-item"><span class="dot">◆</span><span><strong>Nicho 2 — Moda mujer:</strong> Outfits, tendencias, lifestyle</span></div>
-          </div>
-          <div>
-            <div class="bullet-item"><span class="dot">◆</span><span><strong>Nicho 3 — Papás y familia:</strong> Vida cotidiana, actividades del hogar</span></div>
-            <div class="bullet-item"><span class="dot">◆</span><span><strong>Nicho 4 — Tendencia general:</strong> Moda casual, fitness, looks del día</span></div>
-          </div>
-        </div>
-      </div>
-
-      <div class="insight-box">
-        <p>
-          <strong>Recomendación clave:</strong> Definir desde ya cuatro perfiles fijos que roten todo el año. Así no se improvisa cada mes — se tiene un roster establecido, se evalúa su rendimiento y se ajusta trimestralmente si alguno no está jalando.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- 04 CALENDARIO -->
-  <section class="section-block">
-    <div class="container">
-      <p class="section-label">04 — Calendario</p>
+      <p class="section-label">03 — Calendario</p>
       <h2 class="section-title">Segundo semestre 2025</h2>
-      <p class="section-intro">
-        Siete meses, siete colecciones, 56 piezas de contenido. Cada mes tiene una temática propia conectada al calendario comercial colombiano.
-      </p>
+      <p class="section-intro">Siete meses, siete colecciones, campañas activas por período y contenido semana a semana.</p>
 
       <div class="card featured" style="margin-bottom:24px;">
         <div style="display:grid; grid-template-columns:repeat(4,1fr);">
-          <div class="stat-block">
-            <p class="stat-num">7</p>
-            <p class="stat-label">Meses de estrategia</p>
-          </div>
-          <div class="stat-block">
-            <p class="stat-num">56</p>
-            <p class="stat-label">Piezas totales</p>
-          </div>
-          <div class="stat-block">
-            <p class="stat-num">21</p>
-            <p class="stat-label">Piezas pautadas en el semestre</p>
-          </div>
-          <div class="stat-block">
-            <p class="stat-num">3</p>
-            <p class="stat-label">Públicos simultáneos</p>
-          </div>
+          <div class="stat-block"><p class="stat-num">7</p><p class="stat-label">Meses de estrategia</p></div>
+          <div class="stat-block"><p class="stat-num">56</p><p class="stat-label">Piezas de feed</p></div>
+          <div class="stat-block"><p class="stat-num">84</p><p class="stat-label">Historias en el semestre</p></div>
+          <div class="stat-block"><p class="stat-num">3</p><p class="stat-label">Públicos simultáneos</p></div>
         </div>
       </div>
 
-      <!-- JUNIO -->
+      <!-- ───── JUNIO ───── -->
       <div class="card featured" style="margin-bottom:12px;">
         <div class="month-header">
           <span class="month-badge">Junio</span>
           <span class="month-theme">Colección "Para Él" + cierre de semestre · Día del Padre</span>
         </div>
-        <div class="stack">
-          <div class="step-item"><div class="step-num">1</div><div class="step-content"><strong><span class="tipo tipo-mayorista">Mayorista</span> Reel de bodega</strong><p>"Esto es lo que tienen en su bodega los almacenes que ya nos compran." Recorrido rápido de bodega, variedad y volumen. CTA: WhatsApp.</p></div></div>
-          <div class="step-item"><div class="step-num">2</div><div class="step-content"><strong><span class="tipo tipo-mayorista">Mayorista</span> Testimonio de cliente</strong><p>"Este cliente empezó con $1.000.000 y hoy nos compra cada mes." Testimonio o cifra real. CTA: WhatsApp.</p></div></div>
-          <div class="step-item"><div class="step-num">3</div><div class="step-content"><strong><span class="tipo tipo-emprendedor">Emprendedor</span> Combo Junio</strong><p>"10 pijamas + 10 camisetas desde $500.000." Carrusel con el detalle del paquete. CTA: web.</p></div></div>
-          <div class="step-item"><div class="step-num">4</div><div class="step-content"><strong><span class="tipo tipo-emprendedor">Emprendedor</span> Producto — Día del Padre</strong><p>Pijama hombre destacada, precio mayorista visible, "ideal para Día del Padre." CTA: web.</p></div></div>
-          <div class="step-item"><div class="step-num">5</div><div class="step-content"><strong><span class="tipo tipo-lanzamiento">Lanzamiento</span> Colección Para Él</strong><p>"Llegó la colección Para Él." Carrusel mostrando pijamas, camisetas y conjuntos de hombre. CTA dual.</p></div></div>
-          <div class="step-item"><div class="step-num">6</div><div class="step-content"><strong><span class="tipo tipo-alcance">Alcance</span> Tendencia masculina</strong><p>Looks casuales de hombre, sin hablar de precio, solo estilo.</p></div></div>
-          <div class="step-item"><div class="step-num">7</div><div class="step-content"><strong><span class="tipo tipo-emprendedor">Emprendedor</span> Educativo — apertura de negocio</strong><p>"3 razones por las que junio es buen mes para abrir tu negocio de ropa." CTA: web.</p></div></div>
-          <div class="step-item"><div class="step-num">8</div><div class="step-content"><strong><span class="tipo tipo-mayorista">Mayorista</span> Cierre Día del Padre</strong><p>"Quedan pocos días para surtir antes del Día del Padre. Escríbenos ya." CTA: WhatsApp.</p></div></div>
-        </div>
-      </div>
 
-      <!-- JULIO -->
-      <div class="card" style="margin-bottom:12px;">
-        <div class="month-header">
-          <span class="month-badge">Julio</span>
-          <span class="month-theme">Vacaciones + Independencia + colección "Básicos"</span>
+        <div class="pac-section">
+          <p class="pac-label">Campañas activas (PAC)</p>
+          <div class="pac-item"><span class="pac-dot">◆</span><span><strong>Papá con Estilo Gerpar</strong> — 25 mayo al 30 jun · Público: hombre</span></div>
+          <div class="pac-item"><span class="pac-dot">◆</span><span><strong>Verano en Familia con Gerpar</strong> — 1 jun al 5 jul · Público: bebés, niños, mujer, hombre</span></div>
+          <div class="pac-item"><span class="pac-dot">◆</span><span><strong>Mundial de Fútbol: Vibra la Moda del Gol</strong> — 11 jun al 19 jul · Público: niños, hombre</span></div>
         </div>
-        <div class="stack">
-          <div class="step-item"><div class="step-num">1</div><div class="step-content"><strong><span class="tipo tipo-mayorista">Mayorista</span> Bodega activa en vacaciones</strong><p>"Mientras otros bajan ventas en vacaciones, nuestros clientes siguen surtiendo. ¿Por qué?" CTA: WhatsApp.</p></div></div>
-          <div class="step-item"><div class="step-num">2</div><div class="step-content"><strong><span class="tipo tipo-mayorista">Mayorista</span> Dato estratégico</strong><p>"Julio es el mes ideal para renovar inventario antes de la segunda mitad del año." CTA: WhatsApp.</p></div></div>
-          <div class="step-item"><div class="step-num">3</div><div class="step-content"><strong><span class="tipo tipo-emprendedor">Emprendedor</span> Combo Vacaciones</strong><p>"Básicos para toda la familia desde $500.000." CTA: web.</p></div></div>
-          <div class="step-item"><div class="step-num">4</div><div class="step-content"><strong><span class="tipo tipo-emprendedor">Emprendedor</span> Camiseta básica unisex</strong><p>Producto destacado con precio mayorista visible. CTA: web.</p></div></div>
-          <div class="step-item"><div class="step-num">5</div><div class="step-content"><strong><span class="tipo tipo-lanzamiento">Lanzamiento</span> Colección Básicos</strong><p>"La que nunca falta en un negocio." Carrusel de camisetas, joggers y conjuntos sencillos. CTA dual.</p></div></div>
-          <div class="step-item"><div class="step-num">6</div><div class="step-content"><strong><span class="tipo tipo-alcance">Alcance</span> Outfits para julio</strong><p>Reel de tendencia sin venta directa — looks de vacaciones en Colombia.</p></div></div>
-          <div class="step-item"><div class="step-num">7</div><div class="step-content"><strong><span class="tipo tipo-emprendedor">Emprendedor</span> Educativo — ventas en vacaciones</strong><p>"Cómo aprovechar el mes de vacaciones para vender más ropa casual." CTA: web.</p></div></div>
-          <div class="step-item"><div class="step-num">8</div><div class="step-content"><strong><span class="tipo tipo-mayorista">Mayorista</span> Cierre de julio</strong><p>"Antes de cerrar julio, asegure su pedido. Cupos limitados de despacho." CTA: WhatsApp.</p></div></div>
-        </div>
-      </div>
 
-      <!-- AGOSTO -->
-      <div class="card" style="margin-bottom:12px;">
-        <div class="month-header">
-          <span class="month-badge">Agosto</span>
-          <span class="month-theme">Regreso a clases + colección "Niños"</span>
+        <div class="stack" style="margin-bottom:0;">
+          <div class="step-item"><div class="step-num">1</div><div class="step-content"><strong><span class="tipo tipo-mayorista">Mayorista</span> Bodega de Día del Padre</strong><p>"Estos son los almacenes que ya están surtidos para el Día del Padre. ¿Y el tuyo?" — bodega de pijamas y ropa de hombre.</p></div></div>
+          <div class="step-item"><div class="step-num">2</div><div class="step-content"><strong><span class="tipo tipo-mayorista">Mayorista</span> Testimonio cliente</strong><p>"Un cliente nos escribió en mayo por pijamas de hombre. Hoy nos compra cada mes."</p></div></div>
+          <div class="step-item"><div class="step-num">3</div><div class="step-content"><strong><span class="tipo tipo-emprendedor">Emprendedor</span> Combo Verano</strong><p>"Vestidos de baño + ropa de playa para toda la familia desde $500.000." CTA: WhatsApp.</p></div></div>
+          <div class="step-item"><div class="step-num">4</div><div class="step-content"><strong><span class="tipo tipo-emprendedor">Emprendedor</span> Pijama hombre "Papá con Estilo"</strong><p>Producto destacado, precio mayorista visible. CTA: web.</p></div></div>
+          <div class="step-item"><div class="step-num">5</div><div class="step-content"><strong><span class="tipo tipo-lanzamiento">Lanzamiento</span> Llegó Papá con Estilo Gerpar</strong><p>Carrusel de pijamas, camisetas y conjuntos de hombre. CTA dual.</p></div></div>
+          <div class="step-item"><div class="step-num">6</div><div class="step-content"><strong><span class="tipo tipo-alcance">Alcance</span> Vibra la moda del gol</strong><p>Looks de hombre y niño con guiño al Mundial, sin venta directa.</p></div></div>
+          <div class="step-item"><div class="step-num">7</div><div class="step-content"><strong><span class="tipo tipo-emprendedor">Emprendedor</span> Educativo — junio es buen mes</strong><p>"3 razones por las que junio es buen mes para surtir tu negocio: Día del Padre, vacaciones y Mundial."</p></div></div>
+          <div class="step-item"><div class="step-num">8</div><div class="step-content"><strong><span class="tipo tipo-mayorista">Mayorista</span> Cierre Día del Padre</strong><p>"Quedan pocos días para surtir antes del Día del Padre. Escríbenos ya."</p></div></div>
         </div>
-        <div class="stack">
-          <div class="step-item"><div class="step-num">1</div><div class="step-content"><strong><span class="tipo tipo-mayorista">Mayorista</span> Temporada escolar</strong><p>"Cada agosto las mamás buscan uniformes y ropa escolar. ¿Está su negocio listo?" CTA: WhatsApp.</p></div></div>
-          <div class="step-item"><div class="step-num">2</div><div class="step-content"><strong><span class="tipo tipo-mayorista">Mayorista</span> Testimonio ropa infantil</strong><p>Caso de un cliente que surte ropa infantil exitosamente. CTA: WhatsApp.</p></div></div>
-          <div class="step-item"><div class="step-num">3</div><div class="step-content"><strong><span class="tipo tipo-emprendedor">Emprendedor</span> Combo Vuelta al Cole</strong><p>"Ropa de niño y niña desde $500.000." CTA: web.</p></div></div>
-          <div class="step-item"><div class="step-num">4</div><div class="step-content"><strong><span class="tipo tipo-emprendedor">Emprendedor</span> Conjunto infantil destacado</strong><p>Producto infantil con precio mayorista visible. CTA: web.</p></div></div>
-          <div class="step-item"><div class="step-num">5</div><div class="step-content"><strong><span class="tipo tipo-lanzamiento">Lanzamiento</span> Colección Niños</strong><p>"Para que no falte nada en agosto." Carrusel con tallas y referencias. CTA dual.</p></div></div>
-          <div class="step-item"><div class="step-num">6</div><div class="step-content"><strong><span class="tipo tipo-alcance">Alcance</span> Reel ropa infantil</strong><p>Combinaciones de ropa infantil, tono divertido y cercano a mamás y papás.</p></div></div>
-          <div class="step-item"><div class="step-num">7</div><div class="step-content"><strong><span class="tipo tipo-emprendedor">Emprendedor</span> Educativo — negocio infantil</strong><p>"Por qué la ropa infantil es de las que más rota en un negocio pequeño." CTA: web.</p></div></div>
-          <div class="step-item"><div class="step-num">8</div><div class="step-content"><strong><span class="tipo tipo-mayorista">Mayorista</span> Cierre temporada alta</strong><p>"Agosto es temporada alta de ropa infantil. Haga su pedido antes de que se agote." CTA: WhatsApp.</p></div></div>
-        </div>
-      </div>
 
-      <!-- SEPTIEMBRE -->
-      <div class="card" style="margin-bottom:12px;">
-        <div class="month-header">
-          <span class="month-badge">Septiembre</span>
-          <span class="month-theme">Amor y Amistad + colección "Regalo"</span>
-        </div>
-        <div class="stack">
-          <div class="step-item"><div class="step-num">1</div><div class="step-content"><strong><span class="tipo tipo-mayorista">Mayorista</span> Temporada de regalos</strong><p>"Septiembre mueve más regalos que cualquier otro mes del segundo semestre. Prepárese." CTA: WhatsApp.</p></div></div>
-          <div class="step-item"><div class="step-num">2</div><div class="step-content"><strong><span class="tipo tipo-mayorista">Mayorista</span> Dato de temporada</strong><p>Cifra o dato de ventas de la temporada anterior de Amor y Amistad. CTA: WhatsApp.</p></div></div>
-          <div class="step-item"><div class="step-num">3</div><div class="step-content"><strong><span class="tipo tipo-emprendedor">Emprendedor</span> Combo Amor y Amistad</strong><p>"Variedad de regalos desde $500.000." CTA: web.</p></div></div>
-          <div class="step-item"><div class="step-num">4</div><div class="step-content"><strong><span class="tipo tipo-emprendedor">Emprendedor</span> Producto para regalar</strong><p>Pijama o conjunto unisex ideal para regalar, precio mayorista. CTA: web.</p></div></div>
-          <div class="step-item"><div class="step-num">5</div><div class="step-content"><strong><span class="tipo tipo-lanzamiento">Lanzamiento</span> Colección Regalo</strong><p>"Algo para cada amigo, cada pareja, cada persona especial." Carrusel. CTA dual.</p></div></div>
-          <div class="step-item"><div class="step-num">6</div><div class="step-content"><strong><span class="tipo tipo-alcance">Alcance</span> Ideas de regalo</strong><p>Reel de tendencia "ideas de regalo" sin mencionar precio — contenido aspiracional puro.</p></div></div>
-          <div class="step-item"><div class="step-num">7</div><div class="step-content"><strong><span class="tipo tipo-emprendedor">Emprendedor</span> Educativo — vitrina de regalos</strong><p>"Cómo armar una vitrina de regalos en tu negocio para Amor y Amistad." CTA: web.</p></div></div>
-          <div class="step-item"><div class="step-num">8</div><div class="step-content"><strong><span class="tipo tipo-mayorista">Mayorista</span> Cierre Amor y Amistad</strong><p>"Quedan pocos días. Surta ahora y no se quede sin inventario." CTA: WhatsApp.</p></div></div>
-        </div>
-      </div>
-
-      <!-- OCTUBRE -->
-      <div class="card" style="margin-bottom:12px;">
-        <div class="month-header">
-          <span class="month-badge">Octubre</span>
-          <span class="month-theme">Halloween + colección "Niños especial"</span>
-        </div>
-        <div class="stack">
-          <div class="step-item"><div class="step-num">1</div><div class="step-content"><strong><span class="tipo tipo-mayorista">Mayorista</span> Octubre también vende</strong><p>"Disfraces, ropa temática y básicos no paran de moverse." CTA: WhatsApp.</p></div></div>
-          <div class="step-item"><div class="step-num">2</div><div class="step-content"><strong><span class="tipo tipo-mayorista">Mayorista</span> Testimonio de diversificación</strong><p>Cliente que diversifica su negocio en octubre con ropa temática. CTA: WhatsApp.</p></div></div>
-          <div class="step-item"><div class="step-num">3</div><div class="step-content"><strong><span class="tipo tipo-emprendedor">Emprendedor</span> Combo Octubre</strong><p>"Ropa infantil + básicos desde $500.000." CTA: web.</p></div></div>
-          <div class="step-item"><div class="step-num">4</div><div class="step-content"><strong><span class="tipo tipo-emprendedor">Emprendedor</span> Producto infantil destacado</strong><p>Producto de la colección de niños con precio mayorista visible. CTA: web.</p></div></div>
-          <div class="step-item"><div class="step-num">5</div><div class="step-content"><strong><span class="tipo tipo-lanzamiento">Lanzamiento</span> Colección Niños Especial</strong><p>"Para octubre y lo que viene." Carrusel con novedades. CTA dual.</p></div></div>
-          <div class="step-item"><div class="step-num">6</div><div class="step-content"><strong><span class="tipo tipo-alcance">Alcance</span> Reel temático octubre</strong><p>Tono divertido. Se les envían camisas a influencers creativos para que hagan algo con ellas.</p></div></div>
-          <div class="step-item"><div class="step-num">7</div><div class="step-content"><strong><span class="tipo tipo-emprendedor">Emprendedor</span> Educativo — preparar diciembre</strong><p>"Por qué octubre es el mejor mes para empezar a preparar tu inventario de diciembre." CTA: web.</p></div></div>
-          <div class="step-item"><div class="step-num">8</div><div class="step-content"><strong><span class="tipo tipo-mayorista">Mayorista</span> Anticipo de noviembre</strong><p>"Antes de que llegue noviembre, asegure su próximo pedido. Cupos limitados." CTA: WhatsApp.</p></div></div>
-        </div>
-      </div>
-
-      <!-- NOVIEMBRE -->
-      <div class="card" style="margin-bottom:12px;">
-        <div class="month-header">
-          <span class="month-badge">Noviembre</span>
-          <span class="month-theme">Black Friday + preventa colección diciembre</span>
-        </div>
-        <div class="stack">
-          <div class="step-item"><div class="step-num">1</div><div class="step-content"><strong><span class="tipo tipo-mayorista">Mayorista</span> Black Friday mayorista</strong><p>"Black Friday no es solo para el cliente final. Aproveche precios mayoristas especiales este mes." CTA: WhatsApp.</p></div></div>
-          <div class="step-item"><div class="step-num">2</div><div class="step-content"><strong><span class="tipo tipo-mayorista">Mayorista</span> Dato Black Friday anterior</strong><p>Testimonio o dato de pedidos grandes en Black Friday del año anterior. CTA: WhatsApp.</p></div></div>
-          <div class="step-item"><div class="step-num">3</div><div class="step-content"><strong><span class="tipo tipo-emprendedor">Emprendedor</span> Combo Black Friday</strong><p>"Stock para vender en la temporada más fuerte del año, desde $500.000." CTA: web.</p></div></div>
-          <div class="step-item"><div class="step-num">4</div><div class="step-content"><strong><span class="tipo tipo-emprendedor">Emprendedor</span> Preventa colección diciembre</strong><p>Producto destacado de la colección navideña en preventa, precio mayorista. CTA: web.</p></div></div>
-          <div class="step-item"><div class="step-num">5</div><div class="step-content"><strong><span class="tipo tipo-lanzamiento">Lanzamiento</span> Anticipo Colección Diciembre</strong><p>"Ya llegó el anticipo. Sea de los primeros en tenerla." Carrusel. CTA dual.</p></div></div>
-          <div class="step-item"><div class="step-num">6</div><div class="step-content"><strong><span class="tipo tipo-alcance">Alcance</span> Adelanto navideño</strong><p>Reel mostrando un adelanto de la colección navideña, generando expectativa sin revelar todo.</p></div></div>
-          <div class="step-item"><div class="step-num">7</div><div class="step-content"><strong><span class="tipo tipo-emprendedor">Emprendedor</span> Educativo — inventario de diciembre</strong><p>"Por qué noviembre es el mes para comprar el inventario de diciembre, no diciembre mismo." CTA: web.</p></div></div>
-          <div class="step-item"><div class="step-num">8</div><div class="step-content"><strong><span class="tipo tipo-mayorista">Mayorista</span> Cierre Black Friday</strong><p>"Black Friday termina pronto. Haga su pedido antes de que se agoten las referencias de diciembre." CTA: WhatsApp.</p></div></div>
-        </div>
-      </div>
-
-      <!-- DICIEMBRE -->
-      <div class="card featured">
-        <div class="month-header">
-          <span class="month-badge">Diciembre</span>
-          <span class="month-theme">Colección "Fiestas" + cierre de año y agradecimiento</span>
-        </div>
-        <div class="stack">
-          <div class="step-item"><div class="step-num">1</div><div class="step-content"><strong><span class="tipo tipo-mayorista">Mayorista</span> El mes más grande del año</strong><p>"Diciembre es el mes de mayor venta del año. ¿Ya tiene su vitrina lista?" CTA: WhatsApp.</p></div></div>
-          <div class="step-item"><div class="step-num">2</div><div class="step-content"><strong><span class="tipo tipo-mayorista">Mayorista</span> Testimonio de fin de año</strong><p>Cliente que vendió bien gracias a surtirse con tiempo en noviembre. CTA: WhatsApp.</p></div></div>
-          <div class="step-item"><div class="step-num">3</div><div class="step-content"><strong><span class="tipo tipo-emprendedor">Emprendedor</span> Combo Fiestas</strong><p>"Outfits de diciembre desde $500.000." CTA: web.</p></div></div>
-          <div class="step-item"><div class="step-num">4</div><div class="step-content"><strong><span class="tipo tipo-emprendedor">Emprendedor</span> Producto fiesta destacado</strong><p>Vestido o conjunto de fiesta con precio mayorista visible. CTA: web.</p></div></div>
-          <div class="step-item"><div class="step-num">5</div><div class="step-content"><strong><span class="tipo tipo-lanzamiento">Lanzamiento</span> Colección Fiestas</strong><p>"La que cierra el año en grande." Carrusel completo. CTA dual.</p></div></div>
-          <div class="step-item"><div class="step-num">6</div><div class="step-content"><strong><span class="tipo tipo-alcance">Alcance</span> Looks de fin de año</strong><p>Reel de tendencia con influencers — looks para celebraciones de diciembre.</p></div></div>
-          <div class="step-item"><div class="step-num">7</div><div class="step-content"><strong><span class="tipo tipo-emprendedor">Emprendedor</span> Educativo — enero sin crisis</strong><p>"Cómo vender más en diciembre sin quedarte sin inventario en enero." CTA: web.</p></div></div>
-          <div class="step-item"><div class="step-num">8</div><div class="step-content"><strong><span class="tipo tipo-mayorista">Mayorista</span> Cierre de año</strong><p>"Gracias por un año de confianza. Hagamos que el próximo año sea aún más grande para su negocio." Mensaje de cierre sin venta dura — deja la puerta abierta para enero.</p></div></div>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- 05 RECOMENDACIONES -->
-  <section class="section-block">
-    <div class="container">
-      <p class="section-label">05 — Recomendaciones</p>
-      <h2 class="section-title">Tres decisiones estructurales</h2>
-      <p class="section-intro">
-        Más allá del contenido mensual, hay tres elementos de estructura que determinan si el sistema funciona o se cae.
-      </p>
-
-      <div class="stack">
-
-        <div class="card featured">
-          <div style="display:flex; gap:20px; align-items:flex-start;">
-            <div style="font-size:32px; line-height:1; flex-shrink:0;">👤</div>
-            <div>
-              <span class="card-badge">Recomendación 1 — Crítica</span>
-              <p class="card-title">Contratar un promotor de ventas mayoristas</p>
-              <p class="card-body">
-                Tiene sentido contratar a alguien que se dedique <strong>solo a recibir y cerrar los leads que lleguen por WhatsApp desde el contenido.</strong> Ese rol es fundamental. El contenido va a generar interesados — si no hay nadie que los reciba y cierre, el esfuerzo se desperdicia en el último metro.
-              </p>
+        <div class="stories-section">
+          <p class="stories-label">Historias — 3 por semana</p>
+          <div class="story-weeks">
+            <div class="story-week">
+              <p class="story-week-label">Semana 1</p>
+              <div class="story-item"><span class="s-tag s-a">A</span><span>"Bodega lista para Papá con Estilo, ¿ya pediste el tuyo?"</span></div>
+              <div class="story-item"><span class="s-tag s-b">B</span><span>"Esta pijama de hombre se está agotando."</span></div>
+              <div class="story-item"><span class="s-tag s-c">C</span><span>"Mira cómo armamos este look de playa."</span></div>
+            </div>
+            <div class="story-week">
+              <p class="story-week-label">Semana 2</p>
+              <div class="story-item"><span class="s-tag s-a">A</span><span>"Faltan días para el Día del Padre, surte ahora."</span></div>
+              <div class="story-item"><span class="s-tag s-b">B</span><span>"Vestido de baño + camiseta, combo desde $500.000."</span></div>
+              <div class="story-item"><span class="s-tag s-c">C</span><span>"Detrás de cámaras: empacando pedidos mayoristas."</span></div>
+            </div>
+            <div class="story-week">
+              <p class="story-week-label">Semana 3</p>
+              <div class="story-item"><span class="s-tag s-a">A</span><span>"Último llamado: Día del Padre es este fin de semana."</span></div>
+              <div class="story-item"><span class="s-tag s-b">B</span><span>"Mira esta camiseta del Mundial para niño."</span></div>
+              <div class="story-item"><span class="s-tag s-c">C</span><span>"Repost: mira cómo lo lució @[influencer]."</span></div>
+            </div>
+            <div class="story-week">
+              <p class="story-week-label">Semana 4</p>
+              <div class="story-item"><span class="s-tag s-a">A</span><span>"Julio llega con más Mundial. Prepárate."</span></div>
+              <div class="story-item"><span class="s-tag s-b">B</span><span>"Combo de playa todavía disponible en la web."</span></div>
+              <div class="story-item"><span class="s-tag s-c">C</span><span>"¿Cuál es tu favorito de la colección Verano?"</span></div>
             </div>
           </div>
         </div>
+      </div>
 
-        <div class="grid-2">
-          <div class="card">
-            <div style="font-size:28px; margin-bottom:10px;">🎤</div>
-            <span class="card-badge">Recomendación 2</span>
-            <p class="card-title">4 perfiles de influencer fijos</p>
-            <p class="card-body">
-              Definir desde ya cuatro perfiles que roten todo el año: <strong>moda mujer, papás/familia, niños/mamás, tendencia general.</strong> Se evalúa su rendimiento cada trimestre y se ajusta si alguno no está jalando.
-            </p>
-          </div>
-
-          <div class="card">
-            <div style="font-size:28px; margin-bottom:10px;">📣</div>
-            <span class="card-badge">Recomendación 3</span>
-            <p class="card-title">Pautar solo las piezas con CTA claro</p>
-            <p class="card-body">
-              Las piezas <strong>#1, #3 y #6</strong> de cada mes son las únicas que deben pautarse. El resto es orgánico puro. Concentrar el presupuesto en piezas con público definido maximiza el retorno de la inversión en pauta.
-            </p>
-          </div>
+      <!-- ───── JULIO ───── -->
+      <div class="card" style="margin-bottom:12px;">
+        <div class="month-header">
+          <span class="month-badge">Julio</span>
+          <span class="month-theme">Aniversario Gerpar 39 años + Mundial + Bebés Mi Puupa</span>
         </div>
 
+        <div class="pac-section">
+          <p class="pac-label">Campañas activas (PAC) + evento especial</p>
+          <div class="pac-item"><span class="pac-dot">◆</span><span><strong>Aniversario Gerpar — 39 años</strong> — 1 de julio</span></div>
+          <div class="pac-item"><span class="pac-dot">◆</span><span><strong>Verano en Familia con Gerpar</strong> — continúa hasta el 5 de julio</span></div>
+          <div class="pac-item"><span class="pac-dot">◆</span><span><strong>Mundial de Fútbol</strong> — continúa hasta el 19 de julio</span></div>
+          <div class="pac-item"><span class="pac-dot">◆</span><span><strong>Campaña Bebés: Mi Puupa</strong> — arranca el 27 de julio</span></div>
+        </div>
+
+        <div class="stack" style="margin-bottom:0;">
+          <div class="step-item"><div class="step-num">1</div><div class="step-content"><strong><span class="tipo tipo-mayorista">Mayorista</span> Bodega activa en vacaciones</strong><p>"Mientras otros bajan ventas en vacaciones, nuestros clientes siguen surtiendo. Así lo hacen."</p></div></div>
+          <div class="step-item"><div class="step-num">2</div><div class="step-content"><strong><span class="tipo tipo-especial">Aniversario</span> 39 años vistiendo familias colombianas</strong><p>Reel institucional, sin venta, solo gratitud y orgullo. Tipo documental — testimonios de los trabajadores más antiguos, tomas en blanco y negro mostrando la historia de la marca.</p></div></div>
+          <div class="step-item"><div class="step-num">3</div><div class="step-content"><strong><span class="tipo tipo-emprendedor">Emprendedor</span> Combo Verano — últimos días</strong><p>"Últimos días del Combo Verano. Aprovecha antes de que cambie la colección." CTA: WhatsApp.</p></div></div>
+          <div class="step-item"><div class="step-num">4</div><div class="step-content"><strong><span class="tipo tipo-emprendedor">Emprendedor</span> Camiseta Mundial</strong><p>Producto destacado camiseta Mundial, precio mayorista. CTA: web.</p></div></div>
+          <div class="step-item"><div class="step-num">5</div><div class="step-content"><strong><span class="tipo tipo-lanzamiento">Lanzamiento (preview)</span> Viene el festival del bebé</strong><p>"Ya viene el festival del bebé: Pequeños Consentidos. Prepárate para surtir bebés."</p></div></div>
+          <div class="step-item"><div class="step-num">6</div><div class="step-content"><strong><span class="tipo tipo-alcance">Alcance</span> Outfits de vacaciones</strong><p>Reel de tendencia "outfits de vacaciones" sin venta directa.</p></div></div>
+          <div class="step-item"><div class="step-num">7</div><div class="step-content"><strong><span class="tipo tipo-emprendedor">Emprendedor</span> Educativo — ropa de bebé</strong><p>"Por qué la ropa de bebé es de las categorías más rentables para un negocio pequeño."</p></div></div>
+          <div class="step-item"><div class="step-num">8</div><div class="step-content"><strong><span class="tipo tipo-mayorista">Mayorista</span> Anticipo festival del bebé</strong><p>"El festival del bebé llega la próxima semana. Asegure su lugar en el primer pedido."</p></div></div>
+        </div>
+
+        <div class="stories-section">
+          <p class="stories-label">Historias — 3 por semana</p>
+          <div class="story-weeks">
+            <div class="story-week">
+              <p class="story-week-label">Semana 1 — incluye 1 de julio (Aniversario)</p>
+              <div class="story-item"><span class="s-tag s-a">A</span><span>"¡39 años cumple Gerpar! Gracias por ser parte de esta historia."</span></div>
+              <div class="story-item"><span class="s-tag s-b">B</span><span>"39 años de experiencia, hoy reflejados en cada prenda que fabricamos."</span></div>
+              <div class="story-item"><span class="s-tag s-c">C</span><span>"Cuéntanos: ¿hace cuánto compras con Gerpar? Muéstranos si aún tienes un producto y te damos una muda de ropa."</span></div>
+            </div>
+          </div>
+        </div>
       </div>
+
+      <!-- ───── AGOSTO ───── -->
+      <div class="card" style="margin-bottom:12px;">
+        <div class="month-header">
+          <span class="month-badge">Agosto</span>
+          <span class="month-theme">Bebés Mi Puupa + arranque Amor y Amistad</span>
+        </div>
+
+        <div class="pac-section">
+          <p class="pac-label">Campañas activas (PAC)</p>
+          <div class="pac-item"><span class="pac-dot">◆</span><span><strong>Campaña Bebés: Pequeños Consentidos Mi Puupa</strong> — continúa hasta el 23 de agosto</span></div>
+          <div class="pac-item"><span class="pac-dot">◆</span><span><strong>Amor y Amistad se Visten de Gerpar</strong> — arranca el 24 de agosto hasta el 30 de septiembre · Público: mujer, hombre</span></div>
+        </div>
+
+        <div class="stack" style="margin-bottom:0;">
+          <div class="step-item"><div class="step-num">1</div><div class="step-content"><strong><span class="tipo tipo-mayorista">Mayorista</span> Bodega Mi Puupa</strong><p>"Esta es la bodega de Mi Puupa. Así surtimos a quienes venden ropa de bebé."</p></div></div>
+          <div class="step-item"><div class="step-num">2</div><div class="step-content"><strong><span class="tipo tipo-mayorista">Mayorista</span> Testimonio — ropa de bebé</strong><p>"Un cliente que solo vendía ropa de niño hoy también surte bebés con nosotros."</p></div></div>
+          <div class="step-item"><div class="step-num">3</div><div class="step-content"><strong><span class="tipo tipo-emprendedor">Emprendedor</span> Combo Mi Puupa</strong><p>"Ropa de bebé desde $500.000 para surtir tu sección de pequeños." CTA: WhatsApp.</p></div></div>
+          <div class="step-item"><div class="step-num">4</div><div class="step-content"><strong><span class="tipo tipo-emprendedor">Emprendedor</span> Conjunto de bebé destacado</strong><p>Producto estrella, precio mayorista visible. CTA: web.</p></div></div>
+          <div class="step-item"><div class="step-num">5</div><div class="step-content"><strong><span class="tipo tipo-lanzamiento">Lanzamiento</span> Amor y Amistad se viste de Gerpar</strong><p>Carrusel mostrando ideas de regalo para mujer y hombre. CTA dual.</p></div></div>
+          <div class="step-item"><div class="step-num">6</div><div class="step-content"><strong><span class="tipo tipo-alcance">Alcance</span> Ideas de regalo para Amor y Amistad</strong><p>Reel de tendencia sin mencionar precio.</p></div></div>
+          <div class="step-item"><div class="step-num">7</div><div class="step-content"><strong><span class="tipo tipo-emprendedor">Emprendedor</span> Educativo — vitrina de regalos</strong><p>"Cómo armar una vitrina de regalos en tu negocio para Amor y Amistad."</p></div></div>
+          <div class="step-item"><div class="step-num">8</div><div class="step-content"><strong><span class="tipo tipo-mayorista">Mayorista</span> Amor y Amistad ya activa</strong><p>"Amor y Amistad ya está activa. Surta ahora antes de que se agoten las referencias top."</p></div></div>
+        </div>
+
+        <div class="stories-section">
+          <p class="stories-label">Historias — 3 por semana</p>
+          <div class="story-weeks">
+            <div class="story-week">
+              <p class="story-week-label">Semana 1</p>
+              <div class="story-item"><span class="s-tag s-a">A</span><span>"Mi Puupa: pedidos mayoristas abiertos."</span></div>
+              <div class="story-item"><span class="s-tag s-b">B</span><span>"Este conjunto de bebé se está agotando rápido."</span></div>
+              <div class="story-item"><span class="s-tag s-c">C</span><span>"Lo más tierno de la semana: mira esta combinación."</span></div>
+            </div>
+            <div class="story-week">
+              <p class="story-week-label">Semana 2</p>
+              <div class="story-item"><span class="s-tag s-a">A</span><span>"Últimos días de Mi Puupa en bodega completa."</span></div>
+              <div class="story-item"><span class="s-tag s-b">B</span><span>"Combo bebé todavía disponible en la web."</span></div>
+              <div class="story-item"><span class="s-tag s-c">C</span><span>"¿Niño o niña? Cuéntanos en los comentarios."</span></div>
+            </div>
+            <div class="story-week">
+              <p class="story-week-label">Semana 3</p>
+              <div class="story-item"><span class="s-tag s-a">A</span><span>"Amor y Amistad se acerca. Prepara tu vitrina de regalos."</span></div>
+              <div class="story-item"><span class="s-tag s-b">B</span><span>"Esta pijama es el regalo perfecto para Amor y Amistad."</span></div>
+              <div class="story-item"><span class="s-tag s-c">C</span><span>"Adelanto de la colección de regalo."</span></div>
+            </div>
+            <div class="story-week">
+              <p class="story-week-label">Semana 4</p>
+              <div class="story-item"><span class="s-tag s-a">A</span><span>"¡Llegó Amor y Amistad Gerpar! Surta ya."</span></div>
+              <div class="story-item"><span class="s-tag s-b">B</span><span>"Combo regalo desde $500.000, ya en la web."</span></div>
+              <div class="story-item"><span class="s-tag s-c">C</span><span>"¿Para quién sería este regalo?"</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ───── SEPTIEMBRE ───── -->
+      <div class="card" style="margin-bottom:12px;">
+        <div class="month-header">
+          <span class="month-badge">Septiembre</span>
+          <span class="month-theme">Amor y Amistad — todo el mes</span>
+        </div>
+
+        <div class="pac-section">
+          <p class="pac-label">Campañas activas (PAC)</p>
+          <div class="pac-item"><span class="pac-dot">◆</span><span><strong>Amor y Amistad se Visten de Gerpar</strong> — continúa todo el mes hasta el 30 de septiembre</span></div>
+        </div>
+
+        <div class="stack" style="margin-bottom:0;">
+          <div class="step-item"><div class="step-num">1</div><div class="step-content"><strong><span class="tipo tipo-mayorista">Mayorista</span> Septiembre mueve regalos</strong><p>"Septiembre mueve más regalos que cualquier otro mes del segundo semestre. Prepárese."</p></div></div>
+          <div class="step-item"><div class="step-num">2</div><div class="step-content"><strong><span class="tipo tipo-mayorista">Mayorista</span> Dato de temporada anterior</strong><p>Cifra o dato de ventas de la temporada anterior de Amor y Amistad.</p></div></div>
+          <div class="step-item"><div class="step-num">3</div><div class="step-content"><strong><span class="tipo tipo-emprendedor">Emprendedor</span> Combo Amor y Amistad</strong><p>"Variedad de regalos para mujer y hombre desde $500.000." CTA: WhatsApp.</p></div></div>
+          <div class="step-item"><div class="step-num">4</div><div class="step-content"><strong><span class="tipo tipo-emprendedor">Emprendedor</span> Producto para regalar</strong><p>Pijama o conjunto ideal para regalar, precio mayorista. CTA: web.</p></div></div>
+          <div class="step-item"><div class="step-num">5</div><div class="step-content"><strong><span class="tipo tipo-lanzamiento">Lanzamiento (cierre)</span> Lo mejor de Amor y Amistad Gerpar</strong><p>Todo en un solo carrusel. CTA dual.</p></div></div>
+          <div class="step-item"><div class="step-num">6</div><div class="step-content"><strong><span class="tipo tipo-alcance">Alcance</span> Looks para regalar</strong><p>Reel de tendencia sin venta directa.</p></div></div>
+          <div class="step-item"><div class="step-num">7</div><div class="step-content"><strong><span class="tipo tipo-emprendedor">Emprendedor</span> Educativo — combos de regalo</strong><p>"Cómo armar combos de regalo que se vendan solos en tu negocio."</p></div></div>
+          <div class="step-item"><div class="step-num">8</div><div class="step-content"><strong><span class="tipo tipo-mayorista">Mayorista</span> Cierre Amor y Amistad</strong><p>"Quedan pocos días de Amor y Amistad. Surta ahora y no se quede sin inventario."</p></div></div>
+        </div>
+
+        <div class="stories-section">
+          <p class="stories-label">Historias — 3 por semana</p>
+          <div class="story-weeks">
+            <div class="story-week">
+              <p class="story-week-label">Semana 1</p>
+              <div class="story-item"><span class="s-tag s-a">A</span><span>"Amor y Amistad sigue activa. Bodega llena para surtir."</span></div>
+              <div class="story-item"><span class="s-tag s-b">B</span><span>"Esta camiseta es de las más pedidas para regalar."</span></div>
+              <div class="story-item"><span class="s-tag s-c">C</span><span>"¿Ya tienes tu regalo de Amor y Amistad?"</span></div>
+            </div>
+            <div class="story-week">
+              <p class="story-week-label">Semana 2</p>
+              <div class="story-item"><span class="s-tag s-a">A</span><span>"Mitad de mes: aproveche precios mayoristas de Amor y Amistad."</span></div>
+              <div class="story-item"><span class="s-tag s-b">B</span><span>"Combo regalo en la web, ideal para emprendedores."</span></div>
+              <div class="story-item"><span class="s-tag s-c">C</span><span>"Mira este look completo para regalar."</span></div>
+            </div>
+            <div class="story-week">
+              <p class="story-week-label">Semana 3</p>
+              <div class="story-item"><span class="s-tag s-a">A</span><span>"Últimas dos semanas de Amor y Amistad. No se quede sin stock."</span></div>
+              <div class="story-item"><span class="s-tag s-b">B</span><span>"Producto del momento: conjunto unisex."</span></div>
+              <div class="story-item"><span class="s-tag s-c">C</span><span>"Repost: así lo combinó @[influencer]."</span></div>
+            </div>
+            <div class="story-week">
+              <p class="story-week-label">Semana 4</p>
+              <div class="story-item"><span class="s-tag s-a">A</span><span>"Cierre de Amor y Amistad. Última oportunidad de surtir."</span></div>
+              <div class="story-item"><span class="s-tag s-b">B</span><span>"Últimas unidades del combo regalo en la web."</span></div>
+              <div class="story-item"><span class="s-tag s-c">C</span><span>"Gracias por un mes lleno de amor y amistad."</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ───── OCTUBRE ───── -->
+      <div class="card" style="margin-bottom:12px;">
+        <div class="month-header">
+          <span class="month-badge">Octubre</span>
+          <span class="month-theme">Halloween en Familia — todo el mes</span>
+        </div>
+
+        <div class="pac-section">
+          <p class="pac-label">Campaña activa (PAC)</p>
+          <div class="pac-item"><span class="pac-dot">◆</span><span><strong>Halloween en Familia con Gerpar</strong> — todo octubre · Público: bebés, niños, mujer, hombre</span></div>
+        </div>
+
+        <div class="stack" style="margin-bottom:0;">
+          <div class="step-item"><div class="step-num">1</div><div class="step-content"><strong><span class="tipo tipo-mayorista">Mayorista</span> Halloween también vende</strong><p>"Halloween también vende. Mire todo lo que tenemos para que su negocio no se quede corto."</p></div></div>
+          <div class="step-item"><div class="step-num">2</div><div class="step-content"><strong><span class="tipo tipo-mayorista">Mayorista</span> Testimonio de diversificación</strong><p>Cliente que diversificó su negocio con ropa Gerpar.</p></div></div>
+          <div class="step-item"><div class="step-num">3</div><div class="step-content"><strong><span class="tipo tipo-emprendedor">Emprendedor</span> Combo Halloween en Familia</strong><p>"Ropa para niños, mujer y hombre desde $500.000." CTA: WhatsApp.</p></div></div>
+          <div class="step-item"><div class="step-num">4</div><div class="step-content"><strong><span class="tipo tipo-emprendedor">Emprendedor</span> Producto destacado Halloween</strong><p>Producto estrella de la colección, precio mayorista. CTA: web.</p></div></div>
+          <div class="step-item"><div class="step-num">5</div><div class="step-content"><strong><span class="tipo tipo-lanzamiento">Lanzamiento</span> Halloween en Familia Gerpar</strong><p>Carrusel con looks para toda la familia. CTA dual.</p></div></div>
+          <div class="step-item"><div class="step-num">6</div><div class="step-content"><strong><span class="tipo tipo-alcance">Alcance</span> Reel temático octubre</strong><p>Tono divertido — aquí se activan los influencers creativos con producto enviado.</p></div></div>
+          <div class="step-item"><div class="step-num">7</div><div class="step-content"><strong><span class="tipo tipo-emprendedor">Emprendedor</span> Educativo — preparar diciembre</strong><p>"Por qué octubre es el mejor mes para empezar a preparar tu inventario de diciembre."</p></div></div>
+          <div class="step-item"><div class="step-num">8</div><div class="step-content"><strong><span class="tipo tipo-mayorista">Mayorista</span> Anticipo de noviembre</strong><p>"Antes de que llegue noviembre, asegure su próximo pedido. Cupos limitados."</p></div></div>
+        </div>
+
+        <div class="stories-section">
+          <p class="stories-label">Historias — 3 por semana</p>
+          <div class="story-weeks">
+            <div class="story-week">
+              <p class="story-week-label">Semana 1</p>
+              <div class="story-item"><span class="s-tag s-a">A</span><span>"Halloween en Familia ya está en bodega."</span></div>
+              <div class="story-item"><span class="s-tag s-b">B</span><span>"Este disfraz casero con ropa Gerpar quedó genial."</span></div>
+              <div class="story-item"><span class="s-tag s-c">C</span><span>"¿Qué se va a disfrazar tu hijo este año?"</span></div>
+            </div>
+            <div class="story-week">
+              <p class="story-week-label">Semana 2</p>
+              <div class="story-item"><span class="s-tag s-a">A</span><span>"Surta ahora, Halloween se acerca rápido."</span></div>
+              <div class="story-item"><span class="s-tag s-b">B</span><span>"Combo Halloween en Familia disponible en la web."</span></div>
+              <div class="story-item"><span class="s-tag s-c">C</span><span>"Mira lo que hizo @[influencer] con la camiseta que le enviamos."</span></div>
+            </div>
+            <div class="story-week">
+              <p class="story-week-label">Semana 3</p>
+              <div class="story-item"><span class="s-tag s-a">A</span><span>"Últimos días para surtir antes de Halloween."</span></div>
+              <div class="story-item"><span class="s-tag s-b">B</span><span>"Producto destacado: el más pedido esta semana."</span></div>
+              <div class="story-item"><span class="s-tag s-c">C</span><span>"Comparte tu disfraz con ropa Gerpar."</span></div>
+            </div>
+            <div class="story-week">
+              <p class="story-week-label">Semana 4</p>
+              <div class="story-item"><span class="s-tag s-a">A</span><span>"Halloween terminó, pero diciembre ya viene. Prepárese."</span></div>
+              <div class="story-item"><span class="s-tag s-b">B</span><span>"Aproveche los combos de octubre antes de que cambien."</span></div>
+              <div class="story-item"><span class="s-tag s-c">C</span><span>"Gracias por un octubre lleno de creatividad."</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ───── NOVIEMBRE ───── -->
+      <div class="card" style="margin-bottom:12px;">
+        <div class="month-header">
+          <span class="month-badge">Noviembre</span>
+          <span class="month-theme">Festival de Ofertas (1–14) · Navidad + Black Friday + Cyber Monday (15–30)</span>
+        </div>
+
+        <div class="pac-section">
+          <p class="pac-label">Campañas activas (PAC) + eventos especiales</p>
+          <div class="pac-item"><span class="pac-dot">◆</span><span><strong>Festival de Ofertas Gerpar y Mi Puupa</strong> — 1 al 14 de noviembre</span></div>
+          <div class="pac-item"><span class="pac-dot">◆</span><span><strong>Campaña Navidad: Regalos que Unen</strong> — arranca el 15 de noviembre</span></div>
+          <div class="pac-item"><span class="pac-dot">◆</span><span><strong>Black Friday</strong> — 27 de noviembre</span></div>
+          <div class="pac-item"><span class="pac-dot">◆</span><span><strong>Cyber Monday</strong> — 30 de noviembre</span></div>
+        </div>
+
+        <p style="font-size:10px; font-weight:700; letter-spacing:0.15em; text-transform:uppercase; color:#555; margin-bottom:12px;">Días 1–14 — Festival de Ofertas</p>
+        <div class="stack" style="margin-bottom:16px;">
+          <div class="step-item"><div class="step-num">1</div><div class="step-content"><strong><span class="tipo tipo-mayorista">Mayorista</span> Festival de Ofertas</strong><p>"El Festival de Ofertas Gerpar y Mi Puupa ya empezó. Precios mayoristas especiales en todas las categorías."</p></div></div>
+          <div class="step-item"><div class="step-num">2</div><div class="step-content"><strong><span class="tipo tipo-mayorista">Mayorista</span> Dato del año anterior</strong><p>"El año pasado, nuestros clientes mayoristas duplicaron su pedido durante el Festival. Esto fue lo que pasó."</p></div></div>
+          <div class="step-item"><div class="step-num">3</div><div class="step-content"><strong><span class="tipo tipo-emprendedor">Emprendedor</span> Combo Festival de Ofertas</strong><p>"Surte tu negocio en todas las categorías desde $500.000." CTA: WhatsApp.</p></div></div>
+          <div class="step-item"><div class="step-num">4</div><div class="step-content"><strong><span class="tipo tipo-emprendedor">Emprendedor</span> Producto en oferta</strong><p>Precio mayorista visible y llamativo. CTA: web.</p></div></div>
+        </div>
+
+        <p style="font-size:10px; font-weight:700; letter-spacing:0.15em; text-transform:uppercase; color:#555; margin-bottom:12px;">Días 15–30 — Navidad + Black Friday + Cyber Monday</p>
+        <div class="stack" style="margin-bottom:0;">
+          <div class="step-item"><div class="step-num">5</div><div class="step-content"><strong><span class="tipo tipo-lanzamiento">Lanzamiento</span> Regalos que Unen — Navidad Gerpar</strong><p>"Ya llegó. Sea de los primeros en tenerlo." CTA dual.</p></div></div>
+          <div class="step-item"><div class="step-num">6</div><div class="step-content"><strong><span class="tipo tipo-alcance">Black Friday</span> Solo por hoy</strong><p>"Black Friday Gerpar: precios mayoristas que no se repiten en todo el año. Solo por hoy." — Pieza de máxima urgencia, pautada.</p></div></div>
+          <div class="step-item"><div class="step-num">7</div><div class="step-content"><strong><span class="tipo tipo-emprendedor">Cyber Monday</span> Combo del año</strong><p>"Cyber Monday Gerpar: el combo emprendedor más grande del año, solo disponible hoy en la web."</p></div></div>
+          <div class="step-item"><div class="step-num">8</div><div class="step-content"><strong><span class="tipo tipo-mayorista">Mayorista</span> Cierre de noviembre</strong><p>"Noviembre se acaba. Asegure su pedido de Navidad antes de que se agoten las referencias top."</p></div></div>
+        </div>
+
+        <div class="stories-section">
+          <p class="stories-label">Historias — 3 por semana</p>
+          <div class="story-weeks">
+            <div class="story-week">
+              <p class="story-week-label">Semana 1 — días 1–7, Festival activo</p>
+              <div class="story-item"><span class="s-tag s-a">A</span><span>"¡Empezó el Festival de Ofertas! Precios mayoristas especiales esta semana."</span></div>
+              <div class="story-item"><span class="s-tag s-b">B</span><span>"Producto en oferta: mira este combo imperdible."</span></div>
+              <div class="story-item"><span class="s-tag s-c">C</span><span>"¿Qué categoría necesitas surtir más: niños, bebés, mujer u hombre?"</span></div>
+            </div>
+            <div class="story-week">
+              <p class="story-week-label">Semana 2 — días 8–14, cierre del Festival</p>
+              <div class="story-item"><span class="s-tag s-a">A</span><span>"Últimos días del Festival de Ofertas. No se quede sin aprovecharlo."</span></div>
+              <div class="story-item"><span class="s-tag s-b">B</span><span>"Combo Festival todavía disponible en la web."</span></div>
+              <div class="story-item"><span class="s-tag s-c">C</span><span>"Gracias por un Festival de Ofertas lleno de pedidos."</span></div>
+            </div>
+            <div class="story-week">
+              <p class="story-week-label">Semana 3 — días 15–21, arranca Navidad</p>
+              <div class="story-item"><span class="s-tag s-a">A</span><span>"¡Llegó Navidad Gerpar! Regalos que Unen ya está en bodega."</span></div>
+              <div class="story-item"><span class="s-tag s-b">B</span><span>"Primera referencia de Navidad disponible en la web."</span></div>
+              <div class="story-item"><span class="s-tag s-c">C</span><span>"Faltan días para Black Friday Gerpar. Prepárate."</span></div>
+            </div>
+            <div class="story-week">
+              <p class="story-week-label">Semana 4 — días 22–30, Black Friday + Cyber Monday</p>
+              <div class="story-item"><span class="s-tag s-a">A</span><span>"Black Friday Gerpar es este viernes. Las mejores referencias, al mejor precio mayorista."</span></div>
+              <div class="story-item"><span class="s-tag s-b">B</span><span>"¡Hoy es Black Friday! Escríbenos antes de que se agoten las unidades."</span></div>
+              <div class="story-item"><span class="s-tag s-c">C</span><span>"Cyber Monday cierra el mes: último combo del año, solo hoy en la web."</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ───── DICIEMBRE ───── -->
+      <div class="card featured">
+        <div class="month-header">
+          <span class="month-badge">Diciembre</span>
+          <span class="month-theme">Navidad Regalos que Unen (hasta 24 dic) + Regreso a Actividades (desde 25–26 dic)</span>
+        </div>
+
+        <div class="pac-section">
+          <p class="pac-label">Campañas activas (PAC)</p>
+          <div class="pac-item"><span class="pac-dot">◆</span><span><strong>Campaña Navidad: Regalos que Unen, Navidad Gerpar</strong> — continúa hasta el 24 de diciembre</span></div>
+          <div class="pac-item"><span class="pac-dot">◆</span><span><strong>Regreso a Actividades con Gerpar</strong> — arranca el 25–26 de diciembre (hasta mediados de feb 2026) · Público: niños, mujer, hombre</span></div>
+        </div>
+
+        <div class="stack" style="margin-bottom:0;">
+          <div class="step-item"><div class="step-num">1</div><div class="step-content"><strong><span class="tipo tipo-mayorista">Mayorista</span> El mes más grande del año</strong><p>"Diciembre es el mes de mayor venta del año. ¿Ya tiene su vitrina lista?"</p></div></div>
+          <div class="step-item"><div class="step-num">2</div><div class="step-content"><strong><span class="tipo tipo-mayorista">Mayorista</span> Testimonio de fin de año</strong><p>Cliente que vendió bien gracias a surtirse con tiempo en noviembre.</p></div></div>
+          <div class="step-item"><div class="step-num">3</div><div class="step-content"><strong><span class="tipo tipo-emprendedor">Emprendedor</span> Combo Navidad</strong><p>"Outfits de fiesta desde $500.000." CTA: WhatsApp.</p></div></div>
+          <div class="step-item"><div class="step-num">4</div><div class="step-content"><strong><span class="tipo tipo-emprendedor">Emprendedor</span> Producto fiesta destacado</strong><p>Vestido o conjunto de fiesta, precio mayorista. CTA: web.</p></div></div>
+          <div class="step-item"><div class="step-num">5</div><div class="step-content"><strong><span class="tipo tipo-lanzamiento">Lanzamiento</span> Regalos que Unen, Navidad Gerpar</strong><p>Carrusel completo de la colección. CTA dual.</p></div></div>
+          <div class="step-item"><div class="step-num">6</div><div class="step-content"><strong><span class="tipo tipo-alcance">Alcance</span> Looks de fin de año</strong><p>Reel de tendencia con influencers.</p></div></div>
+          <div class="step-item"><div class="step-num">7</div><div class="step-content"><strong><span class="tipo tipo-emprendedor">Emprendedor</span> Educativo — enero sin crisis</strong><p>"Cómo vender más en diciembre sin quedarte sin inventario en enero."</p></div></div>
+          <div class="step-item"><div class="step-num">8</div><div class="step-content"><strong><span class="tipo tipo-mayorista">Mayorista</span> Cierre de año</strong><p>"Gracias por un año de confianza. Hagamos que el próximo año sea aún más grande para su negocio." — Sin venta directa, abre la puerta a Regreso a Actividades en enero.</p></div></div>
+        </div>
+
+        <div class="stories-section">
+          <p class="stories-label">Historias — 3 por semana</p>
+          <div class="story-weeks">
+            <div class="story-week">
+              <p class="story-week-label">Semana 1</p>
+              <div class="story-item"><span class="s-tag s-a">A</span><span>"Navidad Gerpar en su mejor momento. Surta ahora."</span></div>
+              <div class="story-item"><span class="s-tag s-b">B</span><span>"Este vestido de fiesta se está agotando."</span></div>
+              <div class="story-item"><span class="s-tag s-c">C</span><span>"¿Cuál es tu look navideño favorito de la colección?"</span></div>
+            </div>
+            <div class="story-week">
+              <p class="story-week-label">Semana 2</p>
+              <div class="story-item"><span class="s-tag s-a">A</span><span>"Quedan pocos días para surtir antes de la Nochebuena."</span></div>
+              <div class="story-item"><span class="s-tag s-b">B</span><span>"Combo Navidad todavía disponible."</span></div>
+              <div class="story-item"><span class="s-tag s-c">C</span><span>"Mira cómo armaron este outfit nuestros seguidores."</span></div>
+            </div>
+            <div class="story-week">
+              <p class="story-week-label">Semana 3</p>
+              <div class="story-item"><span class="s-tag s-a">A</span><span>"Última semana de Navidad Gerpar. No se quede sin stock."</span></div>
+              <div class="story-item"><span class="s-tag s-b">B</span><span>"Producto más vendido de la colección esta semana."</span></div>
+              <div class="story-item"><span class="s-tag s-c">C</span><span>"Feliz Navidad de parte de todo el equipo Gerpar."</span></div>
+            </div>
+            <div class="story-week">
+              <p class="story-week-label">Semana 4 — arranca Regreso a Actividades</p>
+              <div class="story-item"><span class="s-tag s-a">A</span><span>"Gracias por un año increíble. Ya viene Regreso a Actividades."</span></div>
+              <div class="story-item"><span class="s-tag s-b">B</span><span>"Primeras referencias de regreso a clases y rutina, próximamente."</span></div>
+              <div class="story-item"><span class="s-tag s-c">C</span><span>"¿Qué quieres ver en Gerpar el próximo año?"</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
   </section>
 
@@ -610,18 +686,18 @@
           <p style="font-size:40px; margin-bottom:16px;">👗</p>
           <p class="section-label" style="display:block; text-align:center;">Resumen ejecutivo</p>
           <h2 style="font-size:clamp(22px,3.5vw,36px); letter-spacing:-0.04em; line-height:1.2; max-width:640px; margin:12px auto 20px;">
-            56 piezas. 7 meses. Un sistema para que <em style="color:var(--purple); font-style:normal;">Gerpar venda en tres velocidades.</em>
+            56 piezas de feed. 84 historias. <em style="color:var(--purple); font-style:normal;">Un sistema para vender en tres velocidades.</em>
           </h2>
           <p style="font-size:14px; color:#888; max-width:520px; margin:0 auto 28px; line-height:1.75;">
-            Cada pieza tiene un público, un objetivo y un canal de conversión. No se publica por llenar el calendario — se publica para mover a cada tipo de cliente al siguiente paso de su proceso de compra.
+            Cada pieza tiene un público, un objetivo y un canal de conversión. Cada historia tiene un ángulo. No se publica por llenar el calendario — se publica para mover a cada tipo de cliente al siguiente paso.
           </p>
         </div>
         <hr class="card-divider"/>
         <div style="display:grid; grid-template-columns:repeat(4,1fr);">
           <div class="stat-block"><p class="stat-num">8</p><p class="stat-label">Piezas al mes</p></div>
+          <div class="stat-block"><p class="stat-num">12</p><p class="stat-label">Historias al mes</p></div>
           <div class="stat-block"><p class="stat-num">3</p><p class="stat-label">Públicos simultáneos</p></div>
-          <div class="stat-block"><p class="stat-num">3</p><p class="stat-label">Piezas pautadas/mes</p></div>
-          <div class="stat-block"><p class="stat-num">4</p><p class="stat-label">Influencers fijos del año</p></div>
+          <div class="stat-block"><p class="stat-num">7</p><p class="stat-label">Campañas en el semestre</p></div>
         </div>
       </div>
     </div>

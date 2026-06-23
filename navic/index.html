@@ -1,0 +1,1072 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Estrategia Digital — Navic</title>
+  <meta property="og:title" content="Estrategia Digital — Navic" />
+  <meta property="og:description" content="Estrategia de marketing digital para Navic — chaquetas acolchadas colombianas." />
+  <meta property="og:image" content="https://conectux.github.io/estrategias-conectux/Imagenes/url-send.png" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://conectux.github.io/estrategias-conectux/Imagenes/url-send.png" />
+  <link rel="icon" type="image/png" href="../Imagenes/favicon.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Satoshi:wght@300;400;500;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --noir: #111111;
+      --purple: #a100ff;
+      --purple2: #c040ff;
+      --white: #ffffff;
+      --mid: #1c1c1c;
+      --mid2: #252525;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--noir);
+      color: var(--white);
+      font-family: "Satoshi", sans-serif;
+      font-weight: 400;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    h1, h2, h3, h4 { font-family: "Satoshi", sans-serif; font-weight: 700; letter-spacing: -0.03em; }
+    .container { max-width: 900px; margin: 0 auto; padding: 0 32px; }
+
+    /* HEADER */
+    header { padding: 40px 0 0; }
+    .header-inner {
+      display: flex; align-items: center; justify-content: space-between;
+      padding-bottom: 32px; border-bottom: 1px solid #2a2a2a;
+    }
+    .tag-doc {
+      font-size: 11px; font-weight: 500; letter-spacing: 0.15em;
+      text-transform: uppercase; color: var(--purple);
+      border: 1px solid var(--purple); padding: 5px 12px; border-radius: 20px;
+    }
+
+    /* HERO */
+    .hero { padding: 64px 0 48px; position: relative; overflow: hidden; }
+    .hero::before {
+      content: ""; position: absolute; top: -60px; right: -120px;
+      width: 480px; height: 480px;
+      background: radial-gradient(circle, rgba(161,0,255,0.15) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .hero-label {
+      display: inline-block; font-size: 11px; font-weight: 600;
+      letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--purple); margin-bottom: 20px;
+    }
+    .hero h1 {
+      font-size: clamp(28px, 4.5vw, 50px); line-height: 1.05;
+      letter-spacing: -0.04em; margin-bottom: 16px; max-width: 700px;
+    }
+    .hero h1 em { font-style: normal; color: var(--purple); }
+    .hero-sub { font-size: 15px; color: #999; max-width: 580px; line-height: 1.75; }
+    .btn-calendar {
+      display: inline-flex; align-items: center; gap: 8px;
+      margin-top: 28px;
+      padding: 12px 22px; border-radius: 10px;
+      background: rgba(161,0,255,0.12); border: 1px solid rgba(161,0,255,0.4);
+      color: var(--purple); font-family: "Satoshi", sans-serif;
+      font-size: 13px; font-weight: 600; letter-spacing: 0.01em;
+      text-decoration: none; cursor: pointer;
+      transition: background 0.18s, border-color 0.18s, transform 0.15s;
+    }
+    .btn-calendar:hover { background: rgba(161,0,255,0.22); border-color: rgba(161,0,255,0.7); transform: translateY(-1px); }
+    .btn-calendar svg { flex-shrink: 0; }
+
+    /* SECTIONS */
+    .section-block {
+      padding: 56px 0;
+      border-top: 1px solid #1e1e1e;
+    }
+    .section-label {
+      font-size: 10px; font-weight: 600; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--purple); margin-bottom: 10px;
+    }
+    .section-title {
+      font-size: clamp(22px, 3vw, 32px); font-weight: 700;
+      letter-spacing: -0.03em; margin-bottom: 8px;
+    }
+    .section-title em { font-style: normal; color: var(--purple); }
+    .section-desc { font-size: 14px; color: #777; margin-bottom: 32px; line-height: 1.6; }
+
+    /* CARDS */
+    .card {
+      background: var(--mid); border: 1px solid #2a2a2a;
+      border-radius: 16px; padding: 28px;
+    }
+    .card-title { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--purple); margin-bottom: 12px; }
+
+    /* GRIDS */
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; }
+
+    /* CONTENT ITEMS */
+    .content-item {
+      display: flex; align-items: flex-start; gap: 12px;
+      padding: 12px 0; border-bottom: 1px solid #222;
+    }
+    .content-item:last-child { border-bottom: none; }
+    .content-badge {
+      flex-shrink: 0; width: 24px; height: 24px; border-radius: 6px;
+      font-size: 10px; font-weight: 700; display: flex; align-items: center; justify-content: center;
+    }
+    .badge-v { background: rgba(161,0,255,0.2); color: var(--purple); }
+    .badge-i { background: rgba(0,200,100,0.15); color: #00c864; }
+    .badge-e { background: rgba(255,160,0,0.15); color: #ffa000; }
+    .content-text { font-size: 13px; line-height: 1.5; color: #ccc; }
+
+    /* BULLET ITEMS */
+    .bullet-item {
+      display: flex; align-items: flex-start; gap: 10px;
+      padding: 8px 0; font-size: 13px; color: #ccc; line-height: 1.5;
+    }
+    .bullet-dot {
+      flex-shrink: 0; width: 6px; height: 6px; border-radius: 50%;
+      background: var(--purple); margin-top: 7px;
+    }
+
+    /* MONTH CARDS */
+    .month-card {
+      background: var(--mid); border: 1px solid #2a2a2a;
+      border-radius: 20px; padding: 32px; margin-bottom: 16px;
+    }
+    .month-header {
+      display: flex; align-items: baseline; gap: 12px; margin-bottom: 24px;
+      padding-bottom: 20px; border-bottom: 1px solid #252525;
+    }
+    .month-number {
+      font-size: 11px; font-weight: 700; letter-spacing: 0.15em;
+      text-transform: uppercase; color: var(--purple);
+    }
+    .month-name {
+      font-size: 24px; font-weight: 700; letter-spacing: -0.03em;
+    }
+    .month-focus {
+      font-size: 13px; color: #666; margin-left: auto;
+      text-align: right; max-width: 240px; line-height: 1.4;
+    }
+    .month-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .month-col-title {
+      font-size: 10px; font-weight: 700; letter-spacing: 0.15em;
+      text-transform: uppercase; color: #555; margin-bottom: 12px;
+    }
+
+    /* STAT CARDS */
+    .stat-card {
+      background: var(--mid2); border: 1px solid #2a2a2a;
+      border-radius: 12px; padding: 20px; text-align: center;
+    }
+    .stat-number { font-size: 28px; font-weight: 700; color: var(--purple); letter-spacing: -0.04em; }
+    .stat-label { font-size: 11px; color: #666; margin-top: 4px; }
+
+    /* PILAR CARDS */
+    .pilar-card {
+      background: var(--mid); border: 1px solid #2a2a2a;
+      border-radius: 16px; padding: 24px;
+    }
+    .pilar-pct { font-size: 36px; font-weight: 700; letter-spacing: -0.04em; margin-bottom: 4px; }
+    .pilar-name { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 8px; }
+    .pilar-desc { font-size: 12px; color: #777; line-height: 1.5; }
+
+    /* HIGHLIGHT BOX */
+    .highlight-box {
+      background: rgba(161,0,255,0.07); border: 1px solid rgba(161,0,255,0.2);
+      border-radius: 14px; padding: 24px 28px; margin-top: 20px;
+    }
+    .highlight-box p { font-size: 14px; color: #ccc; line-height: 1.7; }
+    .highlight-box strong { color: var(--white); }
+
+    /* PHASE BADGE */
+    .phase-tag {
+      display: inline-block; font-size: 10px; font-weight: 700;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      padding: 4px 10px; border-radius: 20px; margin-bottom: 8px;
+    }
+    .phase-1 { background: rgba(161,0,255,0.15); color: var(--purple); }
+    .phase-2 { background: rgba(0,180,220,0.15); color: #00b4dc; }
+    .phase-3 { background: rgba(255,160,0,0.15); color: #ffa000; }
+
+    /* METRIC ROW */
+    .metric-row {
+      display: flex; align-items: center; gap: 16px;
+      padding: 14px 0; border-bottom: 1px solid #1e1e1e;
+    }
+    .metric-row:last-child { border-bottom: none; }
+    .metric-icon {
+      width: 36px; height: 36px; border-radius: 10px; flex-shrink: 0;
+      background: rgba(161,0,255,0.12); display: flex; align-items: center; justify-content: center;
+      font-size: 16px;
+    }
+    .metric-info { flex: 1; }
+    .metric-name { font-size: 13px; font-weight: 600; margin-bottom: 2px; }
+    .metric-detail { font-size: 12px; color: #666; }
+    .metric-target { font-size: 13px; font-weight: 700; color: var(--purple); }
+
+    /* INFLUENCER CATEGORY */
+    .inf-card {
+      background: var(--mid); border: 1px solid #2a2a2a; border-radius: 16px; padding: 22px;
+    }
+    .inf-type { font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--purple); margin-bottom: 6px; }
+    .inf-name { font-size: 16px; font-weight: 700; margin-bottom: 8px; }
+    .inf-detail { font-size: 12px; color: #777; line-height: 1.5; }
+
+    /* FOOTER */
+    footer { padding: 48px 0 32px; border-top: 1px solid #1e1e1e; }
+    .footer-inner { display: flex; flex-direction: column; gap: 20px; }
+    .footer-top { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+    .footer-logo { font-size: 20px; font-weight: 700; letter-spacing: -0.04em; text-transform: lowercase; color: var(--white); }
+    .footer-logo em { font-style: normal; color: var(--purple); }
+    .footer-contact a { color: var(--purple); text-decoration: none; font-size: 14px; font-weight: 500; }
+    .footer-bottom {
+      font-size: 12px; color: #444; padding-top: 20px;
+      border-top: 1px solid #1e1e1e;
+      display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px;
+    }
+
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+    .hero > * { animation: fadeUp 0.6s ease both; }
+    .hero > *:nth-child(2) { animation-delay: 0.1s; }
+    .hero > *:nth-child(3) { animation-delay: 0.2s; }
+    .hero > *:nth-child(4) { animation-delay: 0.3s; }
+
+    @media (max-width: 640px) {
+      .container { padding: 0 20px; }
+      .header-inner { flex-direction: column; align-items: flex-start; gap: 16px; }
+      .grid-2 { grid-template-columns: 1fr; }
+      .grid-3 { grid-template-columns: 1fr; }
+      .month-grid { grid-template-columns: 1fr; }
+      .month-focus { margin-left: 0; text-align: left; }
+      .footer-top { flex-direction: column; align-items: flex-start; }
+      .footer-bottom { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="container">
+      <div class="header-inner">
+        <a href="../" style="text-decoration:none;">
+          <img src="../Imagenes/logo.png" alt="Conectux" style="height:38px; width:auto;" />
+        </a>
+        <span class="tag-doc">Estrategia Digital 2026</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <span class="hero-label">Navic — Iván Camacho</span>
+      <h1>Chaquetas que <em>visten con propósito</em> — calidad colombiana al precio justo.</h1>
+      <p class="hero-sub">Estrategia de marketing digital Julio — Diciembre 2026. Posicionamiento de marca, comunidad, influencer marketing y pauta digital para llevar Navic al siguiente nivel.</p>
+      <a class="btn-calendar" href="#calendario">
+        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2">
+          <rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/>
+        </svg>
+        Ver calendario de publicaciones
+      </a>
+    </div>
+  </section>
+
+  <!-- PARTE 1: DIAGNÓSTICO DE MARCA -->
+  <section class="section-block">
+    <div class="container">
+      <p class="section-label">01 — Diagnóstico</p>
+      <h2 class="section-title">Diagnóstico de <em>Marca</em></h2>
+      <p class="section-desc">Punto de partida: quiénes somos, qué tenemos y hacia dónde vamos.</p>
+
+      <div class="grid-2" style="margin-bottom:16px;">
+        <div class="card">
+          <p class="card-title">Fortalezas clave</p>
+          <div class="bullet-item"><div class="bullet-dot"></div><span>Más de 15 años de experiencia en la industria textil colombiana</span></div>
+          <div class="bullet-item"><div class="bullet-dot"></div><span>Fabricantes directos — control total sobre calidad y precio</span></div>
+          <div class="bullet-item"><div class="bullet-dot"></div><span>Portafolio amplio: chaquetas acolchadas, impermeables y casuales</span></div>
+          <div class="bullet-item"><div class="bullet-dot"></div><span>Precios competitivos sin sacrificar calidad</span></div>
+          <div class="bullet-item"><div class="bullet-dot"></div><span>Clientes mayoristas fidelizados con recompras frecuentes</span></div>
+        </div>
+        <div class="card">
+          <p class="card-title">Oportunidades de mejora</p>
+          <div class="bullet-item"><div class="bullet-dot"></div><span>Presencia digital prácticamente desde cero — alto potencial de crecimiento orgánico</span></div>
+          <div class="bullet-item"><div class="bullet-dot"></div><span>Sin identidad visual consolidada (logo, paleta, tipografía)</span></div>
+          <div class="bullet-item"><div class="bullet-dot"></div><span>Falta de contenido fotográfico profesional del producto</span></div>
+          <div class="bullet-item"><div class="bullet-dot"></div><span>Comunicación dispersa sin un mensaje central unificado</span></div>
+          <div class="bullet-item"><div class="bullet-dot"></div><span>Canal de ventas B2C subdesarrollado frente al B2B</span></div>
+        </div>
+      </div>
+
+      <div class="highlight-box">
+        <p><strong>Conclusión:</strong> Navic tiene el músculo productivo y la experiencia para competir en el mercado masivo. El trabajo ahora es <strong>construir la narrativa de marca</strong> que conecte ese saber-hacer con el consumidor final y posicione a Navic como la primera opción en chaquetas acolchadas colombianas.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PARTE 2: COMPETENCIA -->
+  <section class="section-block">
+    <div class="container">
+      <p class="section-label">02 — Competencia</p>
+      <h2 class="section-title">Análisis de <em>Competencia</em></h2>
+      <p class="section-desc">Dónde estamos parados frente al mercado y qué podemos aprender.</p>
+
+      <div class="grid-3" style="margin-bottom:24px;">
+        <div class="card">
+          <p class="card-title">Maure</p>
+          <div class="bullet-item"><div class="bullet-dot"></div><span>Fuerte en Instagram, contenido aspiracional</span></div>
+          <div class="bullet-item"><div class="bullet-dot"></div><span>Precio medio-alto, apunta a segmento urbano premium</span></div>
+          <div class="bullet-item"><div class="bullet-dot"></div><span>Débil en precio competitivo para mayoristas</span></div>
+        </div>
+        <div class="card">
+          <p class="card-title">Inti</p>
+          <div class="bullet-item"><div class="bullet-dot"></div><span>Enfoque en clima frío, buena presencia en Bogotá</span></div>
+          <div class="bullet-item"><div class="bullet-dot"></div><span>Marca establecida pero comunicación tradicional</span></div>
+          <div class="bullet-item"><div class="bullet-dot"></div><span>Poca interacción en redes sociales</span></div>
+        </div>
+        <div class="card">
+          <p class="card-title">Dukop</p>
+          <div class="bullet-item"><div class="bullet-dot"></div><span>Precio bajo, volumen alto</span></div>
+          <div class="bullet-item"><div class="bullet-dot"></div><span>Calidad percibida baja — oportunidad para Navic</span></div>
+          <div class="bullet-item"><div class="bullet-dot"></div><span>Muy poca diferenciación de marca</span></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <p class="card-title">Referente aspiracional: Arturo Calle</p>
+        <p style="font-size:13px;color:#aaa;line-height:1.7;">Aunque juega en otra liga de precio, Arturo Calle demuestra que una marca colombiana de ropa puede construir <strong style="color:#fff;">identidad emocional fuerte</strong> y lealtad de largo plazo. La clave: consistencia en comunicación, calidad narrativa del contenido y presencia omnicanal. Navic puede replicar esa coherencia en su escala.</p>
+      </div>
+
+      <div class="highlight-box">
+        <p><strong>Brecha a capitalizar:</strong> Ningún competidor directo combina <strong>precio justo + fabricación colombiana + marca con propósito</strong>. Esa intersección es el territorio de Navic.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PARTE 3: CLIENTE IDEAL -->
+  <section class="section-block">
+    <div class="container">
+      <p class="section-label">03 — Cliente Ideal</p>
+      <h2 class="section-title">Avatar del <em>Cliente</em></h2>
+      <p class="section-desc">Dos perfiles, dos conversaciones, un solo corazón de marca.</p>
+
+      <div class="grid-2">
+        <div class="card" style="border-color: rgba(161,0,255,0.3);">
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;">
+            <div style="width:44px;height:44px;border-radius:12px;background:rgba(161,0,255,0.15);display:flex;align-items:center;justify-content:center;font-size:22px;">🧥</div>
+            <div>
+              <p style="font-size:10px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:var(--purple);margin-bottom:2px;">Avatar 1</p>
+              <p style="font-size:15px;font-weight:700;">Comerciante Mayorista</p>
+            </div>
+          </div>
+          <div class="bullet-item"><div class="bullet-dot"></div><span><strong style="color:#fff;">Edad:</strong> 30–50 años</span></div>
+          <div class="bullet-item"><div class="bullet-dot"></div><span><strong style="color:#fff;">Perfil:</strong> Dueño de tienda, distribuidor o vendedor independiente</span></div>
+          <div class="bullet-item"><div class="bullet-dot"></div><span><strong style="color:#fff;">Motivación:</strong> Máximo margen, calidad garantizada y cumplimiento en entregas</span></div>
+          <div class="bullet-item"><div class="bullet-dot"></div><span><strong style="color:#fff;">Dolor:</strong> Proveedores que fallan en calidad o tallas</span></div>
+          <div class="bullet-item"><div class="bullet-dot"></div><span><strong style="color:#fff;">Canal:</strong> WhatsApp Business, catálogos digitales</span></div>
+          <div class="bullet-item"><div class="bullet-dot"></div><span><strong style="color:#fff;">Mensaje clave:</strong> "Tu negocio crece cuando tienes el mejor producto al mejor precio"</span></div>
+        </div>
+
+        <div class="card" style="border-color: rgba(0,200,100,0.3);">
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;">
+            <div style="width:44px;height:44px;border-radius:12px;background:rgba(0,200,100,0.12);display:flex;align-items:center;justify-content:center;font-size:22px;">✨</div>
+            <div>
+              <p style="font-size:10px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:#00c864;margin-bottom:2px;">Avatar 2</p>
+              <p style="font-size:15px;font-weight:700;">Consumidor Final Estiloso</p>
+            </div>
+          </div>
+          <div class="bullet-item"><div class="bullet-dot"></div><span><strong style="color:#fff;">Edad:</strong> 20–40 años</span></div>
+          <div class="bullet-item"><div class="bullet-dot"></div><span><strong style="color:#fff;">Perfil:</strong> Persona urbana activa, consciente de moda pero precio-sensible</span></div>
+          <div class="bullet-item"><div class="bullet-dot"></div><span><strong style="color:#fff;">Motivación:</strong> Verse bien sin gastar demás, apoyar lo colombiano</span></div>
+          <div class="bullet-item"><div class="bullet-dot"></div><span><strong style="color:#fff;">Dolor:</strong> Opciones importadas caras o calidad baja en lo asequible</span></div>
+          <div class="bullet-item"><div class="bullet-dot"></div><span><strong style="color:#fff;">Canal:</strong> Instagram, TikTok, recomendaciones de influencers</span></div>
+          <div class="bullet-item"><div class="bullet-dot"></div><span><strong style="color:#fff;">Mensaje clave:</strong> "Estilo colombiano que te abriga y te hace sentir bien"</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PARTE 4: POSICIONAMIENTO -->
+  <section class="section-block">
+    <div class="container">
+      <p class="section-label">04 — Posicionamiento</p>
+      <h2 class="section-title">Posicionamiento <em>Estratégico</em></h2>
+      <p class="section-desc">El lugar que Navic quiere ocupar en la mente y el corazón del cliente.</p>
+
+      <div class="card" style="border-color:rgba(161,0,255,0.3);margin-bottom:16px;">
+        <p class="card-title">Declaración de Posicionamiento</p>
+        <p style="font-size:18px;font-weight:700;letter-spacing:-0.02em;line-height:1.4;color:#fff;margin-bottom:12px;">"Navic democratiza el estilo en climas fríos — chaquetas colombianas que combinan calidad real con precios justos para que todos puedan abrigarse con orgullo."</p>
+      </div>
+
+      <div class="grid-3" style="margin-bottom:16px;">
+        <div class="card">
+          <p class="card-title">Territorio</p>
+          <p style="font-size:13px;color:#ccc;line-height:1.6;">Moda funcional accesible. Entre lo aspiracional de Arturo Calle y lo masivo de mercados informales.</p>
+        </div>
+        <div class="card">
+          <p class="card-title">Tono de Voz</p>
+          <div class="bullet-item"><div class="bullet-dot"></div><span>Cercano y auténtico</span></div>
+          <div class="bullet-item"><div class="bullet-dot"></div><span>Inspirador sin ser pretencioso</span></div>
+          <div class="bullet-item"><div class="bullet-dot"></div><span>Directo, claro y colombiano</span></div>
+        </div>
+        <div class="card">
+          <p class="card-title">Propuesta Única</p>
+          <div class="bullet-item"><div class="bullet-dot"></div><span>Hecho en Colombia ✓</span></div>
+          <div class="bullet-item"><div class="bullet-dot"></div><span>15+ años de experiencia ✓</span></div>
+          <div class="bullet-item"><div class="bullet-dot"></div><span>Precio justo garantizado ✓</span></div>
+        </div>
+      </div>
+
+      <div class="highlight-box">
+        <p><strong>Tagline propuesto:</strong> <em style="color:var(--purple)">"Navic — Abrígate con orgullo colombiano."</em></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PARTE 5: PILARES DE CONTENIDO -->
+  <section class="section-block">
+    <div class="container">
+      <p class="section-label">05 — Contenido</p>
+      <h2 class="section-title">Pilares de <em>Contenido</em></h2>
+      <p class="section-desc">Tres pilares que guían cada publicación y mantienen el equilibrio entre vender, conectar y emocionar.</p>
+
+      <div class="grid-3" style="margin-bottom:24px;">
+        <div class="pilar-card">
+          <p class="pilar-pct" style="color:var(--purple);">30%</p>
+          <p class="pilar-name">Venta</p>
+          <p class="pilar-desc">Presentación de productos, precios, promociones y catálogos. Orientado a conversión directa.</p>
+          <div style="margin-top:14px;">
+            <div class="bullet-item"><div class="bullet-dot"></div><span>Posts de producto con precio</span></div>
+            <div class="bullet-item"><div class="bullet-dot"></div><span>Catálogos por temporada</span></div>
+            <div class="bullet-item"><div class="bullet-dot"></div><span>Descuentos y lanzamientos</span></div>
+          </div>
+        </div>
+        <div class="pilar-card" style="border-color:rgba(0,200,100,0.2);">
+          <p class="pilar-pct" style="color:#00c864;">40%</p>
+          <p class="pilar-name">Interacción</p>
+          <p class="pilar-desc">Contenido que genera conversación, preguntas, encuestas y participación activa de la comunidad.</p>
+          <div style="margin-top:14px;">
+            <div class="bullet-item"><div class="bullet-dot"></div><span>¿Cuál modelo prefieres?</span></div>
+            <div class="bullet-item"><div class="bullet-dot"></div><span>Encuestas de temporada</span></div>
+            <div class="bullet-item"><div class="bullet-dot"></div><span>Tips de styling</span></div>
+          </div>
+        </div>
+        <div class="pilar-card" style="border-color:rgba(255,160,0,0.2);">
+          <p class="pilar-pct" style="color:#ffa000;">30%</p>
+          <p class="pilar-name">Emoción</p>
+          <p class="pilar-desc">Historias reales, behind-the-scenes, orgullo colombiano y narrativa de marca que conecta.</p>
+          <div style="margin-top:14px;">
+            <div class="bullet-item"><div class="bullet-dot"></div><span>Historia detrás de la marca</span></div>
+            <div class="bullet-item"><div class="bullet-dot"></div><span>Proceso de fabricación</span></div>
+            <div class="bullet-item"><div class="bullet-dot"></div><span>Testimonios de clientes</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <p class="card-title">Formatos Prioritarios</p>
+        <div class="grid-2">
+          <div>
+            <div class="bullet-item"><div class="bullet-dot"></div><span><strong style="color:#fff;">Reels (60%):</strong> Lookbooks, behind-the-scenes, tendencias</span></div>
+            <div class="bullet-item"><div class="bullet-dot"></div><span><strong style="color:#fff;">Carruseles (25%):</strong> Catálogos, comparativos, tips</span></div>
+          </div>
+          <div>
+            <div class="bullet-item"><div class="bullet-dot"></div><span><strong style="color:#fff;">Stories diarias:</strong> Precio del día, encuestas, reacciones</span></div>
+            <div class="bullet-item"><div class="bullet-dot"></div><span><strong style="color:#fff;">Lives (1/mes):</strong> Lanzamientos y temporadas especiales</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PARTE 6: ESTRATEGIA MES A MES -->
+  <section class="section-block" id="calendario">
+    <div class="container">
+      <p class="section-label">06 — Calendario</p>
+      <h2 class="section-title">Estrategia <em>Mes a Mes</em></h2>
+      <p class="section-desc">Segundo semestre 2026 — de la expectativa al cierre con momentum.</p>
+
+      <!-- JULIO -->
+      <div class="month-card">
+        <div class="month-header">
+          <span class="month-number">01</span>
+          <span class="month-name">Julio</span>
+          <span class="month-focus">Lanzamiento y expectativa — Navic nace digitalmente</span>
+        </div>
+        <div style="margin-bottom:16px;">
+          <span class="phase-tag phase-1">Fase de Lanzamiento</span>
+          <p style="font-size:13px;color:#888;line-height:1.6;margin-top:6px;"><strong style="color:#ccc;">Objetivo:</strong> Construir presencia digital desde cero y generar expectativa alrededor del lanzamiento de marca. Primera impresión sólida en Instagram y Facebook.</p>
+        </div>
+        <div class="month-grid">
+          <div>
+            <p class="month-col-title">Acciones del mes</p>
+            <div class="bullet-item"><div class="bullet-dot"></div><span>Crear y optimizar perfil Instagram + Facebook</span></div>
+            <div class="bullet-item"><div class="bullet-dot"></div><span>Semana previa: 3 posts de expectativa sin revelar el producto</span></div>
+            <div class="bullet-item"><div class="bullet-dot"></div><span>Lanzamiento oficial con Reel de presentación de marca</span></div>
+            <div class="bullet-item"><div class="bullet-dot"></div><span>Publicar catálogo de temporada invernal</span></div>
+            <div class="bullet-item"><div class="bullet-dot"></div><span>Activar WhatsApp Business con catálogo digital</span></div>
+          </div>
+          <div>
+            <p class="month-col-title">Contenido por pilar</p>
+            <div class="content-item">
+              <div class="content-badge badge-v">V</div>
+              <span class="content-text">Reel "Esta es Navic" — presentación de portafolio completo con precio</span>
+            </div>
+            <div class="content-item">
+              <div class="content-badge badge-i">I</div>
+              <span class="content-text">Encuesta: "¿Qué clima vives tú?" — conectar con clima frío de regiones</span>
+            </div>
+            <div class="content-item">
+              <div class="content-badge badge-e">E</div>
+              <span class="content-text">Video: La historia detrás de Navic — 15 años haciendo chaquetas colombianas</span>
+            </div>
+            <div class="content-item">
+              <div class="content-badge badge-v">V</div>
+              <span class="content-text">Carrusel de catálogo julio — modelos, colores y precios mayorista</span>
+            </div>
+            <div class="content-item">
+              <div class="content-badge badge-i">I</div>
+              <span class="content-text">Story "Descubre qué modelo eres tú" — interacción con stickers</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- AGOSTO -->
+      <div class="month-card">
+        <div class="month-header">
+          <span class="month-number">02</span>
+          <span class="month-name">Agosto</span>
+          <span class="month-focus">Comunidad y educación — construir confianza</span>
+        </div>
+        <div style="margin-bottom:16px;">
+          <span class="phase-tag phase-1">Fase de Construcción</span>
+          <p style="font-size:13px;color:#888;line-height:1.6;margin-top:6px;"><strong style="color:#ccc;">Objetivo:</strong> Crecer la comunidad en un 20%, generar primeras recompras y educar al mercado sobre los diferenciales de Navic vs. la competencia.</p>
+        </div>
+        <div class="month-grid">
+          <div>
+            <p class="month-col-title">Acciones del mes</p>
+            <div class="bullet-item"><div class="bullet-dot"></div><span>Activar primeros 2 micro-influencers de nicho</span></div>
+            <div class="bullet-item"><div class="bullet-dot"></div><span>Serie "¿Cómo se hace una chaqueta Navic?" — 4 episodios</span></div>
+            <div class="bullet-item"><div class="bullet-dot"></div><span>Campaña "Trae a tu distribuidor" — referidos B2B</span></div>
+            <div class="bullet-item"><div class="bullet-dot"></div><span>Live de lanzamiento con demostración de calidad</span></div>
+            <div class="bullet-item"><div class="bullet-dot"></div><span>Primeras reseñas de clientes mayoristas</span></div>
+          </div>
+          <div>
+            <p class="month-col-title">Contenido por pilar</p>
+            <div class="content-item">
+              <div class="content-badge badge-e">E</div>
+              <span class="content-text">Serie "Del taller a tu tienda" — proceso de fabricación en 4 Reels</span>
+            </div>
+            <div class="content-item">
+              <div class="content-badge badge-i">I</div>
+              <span class="content-text">"¿Qué es más importante en una chaqueta?" — encuesta de calidad vs. precio</span>
+            </div>
+            <div class="content-item">
+              <div class="content-badge badge-v">V</div>
+              <span class="content-text">Post "Mayorista, escríbenos" — CTA directo a WhatsApp con precios</span>
+            </div>
+            <div class="content-item">
+              <div class="content-badge badge-e">E</div>
+              <span class="content-text">Testimonio de distribuidor: "Por qué trabajo con Navic hace 5 años"</span>
+            </div>
+            <div class="content-item">
+              <div class="content-badge badge-i">I</div>
+              <span class="content-text">Live Q&A: preguntas sobre materiales, tallas y proceso de compra</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SEPTIEMBRE -->
+      <div class="month-card">
+        <div class="month-header">
+          <span class="month-number">03</span>
+          <span class="month-name">Septiembre</span>
+          <span class="month-focus">Autoridad y expansión — ser referente</span>
+        </div>
+        <div style="margin-bottom:16px;">
+          <span class="phase-tag phase-2">Fase de Autoridad</span>
+          <p style="font-size:13px;color:#888;line-height:1.6;margin-top:6px;"><strong style="color:#ccc;">Objetivo:</strong> Consolidar a Navic como voz autorizada en el nicho de ropa acolchada colombiana. Expandir alcance con colaboraciones y contenido de mayor producción.</p>
+        </div>
+        <div class="month-grid">
+          <div>
+            <p class="month-col-title">Acciones del mes</p>
+            <div class="bullet-item"><div class="bullet-dot"></div><span>Lanzar campaña de influencer marketing (3 perfiles)</span></div>
+            <div class="bullet-item"><div class="bullet-dot"></div><span>Publicar guía "Cómo elegir tu chaqueta perfecta"</span></div>
+            <div class="bullet-item"><div class="bullet-dot"></div><span>Primera sesión fotográfica profesional de producto</span></div>
+            <div class="bullet-item"><div class="bullet-dot"></div><span>Activar pauta Meta Ads con campaña de reconocimiento</span></div>
+            <div class="bullet-item"><div class="bullet-dot"></div><span>Colaboración con marca complementaria (bufandas, gorros)</span></div>
+          </div>
+          <div>
+            <p class="month-col-title">Contenido por pilar</p>
+            <div class="content-item">
+              <div class="content-badge badge-v">V</div>
+              <span class="content-text">Colección temporada alta — lookbook completo con 8 modelos</span>
+            </div>
+            <div class="content-item">
+              <div class="content-badge badge-i">I</div>
+              <span class="content-text">"¿Con qué lo combinas?" — tendencias de outfits con chaquetas Navic</span>
+            </div>
+            <div class="content-item">
+              <div class="content-badge badge-e">E</div>
+              <span class="content-text">Influencer unboxing + review auténtico — sin guion, sin filtros</span>
+            </div>
+            <div class="content-item">
+              <div class="content-badge badge-v">V</div>
+              <span class="content-text">Pauta: "Mayoristas, así funciona Navic" — video explainer 30s</span></div>
+            <div class="content-item">
+              <div class="content-badge badge-i">I</div>
+              <span class="content-text">Carrusel "5 razones por las que nuestros clientes vuelven siempre"</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- OCTUBRE -->
+      <div class="month-card">
+        <div class="month-header">
+          <span class="month-number">04</span>
+          <span class="month-name">Octubre</span>
+          <span class="month-focus">Ventas pico — máxima conversión</span>
+        </div>
+        <div style="margin-bottom:16px;">
+          <span class="phase-tag phase-2">Fase de Conversión</span>
+          <p style="font-size:13px;color:#888;line-height:1.6;margin-top:6px;"><strong style="color:#ccc;">Objetivo:</strong> Temporada alta de frío en Colombia. Máxima presión de ventas con promociones específicas para mayoristas y primeras campañas agresivas de pauta digital.</p>
+        </div>
+        <div class="month-grid">
+          <div>
+            <p class="month-col-title">Acciones del mes</p>
+            <div class="bullet-item"><div class="bullet-dot"></div><span>Campaña "Mes del frío" con descuento por volumen</span></div>
+            <div class="bullet-item"><div class="bullet-dot"></div><span>Aumentar pauta 30% vs. septiembre</span></div>
+            <div class="bullet-item"><div class="bullet-dot"></div><span>Serie de contenido de "urgencia y escasez" real</span></div>
+            <div class="bullet-item"><div class="bullet-dot"></div><span>Activar programa de embajadores de marca</span></div>
+            <div class="bullet-item"><div class="bullet-dot"></div><span>Email/WhatsApp masivo a base de clientes B2B</span></div>
+          </div>
+          <div>
+            <p class="month-col-title">Contenido por pilar</p>
+            <div class="content-item">
+              <div class="content-badge badge-v">V</div>
+              <span class="content-text">"Octubre frío = Navic" — campaña de temporada con precios especiales</span>
+            </div>
+            <div class="content-item">
+              <div class="content-badge badge-i">I</div>
+              <span class="content-text">Reto "Muéstranos tu look Navic" — UGC con premio para el mejor</span>
+            </div>
+            <div class="content-item">
+              <div class="content-badge badge-e">E</div>
+              <span class="content-text">"El equipo detrás de cada chaqueta" — humanizar la marca</span>
+            </div>
+            <div class="content-item">
+              <div class="content-badge badge-v">V</div>
+              <span class="content-text">Countdown "Últimas unidades a precio de temporada" — Stories diarias</span>
+            </div>
+            <div class="content-item">
+              <div class="content-badge badge-i">I</div>
+              <span class="content-text">Encuesta "¿Para quién compras?" — conectar con regalo y consumidor final</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- NOVIEMBRE -->
+      <div class="month-card">
+        <div class="month-header">
+          <span class="month-number">05</span>
+          <span class="month-name">Noviembre</span>
+          <span class="month-focus">Fidelización — clientes de por vida</span>
+        </div>
+        <div style="margin-bottom:16px;">
+          <span class="phase-tag phase-3">Fase de Retención</span>
+          <p style="font-size:13px;color:#888;line-height:1.6;margin-top:6px;"><strong style="color:#ccc;">Objetivo:</strong> Convertir compradores de octubre en clientes fieles. Preparar el terreno para diciembre con comunicación personalizada y contenido de valor exclusivo.</p>
+        </div>
+        <div class="month-grid">
+          <div>
+            <p class="month-col-title">Acciones del mes</p>
+            <div class="bullet-item"><div class="bullet-dot"></div><span>Programa de clientes frecuentes — beneficios exclusivos</span></div>
+            <div class="bullet-item"><div class="bullet-dot"></div><span>Black Friday: oferta especial para mayoristas registrados</span></div>
+            <div class="bullet-item"><div class="bullet-dot"></div><span>Campaña navideña de pre-temporada diciembre</span></div>
+            <div class="bullet-item"><div class="bullet-dot"></div><span>Activar retargeting a compradores de oct-nov</span></div>
+            <div class="bullet-item"><div class="bullet-dot"></div><span>Encuesta de satisfacción a clientes activos</span></div>
+          </div>
+          <div>
+            <p class="month-col-title">Contenido por pilar</p>
+            <div class="content-item">
+              <div class="content-badge badge-v">V</div>
+              <span class="content-text">Black Friday Navic — descuento exclusivo primeras 48h por WhatsApp</span>
+            </div>
+            <div class="content-item">
+              <div class="content-badge badge-i">I</div>
+              <span class="content-text">"¿Qué regalo de diciembre le gustaría?" — encuesta y teaser navideño</span>
+            </div>
+            <div class="content-item">
+              <div class="content-badge badge-e">E</div>
+              <span class="content-text">Recopilación de fotos de clientes usando Navic en el frío</span>
+            </div>
+            <div class="content-item">
+              <div class="content-badge badge-v">V</div>
+              <span class="content-text">Carrusel "Guía de regalos Navic para diciembre" — precio para cada presupuesto</span>
+            </div>
+            <div class="content-item">
+              <div class="content-badge badge-i">I</div>
+              <span class="content-text">Story: "Cuéntanos cómo te tratamos" — reseñas en tiempo real</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- DICIEMBRE -->
+      <div class="month-card">
+        <div class="month-header">
+          <span class="month-number">06</span>
+          <span class="month-name">Diciembre</span>
+          <span class="month-focus">Cierre y proyección — preparar el 2027</span>
+        </div>
+        <div style="margin-bottom:16px;">
+          <span class="phase-tag phase-3">Fase de Cierre</span>
+          <p style="font-size:13px;color:#888;line-height:1.6;margin-top:6px;"><strong style="color:#ccc;">Objetivo:</strong> Cerrar el semestre con ventas de temporada navideña, consolidar la comunidad y sentar las bases para el crecimiento del siguiente año.</p>
+        </div>
+        <div class="month-grid">
+          <div>
+            <p class="month-col-title">Acciones del mes</p>
+            <div class="bullet-item"><div class="bullet-dot"></div><span>Campaña de regalos navideños — kits especiales</span></div>
+            <div class="bullet-item"><div class="bullet-dot"></div><span>Cierre de ventas mayoristas con pedidos anticipados 2027</span></div>
+            <div class="bullet-item"><div class="bullet-dot"></div><span>Video resumen del año — los hitos de Navic en su primer semestre digital</span></div>
+            <div class="bullet-item"><div class="bullet-dot"></div><span>Anuncio de colección 2027 — teaser de lo que viene</span></div>
+            <div class="bullet-item"><div class="bullet-dot"></div><span>Informe de resultados y aprendizajes del semestre</span></div>
+          </div>
+          <div>
+            <p class="month-col-title">Contenido por pilar</p>
+            <div class="content-item">
+              <div class="content-badge badge-v">V</div>
+              <span class="content-text">"El regalo perfecto existe — chaqueta Navic para este diciembre"</span>
+            </div>
+            <div class="content-item">
+              <div class="content-badge badge-i">I</div>
+              <span class="content-text">"¿Cuál fue tu momento Navic este año?" — UGC navideño</span>
+            </div>
+            <div class="content-item">
+              <div class="content-badge badge-e">E</div>
+              <span class="content-text">Video "Gracias comunidad Navic" — cierre emocional del semestre</span>
+            </div>
+            <div class="content-item">
+              <div class="content-badge badge-v">V</div>
+              <span class="content-text">Pre-venta colección 2027 para clientes VIP — acceso anticipado</span>
+            </div>
+            <div class="content-item">
+              <div class="content-badge badge-i">I</div>
+              <span class="content-text">Encuesta "¿Qué quieres ver de Navic en 2027?" — participación de comunidad</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PARTE 7: INFLUENCER MARKETING -->
+  <section class="section-block">
+    <div class="container">
+      <p class="section-label">07 — Influencers</p>
+      <h2 class="section-title">Estrategia de <em>Influencer Marketing</em></h2>
+      <p class="section-desc">Micro y nanoinfluencers auténticos que hablan con nuestra audiencia, no para ella.</p>
+
+      <div class="grid-2" style="margin-bottom:16px;">
+        <div class="inf-card">
+          <p class="inf-type">Categoría A</p>
+          <p class="inf-name">Lifestyle & Moda Urbana</p>
+          <p class="inf-detail">Creadores 10k–80k seguidores. Contenido de outfit del día, tendencias y looks de temporada. Alta tasa de engagement con audiencias precio-sensibles que buscan moda accesible.</p>
+          <div style="margin-top:12px;padding-top:12px;border-top:1px solid #2a2a2a;">
+            <span class="phase-tag phase-1">Gifting + Paid</span>
+          </div>
+        </div>
+        <div class="inf-card">
+          <p class="inf-type">Categoría B</p>
+          <p class="inf-name">Clima Frío & Actividad al Aire Libre</p>
+          <p class="inf-detail">Creadores que viven en Bogotá, Medellín (zonas frías), Manizales, Pasto. Contenido cotidiano en climas fríos. Muy alta relevancia para chaquetas funcionales.</p>
+          <div style="margin-top:12px;padding-top:12px;border-top:1px solid #2a2a2a;">
+            <span class="phase-tag phase-2">Gifting puro</span>
+          </div>
+        </div>
+        <div class="inf-card">
+          <p class="inf-type">Categoría C</p>
+          <p class="inf-name">Emprendimiento & Distribución</p>
+          <p class="inf-detail">Creadores del mundo de los negocios, ventas por catálogo y distribución mayorista. Canal ideal para llegar al Avatar 1 (comerciante). LinkedIn e Instagram business.</p>
+          <div style="margin-top:12px;padding-top:12px;border-top:1px solid #2a2a2a;">
+            <span class="phase-tag phase-3">Paid colaboración</span>
+          </div>
+        </div>
+        <div class="inf-card">
+          <p class="inf-type">Categoría D</p>
+          <p class="inf-name">Embajadores de Marca</p>
+          <p class="inf-detail">2–3 nanoinfluencers (3k–10k) seleccionados para usar Navic durante todo el semestre. Relación de largo plazo, contenido auténtico y repetición de mensaje. Los más efectivos para conversión.</p>
+          <div style="margin-top:12px;padding-top:12px;border-top:1px solid #2a2a2a;">
+            <span class="phase-tag phase-1">Embajadores</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <p class="card-title">Protocolo de Colaboración</p>
+        <div class="grid-2">
+          <div>
+            <div class="bullet-item"><div class="bullet-dot"></div><span><strong style="color:#fff;">Gifting:</strong> Enviar 1–2 productos + nota personalizada + guía de valores de marca</span></div>
+            <div class="bullet-item"><div class="bullet-dot"></div><span><strong style="color:#fff;">Brief mínimo:</strong> Mencionar fabricación colombiana, calidad y precio. Sin guion rígido</span></div>
+            <div class="bullet-item"><div class="bullet-dot"></div><span><strong style="color:#fff;">Entregables:</strong> 1 Reel + 3 Stories + mención en bio por 48h</span></div>
+          </div>
+          <div>
+            <div class="bullet-item"><div class="bullet-dot"></div><span><strong style="color:#fff;">Selección:</strong> Engagement rate mínimo 4%, audiencia colombiana +70%</span></div>
+            <div class="bullet-item"><div class="bullet-dot"></div><span><strong style="color:#fff;">Seguimiento:</strong> Reporte de alcance y leads generados por cada colaboración</span></div>
+            <div class="bullet-item"><div class="bullet-dot"></div><span><strong style="color:#fff;">Meta semestre:</strong> 8–10 colaboraciones activas entre julio y diciembre</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PARTE 8: PAUTA DIGITAL -->
+  <section class="section-block">
+    <div class="container">
+      <p class="section-label">08 — Pauta Digital</p>
+      <h2 class="section-title">Estrategia de <em>Pauta Digital</em></h2>
+      <p class="section-desc">Meta Ads como motor de captación y retargeting con enfoque en resultados medibles.</p>
+
+      <div class="grid-3" style="margin-bottom:24px;">
+        <div class="stat-card">
+          <p class="stat-number">60%</p>
+          <p class="stat-label">Instagram + Facebook<br>Captación nueva audiencia</p>
+        </div>
+        <div class="stat-card">
+          <p class="stat-number">40%</p>
+          <p class="stat-label">Retargeting<br>Audiencias calientes y visitantes</p>
+        </div>
+        <div class="stat-card">
+          <p class="stat-number">4x</p>
+          <p class="stat-label">ROAS objetivo<br>Retorno mínimo sobre inversión</p>
+        </div>
+      </div>
+
+      <div class="grid-2" style="margin-bottom:16px;">
+        <div class="card">
+          <p class="card-title">Fase 1: Jul–Ago — Reconocimiento</p>
+          <div class="bullet-item"><div class="bullet-dot"></div><span>Objetivo: alcance y reconocimiento de marca</span></div>
+          <div class="bullet-item"><div class="bullet-dot"></div><span>Formato: video 15s + carrusel de producto</span></div>
+          <div class="bullet-item"><div class="bullet-dot"></div><span>Audiencia: intereses ropa, moda colombiana, climas fríos</span></div>
+          <div class="bullet-item"><div class="bullet-dot"></div><span>KPI: CPM, alcance único, tasa de visualización</span></div>
+        </div>
+        <div class="card">
+          <p class="card-title">Fase 2: Sep–Oct — Consideración</p>
+          <div class="bullet-item"><div class="bullet-dot"></div><span>Objetivo: tráfico a WhatsApp y catálogo</span></div>
+          <div class="bullet-item"><div class="bullet-dot"></div><span>Formato: click-to-WhatsApp + colección de productos</span></div>
+          <div class="bullet-item"><div class="bullet-dot"></div><span>Audiencia: lookalike de clientes actuales + intereses</span></div>
+          <div class="bullet-item"><div class="bullet-dot"></div><span>KPI: CPL, conversaciones iniciadas, costo por lead</span></div>
+        </div>
+        <div class="card">
+          <p class="card-title">Fase 3: Nov–Dic — Conversión</p>
+          <div class="bullet-item"><div class="bullet-dot"></div><span>Objetivo: ventas directas y pedidos mayoristas</span></div>
+          <div class="bullet-item"><div class="bullet-dot"></div><span>Formato: oferta directa + urgencia temporal</span></div>
+          <div class="bullet-item"><div class="bullet-dot"></div><span>Audiencia: retargeting 100% a audiencias calientes</span></div>
+          <div class="bullet-item"><div class="bullet-dot"></div><span>KPI: ROAS, costo por venta, ingresos directos</span></div>
+        </div>
+        <div class="card">
+          <p class="card-title">Segmentación Clave</p>
+          <div class="bullet-item"><div class="bullet-dot"></div><span>Intereses: moda, ropa de invierno, emprendimiento textil</span></div>
+          <div class="bullet-item"><div class="bullet-dot"></div><span>Geográfico: Bogotá, Medellín, eje cafetero, sur del país</span></div>
+          <div class="bullet-item"><div class="bullet-dot"></div><span>Comportamiento: compradores online activos</span></div>
+          <div class="bullet-item"><div class="bullet-dot"></div><span>Lookalike: 1–3% de clientes actuales de WhatsApp</span></div>
+        </div>
+      </div>
+
+      <div class="highlight-box">
+        <p><strong>Presupuesto recomendado:</strong> Iniciar con <strong>$1.5M–$2M COP/mes</strong> en pauta, escalando progresivamente hacia octubre–noviembre cuando el ROI esté demostrado y la temporada esté en su punto más alto.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PARTE 9: MÉTRICAS -->
+  <section class="section-block">
+    <div class="container">
+      <p class="section-label">09 — Métricas</p>
+      <h2 class="section-title">Métricas de <em>Seguimiento</em></h2>
+      <p class="section-desc">Lo que se mide, mejora. Estos son los indicadores que revisamos cada semana.</p>
+
+      <div class="card" style="margin-bottom:16px;">
+        <p class="card-title">KPIs Principales — Meta Semestre</p>
+        <div class="metric-row">
+          <div class="metric-icon">👥</div>
+          <div class="metric-info">
+            <p class="metric-name">Seguidores Instagram</p>
+            <p class="metric-detail">Crecimiento orgánico mes a mes</p>
+          </div>
+          <p class="metric-target">+5.000 al final del semestre</p>
+        </div>
+        <div class="metric-row">
+          <div class="metric-icon">💬</div>
+          <div class="metric-info">
+            <p class="metric-name">Tasa de Engagement</p>
+            <p class="metric-detail">Interacciones ÷ alcance total</p>
+          </div>
+          <p class="metric-target">&gt; 5% promedio</p>
+        </div>
+        <div class="metric-row">
+          <div class="metric-icon">📱</div>
+          <div class="metric-info">
+            <p class="metric-name">Leads WhatsApp</p>
+            <p class="metric-detail">Conversaciones iniciadas por mes</p>
+          </div>
+          <p class="metric-target">+80/mes al cierre</p>
+        </div>
+        <div class="metric-row">
+          <div class="metric-icon">💰</div>
+          <div class="metric-info">
+            <p class="metric-name">ROAS (Retorno sobre inversión publicitaria)</p>
+            <p class="metric-detail">Ingresos generados ÷ inversión en pauta</p>
+          </div>
+          <p class="metric-target">4x mínimo</p>
+        </div>
+        <div class="metric-row">
+          <div class="metric-icon">🎥</div>
+          <div class="metric-info">
+            <p class="metric-name">Visualizaciones de Reels</p>
+            <p class="metric-detail">Alcance de contenido de video</p>
+          </div>
+          <p class="metric-target">+10k por Reel</p>
+        </div>
+        <div class="metric-row">
+          <div class="metric-icon">🔁</div>
+          <div class="metric-info">
+            <p class="metric-name">Tasa de Recompra Mayoristas</p>
+            <p class="metric-detail">Clientes B2B que vuelven a pedir</p>
+          </div>
+          <p class="metric-target">&gt; 60% semestre</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <p class="card-title">Cadencia de Revisión</p>
+        <div class="grid-3">
+          <div>
+            <p style="font-size:12px;font-weight:700;color:var(--purple);margin-bottom:8px;">Semanal</p>
+            <div class="bullet-item"><div class="bullet-dot"></div><span>Interacciones y alcance de publicaciones</span></div>
+            <div class="bullet-item"><div class="bullet-dot"></div><span>Mensajes recibidos en WhatsApp</span></div>
+            <div class="bullet-item"><div class="bullet-dot"></div><span>Rendimiento de pauta activa</span></div>
+          </div>
+          <div>
+            <p style="font-size:12px;font-weight:700;color:var(--purple);margin-bottom:8px;">Mensual</p>
+            <div class="bullet-item"><div class="bullet-dot"></div><span>Revisión de KPIs vs. meta</span></div>
+            <div class="bullet-item"><div class="bullet-dot"></div><span>Análisis de contenidos top</span></div>
+            <div class="bullet-item"><div class="bullet-dot"></div><span>Ajuste de pauta y presupuesto</span></div>
+          </div>
+          <div>
+            <p style="font-size:12px;font-weight:700;color:var(--purple);margin-bottom:8px;">Bimestral</p>
+            <div class="bullet-item"><div class="bullet-dot"></div><span>Revisión estratégica general</span></div>
+            <div class="bullet-item"><div class="bullet-dot"></div><span>Ajuste de pilares de contenido</span></div>
+            <div class="bullet-item"><div class="bullet-dot"></div><span>Evaluación de influencers activos</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PARTE 10: RECOMENDACIONES -->
+  <section class="section-block">
+    <div class="container">
+      <p class="section-label">10 — Recomendaciones</p>
+      <h2 class="section-title">Prioridades <em>Antes de Arrancar</em></h2>
+      <p class="section-desc">Las bases que deben estar listas antes de activar cualquier campaña.</p>
+
+      <div class="grid-2" style="margin-bottom:16px;">
+        <div class="card" style="border-color:rgba(161,0,255,0.3);">
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px;">
+            <div style="width:32px;height:32px;border-radius:8px;background:rgba(161,0,255,0.2);display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--purple);">1</div>
+            <p style="font-size:14px;font-weight:700;">Identidad Visual</p>
+          </div>
+          <p style="font-size:13px;color:#aaa;line-height:1.6;">Definir logo definitivo, paleta de colores, tipografía y guía de uso de marca. Sin esto, todo el contenido luce inconsistente y pierde impacto.</p>
+          <div style="margin-top:10px;">
+            <span class="phase-tag phase-1">Urgente</span>
+          </div>
+        </div>
+        <div class="card" style="border-color:rgba(161,0,255,0.3);">
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px;">
+            <div style="width:32px;height:32px;border-radius:8px;background:rgba(161,0,255,0.2);display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--purple);">2</div>
+            <p style="font-size:14px;font-weight:700;">Sesión Fotográfica Profesional</p>
+          </div>
+          <p style="font-size:13px;color:#aaa;line-height:1.6;">Fotografía de producto sobre fondo blanco + fotografía editorial de lookbook. Sin imágenes de calidad, la pauta y el contenido orgánico no pueden competir.</p>
+          <div style="margin-top:10px;">
+            <span class="phase-tag phase-1">Urgente</span>
+          </div>
+        </div>
+        <div class="card">
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px;">
+            <div style="width:32px;height:32px;border-radius:8px;background:rgba(161,0,255,0.12);display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--purple);">3</div>
+            <p style="font-size:14px;font-weight:700;">Canales Digitales Activos</p>
+          </div>
+          <p style="font-size:13px;color:#aaa;line-height:1.6;">Crear y optimizar Instagram, Facebook y WhatsApp Business antes del lanzamiento. Perfiles incompletos matan la credibilidad desde el día uno.</p>
+          <div style="margin-top:10px;">
+            <span class="phase-tag phase-1">Antes de julio</span>
+          </div>
+        </div>
+        <div class="card">
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px;">
+            <div style="width:32px;height:32px;border-radius:8px;background:rgba(161,0,255,0.12);display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--purple);">4</div>
+            <p style="font-size:14px;font-weight:700;">Catálogo Digital</p>
+          </div>
+          <p style="font-size:13px;color:#aaa;line-height:1.6;">PDF o catálogo interactivo con portafolio completo, precios mayoristas y condiciones de compra. Herramienta fundamental para cerrar ventas B2B por WhatsApp.</p>
+          <div style="margin-top:10px;">
+            <span class="phase-tag phase-2">Semana 1</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <p class="card-title">Lista de Chequeo de Lanzamiento</p>
+        <div class="grid-2">
+          <div>
+            <div class="bullet-item"><div class="bullet-dot"></div><span>Logo y paleta de colores definidos</span></div>
+            <div class="bullet-item"><div class="bullet-dot"></div><span>Sesión fotográfica producto + lookbook lista</span></div>
+            <div class="bullet-item"><div class="bullet-dot"></div><span>Instagram optimizado con bio, highlights y link</span></div>
+            <div class="bullet-item"><div class="bullet-dot"></div><span>WhatsApp Business con catálogo cargado</span></div>
+            <div class="bullet-item"><div class="bullet-dot"></div><span>Primeros 9 posts de lanzamiento creados</span></div>
+          </div>
+          <div>
+            <div class="bullet-item"><div class="bullet-dot"></div><span>Base de datos de clientes mayoristas activa</span></div>
+            <div class="bullet-item"><div class="bullet-dot"></div><span>Primer influencer confirmado para semana 2</span></div>
+            <div class="bullet-item"><div class="bullet-dot"></div><span>Pixel de Meta instalado y verificado</span></div>
+            <div class="bullet-item"><div class="bullet-dot"></div><span>Primera campaña de pauta lista para activar</span></div>
+            <div class="bullet-item"><div class="bullet-dot"></div><span>Calendario de contenido julio completado</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="highlight-box">
+        <p><strong>Nota final:</strong> Navic tiene todo lo necesario para construir una marca poderosa — experiencia, producto y precio. Lo que viene ahora es <strong>contar esa historia de forma consistente y sostenida</strong>. La estrategia funciona si se ejecuta con disciplina semana a semana. Conectux estará contigo en cada paso.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-top">
+          <div>
+            <img src="../Imagenes/logo.png" alt="Conectux" style="height:28px; width:auto;" />
+            <p style="font-size:12px;color:#555;margin-top:4px">Agencia de Marketing Digital</p>
+          </div>
+          <div class="footer-contact">
+            <p style="font-size:13px;color:#777;margin-bottom:6px">¿Hablamos de tu estrategia?</p>
+            <a href="https://wa.me/573005473048">Escríbenos por WhatsApp →</a>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <span>© 2026 Conectux Digital. Todos los derechos reservados.</span>
+          <span>Estrategia personalizada — Navic / Iván Camacho</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,589 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Estrategia de Contenido — Stryvé Sports Wear</title>
+  <meta property="og:title" content="Estrategia de Contenido — Stryvé Sports Wear" />
+  <meta property="og:description" content="Estrategia avanzada de marketing y contenido para Stryvé Sports Wear — Mes 1." />
+  <meta property="og:image" content="https://estrategias-conectux.vercel.app/Imagenes/url-send.png" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://estrategias-conectux.vercel.app/Imagenes/url-send.png" />
+  <link rel="icon" type="image/png" href="../Imagenes/favicon.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Satoshi:wght@300;400;500;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --noir: #111111;
+      --purple: #a100ff;
+      --purple2: #c040ff;
+      --white: #ffffff;
+      --mid: #1c1c1c;
+      --mid2: #252525;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--noir);
+      color: var(--white);
+      font-family: "Satoshi", sans-serif;
+      font-weight: 400;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    h1, h2, h3, h4 { font-family: "Satoshi", sans-serif; font-weight: 700; letter-spacing: -0.03em; }
+    .container { max-width: 900px; margin: 0 auto; padding: 0 32px; }
+
+    /* HEADER */
+    header { padding: 40px 0 0; }
+    .header-inner {
+      display: flex; align-items: center; justify-content: space-between;
+      padding-bottom: 32px; border-bottom: 1px solid #2a2a2a;
+    }
+    .tag-doc {
+      font-size: 11px; font-weight: 500; letter-spacing: 0.15em;
+      text-transform: uppercase; color: var(--purple);
+      border: 1px solid var(--purple); padding: 5px 12px; border-radius: 20px;
+    }
+
+    /* HERO */
+    .hero { padding: 64px 0 48px; position: relative; overflow: hidden; }
+    .hero::before {
+      content: ""; position: absolute; top: -60px; right: -120px;
+      width: 480px; height: 480px;
+      background: radial-gradient(circle, rgba(161,0,255,0.15) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .hero-label {
+      display: inline-block; font-size: 11px; font-weight: 600;
+      letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--purple); margin-bottom: 20px;
+    }
+    .hero h1 {
+      font-size: clamp(28px, 4.5vw, 50px); line-height: 1.05;
+      letter-spacing: -0.04em; margin-bottom: 16px; max-width: 700px;
+    }
+    .hero h1 em { font-style: normal; color: var(--purple); }
+    .hero-sub { font-size: 15px; color: #999; max-width: 580px; line-height: 1.75; }
+    .btn-calendar {
+      display: inline-flex; align-items: center; gap: 8px;
+      margin-top: 28px;
+      padding: 12px 22px; border-radius: 10px;
+      background: rgba(161,0,255,0.12); border: 1px solid rgba(161,0,255,0.4);
+      color: var(--purple); font-family: "Satoshi", sans-serif;
+      font-size: 13px; font-weight: 600; letter-spacing: 0.01em;
+      text-decoration: none; cursor: pointer;
+      transition: background 0.18s, border-color 0.18s, transform 0.15s;
+    }
+    .btn-calendar:hover { background: rgba(161,0,255,0.22); border-color: rgba(161,0,255,0.7); transform: translateY(-1px); }
+    .btn-calendar svg { flex-shrink: 0; }
+
+    /* SECTIONS */
+    .section-block {
+      padding: 56px 0;
+      border-top: 1px solid #1e1e1e;
+    }
+    .section-label {
+      font-size: 10px; font-weight: 600; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--purple); margin-bottom: 10px;
+    }
+    .section-title {
+      font-size: clamp(22px, 3vw, 32px); font-weight: 700;
+      letter-spacing: -0.03em; margin-bottom: 8px;
+    }
+    .section-title em { font-style: normal; color: var(--purple); }
+    .section-desc { font-size: 14px; color: #777; margin-bottom: 32px; line-height: 1.6; }
+
+    /* CARDS */
+    .card {
+      background: var(--mid); border: 1px solid #2a2a2a;
+      border-radius: 16px; padding: 28px;
+    }
+    .card-title { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--purple); margin-bottom: 12px; }
+
+    /* GRIDS */
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; }
+
+    /* CONTENT ITEMS */
+    .content-item {
+      display: flex; align-items: flex-start; gap: 12px;
+      padding: 12px 0; border-bottom: 1px solid #222;
+    }
+    .content-item:last-child { border-bottom: none; }
+    .content-badge {
+      flex-shrink: 0; width: 24px; height: 24px; border-radius: 6px;
+      font-size: 10px; font-weight: 700; display: flex; align-items: center; justify-content: center;
+    }
+    .badge-v { background: rgba(161,0,255,0.2); color: var(--purple); }
+    .badge-i { background: rgba(0,200,100,0.15); color: #00c864; }
+    .badge-e { background: rgba(255,160,0,0.15); color: #ffa000; }
+    .badge-c { background: rgba(0,180,220,0.15); color: #00b4dc; }
+    .content-text { font-size: 13px; line-height: 1.5; color: #ccc; }
+
+    /* BULLET ITEMS */
+    .bullet-item {
+      display: flex; align-items: flex-start; gap: 10px;
+      padding: 8px 0; font-size: 13px; color: #ccc; line-height: 1.5;
+    }
+    .bullet-dot {
+      flex-shrink: 0; width: 6px; height: 6px; border-radius: 50%;
+      background: var(--purple); margin-top: 7px;
+    }
+
+    /* WEEK CARDS (reusing month-card layout for the Mes 1 plan) */
+    .month-card {
+      background: var(--mid); border: 1px solid #2a2a2a;
+      border-radius: 20px; padding: 32px; margin-bottom: 16px;
+    }
+    .month-header {
+      display: flex; align-items: baseline; gap: 12px; margin-bottom: 24px;
+      padding-bottom: 20px; border-bottom: 1px solid #252525;
+    }
+    .month-number {
+      font-size: 11px; font-weight: 700; letter-spacing: 0.15em;
+      text-transform: uppercase; color: var(--purple);
+    }
+    .month-name {
+      font-size: 24px; font-weight: 700; letter-spacing: -0.03em;
+    }
+    .month-focus {
+      font-size: 13px; color: #666; margin-left: auto;
+      text-align: right; max-width: 260px; line-height: 1.4;
+    }
+    .month-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .month-col-title {
+      font-size: 10px; font-weight: 700; letter-spacing: 0.15em;
+      text-transform: uppercase; color: #555; margin-bottom: 12px;
+    }
+
+    /* HIGHLIGHT BOX */
+    .highlight-box {
+      background: rgba(161,0,255,0.07); border: 1px solid rgba(161,0,255,0.2);
+      border-radius: 14px; padding: 24px 28px; margin-top: 20px;
+    }
+    .highlight-box p { font-size: 14px; color: #ccc; line-height: 1.7; }
+    .highlight-box strong { color: var(--white); }
+
+    /* PHASE BADGE */
+    .phase-tag {
+      display: inline-block; font-size: 10px; font-weight: 700;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      padding: 4px 10px; border-radius: 20px; margin-bottom: 8px;
+    }
+    .phase-1 { background: rgba(161,0,255,0.15); color: var(--purple); }
+    .phase-2 { background: rgba(0,180,220,0.15); color: #00b4dc; }
+    .phase-3 { background: rgba(255,160,0,0.15); color: #ffa000; }
+
+    /* SWATCH */
+    .swatch-row { display: flex; align-items: center; gap: 20px; margin-top: 16px; }
+    .swatch { display: flex; align-items: center; gap: 10px; }
+    .swatch-box { width: 28px; height: 28px; border-radius: 8px; border: 1px solid #333; }
+    .swatch-label { font-size: 12px; color: #999; }
+
+    /* FOOTER */
+    footer { padding: 48px 0 32px; border-top: 1px solid #1e1e1e; }
+    .footer-inner { display: flex; flex-direction: column; gap: 20px; }
+    .footer-top { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+    .footer-logo { font-size: 20px; font-weight: 700; letter-spacing: -0.04em; text-transform: lowercase; color: var(--white); }
+    .footer-logo em { font-style: normal; color: var(--purple); }
+    .footer-contact a { color: var(--purple); text-decoration: none; font-size: 14px; font-weight: 500; }
+    .footer-bottom {
+      font-size: 12px; color: #444; padding-top: 20px;
+      border-top: 1px solid #1e1e1e;
+      display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px;
+    }
+
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+    .hero > * { animation: fadeUp 0.6s ease both; }
+    .hero > *:nth-child(2) { animation-delay: 0.1s; }
+    .hero > *:nth-child(3) { animation-delay: 0.2s; }
+    .hero > *:nth-child(4) { animation-delay: 0.3s; }
+
+    @media (max-width: 640px) {
+      .container { padding: 0 20px; }
+      .header-inner { flex-direction: column; align-items: flex-start; gap: 16px; }
+      .grid-2 { grid-template-columns: 1fr; }
+      .grid-3 { grid-template-columns: 1fr; }
+      .month-grid { grid-template-columns: 1fr; }
+      .month-focus { margin-left: 0; text-align: left; }
+      .footer-top { flex-direction: column; align-items: flex-start; }
+      .footer-bottom { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="container">
+      <div class="header-inner">
+        <a href="../" style="text-decoration:none;">
+          <img src="../Imagenes/logo.png" alt="Conectux" style="height:38px; width:auto;" />
+        </a>
+        <span class="tag-doc">Estrategia de Contenido — Mes 1</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <span class="hero-label">Stryvé Sports Wear</span>
+      <h1>Estrategia Avanzada de Marketing y <em>Contenido</em> — Mes 1</h1>
+      <p class="hero-sub">Diagnóstico de marca, estrategia de posicionamiento y plan de contenido semana a semana para convertir a Stryvé en la segunda piel de la mujer real que entrena.</p>
+      <a class="btn-calendar" href="#plan-contenido">
+        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2">
+          <rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/>
+        </svg>
+        Ver plan de contenido — Mes 1
+      </a>
+    </div>
+  </section>
+
+  <!-- PARTE 1: DIAGNÓSTICO -->
+  <section class="section-block">
+    <div class="container">
+      <p class="section-label">01 — Diagnóstico</p>
+      <h2 class="section-title">Falencias y Puntos a <em>Mejorar</em></h2>
+      <p class="section-desc">A partir del brief, identificamos varias oportunidades claras que hoy no se están capitalizando y que la estrategia debe cerrar desde el primer mes.</p>
+
+      <div style="display:flex;flex-direction:column;gap:16px;">
+        <div class="card">
+          <p class="card-title">01 · Falta de prueba social y contenido con "mujeres reales"</p>
+          <p style="font-size:13px;color:#aaa;line-height:1.7;">Ustedes mismos señalan que la competencia usa siempre modelos muy estructuradas, dejando por fuera a la mujer real que también entrena. Hoy Stryvé no está aprovechando ese vacío: no hay testimonios, ni contenido con clientas reales de distintos tipos de cuerpo, que es justo el diferencial emocional que la marca quiere transmitir.</p>
+        </div>
+        <div class="card">
+          <p class="card-title">02 · Objeciones sin respuesta pública</p>
+          <p style="font-size:13px;color:#aaa;line-height:1.7;">La transparencia de la tela, la talla única, la garantía y los cambios son las dudas que más frenan la compra, según el propio brief. Sin embargo, no existe hoy contenido que resuelva estas objeciones de forma proactiva y visible antes de que la clienta pregunte.</p>
+        </div>
+        <div class="card">
+          <p class="card-title">03 · Comunicación de precio y valor poco explícita</p>
+          <p style="font-size:13px;color:#aaa;line-height:1.7;">La marca compite contra alternativas más económicas (Fitline, Amattosport, Greenfit) que no tienen la misma calidad. Hoy no se comunica de forma clara el argumento de valor: <strong style="color:#fff;">"pagas un poco más, pero es una inversión que dura y no transparenta"</strong>. Esto se debe hacer visible referencia por referencia, no solo como concepto abstracto.</p>
+        </div>
+        <div class="card">
+          <p class="card-title">04 · Sin manual de marca ni banco de contenido estructurado</p>
+          <p style="font-size:13px;color:#aaa;line-height:1.7;">No cuentan con manual de marca, lo que puede generar inconsistencia visual y de tono a medida que se producen más piezas. Recomendamos construirlo en paralelo al primer mes de contenido para fijar tipografía, paleta (negro y blanco), tono de voz y uso del logo.</p>
+        </div>
+        <div class="card">
+          <p class="card-title">05 · Baja frecuencia y ausencia de formato en vivo</p>
+          <p style="font-size:13px;color:#aaa;line-height:1.7;">Hoy la marca no está utilizando TikTok Live ni una cadencia de historias diaria, dos de los formatos que generan más cercanía y confianza — justo los valores que Stryvé quiere transmitir. Esto es una oportunidad grande de bajo costo y alto impacto.</p>
+        </div>
+        <div class="card">
+          <p class="card-title">06 · Canales: foco correcto, ejecución incompleta</p>
+          <p style="font-size:13px;color:#aaa;line-height:1.7;">Instagram, TikTok, Facebook y WhatsApp son los canales correctos según el comportamiento de la audiencia (LinkedIn y X no aportan aquí). El reto no es de canal sino de <strong style="color:#fff;">consistencia y de profundidad de contenido</strong> en cada uno.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PARTE 2: ESTRATEGIA AVANZADA DE MARKETING -->
+  <section class="section-block">
+    <div class="container">
+      <p class="section-label">02 — Estrategia</p>
+      <h2 class="section-title">Estrategia Avanzada de <em>Marketing</em></h2>
+      <p class="section-desc">El marco que conecta posicionamiento, contenido, objeciones y formato para construir confianza desde el primer mes.</p>
+
+      <div class="card" style="border-color:rgba(161,0,255,0.3);margin-bottom:16px;">
+        <p class="card-title">Posicionamiento</p>
+        <p style="font-size:18px;font-weight:700;letter-spacing:-0.02em;line-height:1.4;color:#fff;">"Stryvé es la segunda piel que acompaña a la mujer real — no a un estándar de belleza — en su entrenamiento y en su día a día, con prendas que no transparentan, moldean, sostienen y generan confianza desde el primer uso."</p>
+      </div>
+
+      <p class="card-title" style="margin-bottom:12px;">Pilares de Contenido</p>
+      <div class="grid-2" style="margin-bottom:16px;">
+        <div class="card">
+          <p class="card-title">Producto y Calidad</p>
+          <p style="font-size:13px;color:#ccc;line-height:1.6;">Pruebas visibles de que la prenda cumple lo que promete (no transparenta, soporta, moldea).</p>
+        </div>
+        <div class="card">
+          <p class="card-title">Confianza y Comunidad</p>
+          <p style="font-size:13px;color:#ccc;line-height:1.6;">Testimonios reales, mujeres reales, resolución abierta de objeciones (garantía, cambios, tallas).</p>
+        </div>
+        <div class="card">
+          <p class="card-title">Educación</p>
+          <p style="font-size:13px;color:#ccc;line-height:1.6;">Cómo elegir talla, cómo cuidar la prenda, qué es la tela seamless y por qué justifica el precio.</p>
+        </div>
+        <div class="card">
+          <p class="card-title">Estilo de Vida</p>
+          <p style="font-size:13px;color:#ccc;line-height:1.6;">La prenda en el día a día, no solo en el gimnasio, reforzando comodidad y versatilidad.</p>
+        </div>
+      </div>
+
+      <div class="card" style="margin-bottom:16px;">
+        <p class="card-title">Mapeo por Nivel de Conciencia</p>
+        <p style="font-size:13px;color:#aaa;line-height:1.7;">El público de Stryvé va desde quien apenas identifica el problema (inseguridad al entrenar) hasta quien ya compara proveedores por precio y calidad. La estrategia debe alimentar los cuatro niveles a la vez: <strong style="color:#fff;">contenido educativo</strong> para quien recién descubre la marca, <strong style="color:#fff;">comparativos de valor</strong> para quien está comparando, y <strong style="color:#fff;">prueba social + garantía</strong> para quien está a punto de comprar.</p>
+      </div>
+
+      <div class="highlight-box" style="margin-top:0;margin-bottom:16px;">
+        <p><strong>Manejo proactivo de objeciones:</strong> en lugar de esperar a que la clienta pregunte, cada mes debe incluir al menos una pieza que resuelva de frente las dudas más comunes: transparencia, talla única, cambios y garantía, y si son mayoristas.</p>
+      </div>
+
+      <div class="card" style="margin-bottom:16px;">
+        <p class="card-title">Tono y Estilo Visual</p>
+        <div class="bullet-item"><div class="bullet-dot"></div><span>Cercano</span></div>
+        <div class="bullet-item"><div class="bullet-dot"></div><span>Profesional</span></div>
+        <div class="bullet-item"><div class="bullet-dot"></div><span>Educativo</span></div>
+        <div class="bullet-item"><div class="bullet-dot"></div><span>Directo e inspirador</span></div>
+        <p style="font-size:13px;color:#aaa;line-height:1.6;margin-top:10px;">Paleta negro y blanco (seguridad, fuerza, elegancia, versatilidad). Evitar cualquier mensaje que sugiera presión estética o perfección; el eje siempre es <strong style="color:#fff;">comodidad, bienestar y amor propio</strong>.</p>
+        <div class="swatch-row">
+          <div class="swatch"><div class="swatch-box" style="background:#111;"></div><span class="swatch-label">Negro</span></div>
+          <div class="swatch"><div class="swatch-box" style="background:#fff;"></div><span class="swatch-label">Blanco</span></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <p class="card-title">Por Qué las Historias y los TikTok Live Potencian Todo lo Anterior</p>
+        <p style="font-size:13px;color:#aaa;line-height:1.7;margin-bottom:12px;">Las historias adicionales entre semana (más allá de las 3 fijas) mantienen a la marca presente todos los días sin necesitar producción pesada, y son el espacio ideal para encuestas, preguntas y contenido espontáneo con clientas reales.</p>
+        <p style="font-size:13px;color:#aaa;line-height:1.7;">Los TikTok Live, por su parte, son el formato que mejor transmite cercanía y resuelve objeciones en tiempo real (tallas, calidad, garantía), generando confianza inmediata y permitiendo mostrar la prenda en movimiento sin edición — algo muy difícil de replicar por la competencia.</p>
+        <div class="highlight-box">
+          <p><strong>Recomendación:</strong> que Jurany o alguien del equipo lidere al menos <strong>un live quincenal desde el mes 1</strong>, y que se aumente a <strong>semanal en el mes 2</strong> según respuesta de la audiencia.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PARTE 3: PLAN DE CONTENIDO — MES 1 -->
+  <section class="section-block" id="plan-contenido">
+    <div class="container">
+      <p class="section-label">03 — Plan de Contenido</p>
+      <h2 class="section-title">Plan de Contenido — <em>Mes 1</em></h2>
+      <p class="section-desc">Enfoque del mes: demostrar calidad de forma tangible y mostrar cada referencia de producto con su precio, para avanzar simultáneamente el argumento de calidad y el argumento de valor frente a la competencia más económica.</p>
+
+      <div class="highlight-box" style="margin-top:0;margin-bottom:24px;">
+        <p><strong>Cadencia base por semana:</strong> 1 video, 1 carrusel o post, y mínimo 3 historias. A esto se suma la recomendación de historias adicionales en días alternos y TikTok Live, que no reemplazan la cadencia base sino que la potencian.</p>
+      </div>
+
+      <!-- SEMANA 1 -->
+      <div class="month-card">
+        <div class="month-header">
+          <span class="month-number">01</span>
+          <span class="month-name">Semana 1</span>
+          <span class="month-focus">Enfoque: Calidad y no transparencia</span>
+        </div>
+        <div class="month-grid">
+          <div>
+            <p class="month-col-title">Contenido programado</p>
+            <div class="content-item">
+              <div class="content-badge badge-v">V</div>
+              <span class="content-text">Reto "prueba de luz": sentadillas, estiramientos y flexiones con luz directa mostrando que la prenda no transparenta. Cierre con mensaje de marca: "Segunda piel, cero preocupaciones".</span>
+            </div>
+            <div class="content-item">
+              <div class="content-badge badge-c">C</div>
+              <span class="content-text">Catálogo de leggins: foto por referencia + nombre + precio + tallas disponibles. Incluir 1–2 beneficios clave por prenda (soporte, moldeado, tela).</span>
+            </div>
+          </div>
+          <div>
+            <p class="month-col-title">Historias (mínimo 3)</p>
+            <div class="content-item">
+              <div class="content-badge badge-i">H</div>
+              <span class="content-text">Detrás de cámaras de la grabación del video.</span>
+            </div>
+            <div class="content-item">
+              <div class="content-badge badge-i">H</div>
+              <span class="content-text">Encuesta: "¿Qué referencia quieres ver primero?"</span>
+            </div>
+            <div class="content-item">
+              <div class="content-badge badge-i">H</div>
+              <span class="content-text">Adelanto del carrusel con conteo regresivo.</span>
+            </div>
+          </div>
+        </div>
+        <div class="highlight-box">
+          <p><strong>Extra sugerido:</strong> historias extra en días alternos con tips rápidos de cuidado de la prenda. Considerar 1 TikTok Live corto mostrando el reto de luz en vivo.</p>
+        </div>
+      </div>
+
+      <!-- SEMANA 2 -->
+      <div class="month-card">
+        <div class="month-header">
+          <span class="month-number">02</span>
+          <span class="month-name">Semana 2</span>
+          <span class="month-focus">Enfoque: Soporte y tela seamless</span>
+        </div>
+        <div class="month-grid">
+          <div>
+            <p class="month-col-title">Contenido programado</p>
+            <div class="content-item">
+              <div class="content-badge badge-v">V</div>
+              <span class="content-text">Video educativo: qué es la tela seamless, por qué moldea y soporta, con prueba de estiramiento en cámara.</span>
+            </div>
+            <div class="content-item">
+              <div class="content-badge badge-c">C</div>
+              <span class="content-text">Catálogo de enterizos y tops: foto + precio + tallas + beneficio principal (soporte, comodidad, versatilidad).</span>
+            </div>
+          </div>
+          <div>
+            <p class="month-col-title">Historias (mínimo 3)</p>
+            <div class="content-item">
+              <div class="content-badge badge-i">H</div>
+              <span class="content-text">Testimonio real de una clienta (foto o audio).</span>
+            </div>
+            <div class="content-item">
+              <div class="content-badge badge-i">H</div>
+              <span class="content-text">Pregunta al público: "¿Qué talla usas normalmente?" (para reforzar guía de tallas).</span>
+            </div>
+            <div class="content-item">
+              <div class="content-badge badge-i">H</div>
+              <span class="content-text">Mini tutorial: cómo lavar y cuidar la prenda para que dure más.</span>
+            </div>
+          </div>
+        </div>
+        <div class="highlight-box">
+          <p><strong>Extra sugerido:</strong> historias extra con comparativo "antes/después" de uso de la prenda en entrenamiento. TikTok Live de preguntas y respuestas sobre tallas y ajuste.</p>
+        </div>
+      </div>
+
+      <!-- SEMANA 3 -->
+      <div class="month-card">
+        <div class="month-header">
+          <span class="month-number">03</span>
+          <span class="month-name">Semana 3</span>
+          <span class="month-focus">Enfoque: Comodidad y versatilidad día a día</span>
+        </div>
+        <div class="month-grid">
+          <div>
+            <p class="month-col-title">Contenido programado</p>
+            <div class="content-item">
+              <div class="content-badge badge-v">V</div>
+              <span class="content-text">"Un día con Stryvé": del gym a la calle, mostrando cómo la prenda se adapta al entrenamiento y al día a día.</span>
+            </div>
+            <div class="content-item">
+              <div class="content-badge badge-c">C</div>
+              <span class="content-text">Catálogo de shorts y crops: foto + precio + ideas de combinación ("arma tu look").</span>
+            </div>
+          </div>
+          <div>
+            <p class="month-col-title">Historias (mínimo 3)</p>
+            <div class="content-item">
+              <div class="content-badge badge-i">H</div>
+              <span class="content-text">Encuesta de colores favoritos.</span>
+            </div>
+            <div class="content-item">
+              <div class="content-badge badge-i">H</div>
+              <span class="content-text">Resultados de la encuesta + agradecimiento.</span>
+            </div>
+            <div class="content-item">
+              <div class="content-badge badge-i">H</div>
+              <span class="content-text">Behind the scenes de una sesión de fotos o de la selección de prendas.</span>
+            </div>
+          </div>
+        </div>
+        <div class="highlight-box">
+          <p><strong>Extra sugerido:</strong> historias extra con repost de contenido de clientas reales (UGC) usando la prenda en su día a día. TikTok Live de styling en vivo combinando prendas.</p>
+        </div>
+      </div>
+
+      <!-- SEMANA 4 -->
+      <div class="month-card">
+        <div class="month-header">
+          <span class="month-number">04</span>
+          <span class="month-name">Semana 4</span>
+          <span class="month-focus">Enfoque: Confianza, objeciones y cierre de mes</span>
+        </div>
+        <div class="month-grid">
+          <div>
+            <p class="month-col-title">Contenido programado</p>
+            <div class="content-item">
+              <div class="content-badge badge-v">V</div>
+              <span class="content-text">Video FAQ: responde en cámara las dudas más frecuentes (talla única, transparencia, cambios y garantía).</span>
+            </div>
+            <div class="content-item">
+              <div class="content-badge badge-c">C</div>
+              <span class="content-text">Catálogo de chaquetas + combos completos: foto + precio + guía de tallas + condiciones de cambio/garantía.</span>
+            </div>
+          </div>
+          <div>
+            <p class="month-col-title">Historias (mínimo 3)</p>
+            <div class="content-item">
+              <div class="content-badge badge-i">H</div>
+              <span class="content-text">Caja de preguntas abierta ("pregúntame lo que quieras").</span>
+            </div>
+            <div class="content-item">
+              <div class="content-badge badge-i">H</div>
+              <span class="content-text">Testimonios adicionales de clientas satisfechas.</span>
+            </div>
+            <div class="content-item">
+              <div class="content-badge badge-i">H</div>
+              <span class="content-text">Recordatorio claro de política de cambios y garantía.</span>
+            </div>
+          </div>
+        </div>
+        <div class="highlight-box">
+          <p><strong>Extra sugerido:</strong> historias extra con resumen del mes en 3 historias (mejores momentos, prendas más pedidas). TikTok Live de cierre de mes: sesión de preguntas y respuestas + adelanto del próximo mes.</p>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:8px;">
+        <p class="card-title">Notas de Ejecución</p>
+        <div class="bullet-item"><div class="bullet-dot"></div><span>Cada pieza de "referencia con precio" debe incluir: foto clara de la prenda, nombre de referencia, precio, tallas disponibles y un beneficio concreto (no transparenta / soporta / moldea).</span></div>
+        <div class="bullet-item"><div class="bullet-dot"></div><span>Idealmente alternar modelos estructuradas con clientas reales de distintos tipos de cuerpo, respondiendo directamente a lo que la marca no quiere transmitir (presión estética).</span></div>
+        <div class="bullet-item"><div class="bullet-dot"></div><span>Guardar cada testimonio y pregunta frecuente respondida en Historias Destacadas, para que quede disponible después de las 24 horas.</span></div>
+        <div class="bullet-item"><div class="bullet-dot"></div><span>Los TikTok Live no requieren producción: bastan buena luz, el celular y un guion simple de 3–4 temas a cubrir.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PARTE 4: PRÓXIMOS PASOS -->
+  <section class="section-block">
+    <div class="container">
+      <p class="section-label">04 — Próximos Pasos</p>
+      <h2 class="section-title">Próximos Pasos <em>Sugeridos</em></h2>
+      <p class="section-desc">Las acciones inmediatas para poner en marcha el plan de Mes 1.</p>
+
+      <div class="grid-2">
+        <div class="card" style="border-color:rgba(161,0,255,0.3);">
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px;">
+            <div style="width:32px;height:32px;border-radius:8px;background:rgba(161,0,255,0.2);display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--purple);">1</div>
+            <p style="font-size:14px;font-weight:700;">TikTok Live</p>
+          </div>
+          <p style="font-size:13px;color:#aaa;line-height:1.6;">Definir fecha y responsable del primer TikTok Live (recomendado: semana 1 o 2).</p>
+        </div>
+        <div class="card" style="border-color:rgba(161,0,255,0.3);">
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px;">
+            <div style="width:32px;height:32px;border-radius:8px;background:rgba(161,0,255,0.2);display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--purple);">2</div>
+            <p style="font-size:14px;font-weight:700;">Testimonios Reales</p>
+          </div>
+          <p style="font-size:13px;color:#aaa;line-height:1.6;">Recopilar 2–3 testimonios reales de clientas para usar desde la semana 2.</p>
+        </div>
+        <div class="card">
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px;">
+            <div style="width:32px;height:32px;border-radius:8px;background:rgba(161,0,255,0.12);display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--purple);">3</div>
+            <p style="font-size:14px;font-weight:700;">Precios y Tallas</p>
+          </div>
+          <p style="font-size:13px;color:#aaa;line-height:1.6;">Confirmar precios y tallas actualizados de cada referencia antes de producir los carruseles.</p>
+        </div>
+        <div class="card">
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px;">
+            <div style="width:32px;height:32px;border-radius:8px;background:rgba(161,0,255,0.12);display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--purple);">4</div>
+            <p style="font-size:14px;font-weight:700;">Manual de Marca</p>
+          </div>
+          <p style="font-size:13px;color:#aaa;line-height:1.6;">Iniciar en paralelo la construcción del manual de marca (paleta negro/blanco, tipografía, tono de voz) para dar consistencia a todas las piezas.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-top">
+          <div>
+            <img src="../Imagenes/logo.png" alt="Conectux" style="height:28px; width:auto;" />
+            <p style="font-size:12px;color:#555;margin-top:4px">Agencia de Marketing Digital</p>
+          </div>
+          <div class="footer-contact">
+            <p style="font-size:13px;color:#777;margin-bottom:6px">¿Hablamos de tu estrategia?</p>
+            <a href="https://wa.me/573005473048">Escríbenos por WhatsApp →</a>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <span>© 2026 Conectux Digital. Todos los derechos reservados.</span>
+          <span>Estrategia personalizada — Stryvé Sports Wear</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
